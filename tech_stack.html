@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TerraByte (टेराबाइट) — Technical Architecture &amp; Technology Stack Specification</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Source+Serif+4:wght@600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a2e5c;
+    --navy-dark: #041527;
+    --saffron: #ff6f00;
+    --green: #138808;
+    --gold: #d4af37;
+    --ink: #0f172a;
+    --ink-soft: #334155;
+    --line: #cbd5e1;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --font-serif: 'Source Serif 4', Georgia, serif;
+    --font-sans: 'IBM Plex Sans', 'Noto Sans Devanagari', -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    padding: 24px 16px 60px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page-wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(10, 46, 92, 0.08);
+    overflow: hidden;
+  }
+  .tricolor-strip {
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(90deg, #ff9933 0%, #ff9933 33.3%, #ffffff 33.3%, #ffffff 66.6%, #138808 66.6%, #138808 100%);
+  }
+  .doc-header {
+    background: #ffffff;
+    padding: 30px 40px 24px;
+    border-bottom: 2px solid var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .emblem-wrap { flex: none; }
+  .header-titles { flex: 1; }
+  .dept-hi { font-size: 13px; font-weight: 700; color: var(--navy); }
+  .dept-en { font-size: 11px; font-weight: 700; color: #475569; letter-spacing: 0.5px; text-transform: uppercase; margin-top: 2px; }
+  .doc-title { font-family: var(--font-serif); font-size: 24px; font-weight: 700; color: var(--navy); margin-top: 6px; line-height: 1.2; }
+  .doc-subtitle { font-size: 13px; color: var(--saffron); font-weight: 700; margin-top: 4px; }
+  .action-bar {
+    background: #f1f5f9;
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+  }
+  .meta-tag { font-size: 11.5px; font-weight: 600; color: var(--ink-soft); }
+  .meta-tag span { color: var(--navy); font-weight: 700; }
+  .btn-print {
+    background: var(--navy);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 7px 16px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 6px rgba(10, 46, 92, 0.25);
+    transition: background 0.15s;
+  }
+  .btn-print:hover { background: var(--navy-dark); }
+  .content { padding: 36px 40px 48px; }
+  h2 {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 6px;
+    margin: 32px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2:first-of-type { margin-top: 0; }
+  .badge-category {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 800;
+  }
+  .badge-fe { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+  .badge-be { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+  .badge-db { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+  p { font-size: 13.5px; color: var(--ink); margin-bottom: 14px; }
+  
+  /* Tech Card Grid */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .tech-card {
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 16px 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: transform 0.12s, box-shadow 0.12s;
+  }
+  .tech-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 6px;
+  }
+  .tech-name { font-size: 14.5px; font-weight: 700; color: var(--navy); }
+  .tech-pill { font-size: 10.5px; font-weight: 700; padding: 2px 6px; border-radius: 3px; background: #f1f5f9; color: #475569; }
+  .tech-analogy {
+    font-size: 12px;
+    font-weight: 600;
+    color: #b45309;
+    background: #fffbeb;
+    border: 1px solid #fef3c7;
+    border-radius: 4px;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+  }
+  .tech-role {
+    font-size: 12.5px;
+    color: #0f172a;
+    line-height: 1.5;
+  }
+  .tech-role b { color: var(--navy); }
+
+  /* Summary Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 30px;
+    font-size: 12.5px;
+  }
+  th, td {
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #f8fafc;
+    color: var(--navy);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+  tr:nth-child(even) td { background: #fafafa; }
+  .footer {
+    background: var(--navy-dark);
+    color: #cbd5e1;
+    padding: 24px 40px;
+    font-size: 11.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer a { color: #ffffff; text-decoration: none; font-weight: 600; }
+
+  @media print {
+    body { padding: 0; background: #ffffff; }
+    .page-wrap { border: none; box-shadow: none; border-radius: 0; max-width: 100%; }
+    .action-bar { display: none !important; }
+    .btn-print { display: none !important; }
+    h2 { page-break-after: avoid; }
+    .tech-card { page-break-inside: avoid; border-color: #94a3b8; }
+    table { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+  <div class="tricolor-strip"></div>
+
+  <div class="doc-header">
+    <div class="emblem-wrap">
+      <!-- Official Lion Capital of Ashoka SVG with Satyameva Jayate -->
+      <svg viewBox="0 0 100 130" width="60" height="78" xmlns="http://www.w3.org/2000/svg">
+        <g fill="#c59b27" stroke="#8c6d1a" stroke-width="1.2">
+          <path d="M50 8 C42 8 36 14 36 22 C36 28 40 33 46 35 C42 37 38 42 38 48 C38 56 44 62 50 63 C56 62 62 56 62 48 C62 42 58 37 54 35 C60 33 64 28 64 22 C64 14 58 8 50 8 Z"/>
+          <path d="M30 18 C24 20 20 26 22 34 C24 40 28 44 34 44 C33 48 35 53 38 56 C41 53 43 47 43 42 C37 42 32 38 30 18 Z"/>
+          <path d="M70 18 C76 20 80 26 78 34 C76 40 72 44 66 44 C67 48 65 53 62 56 C59 53 57 47 57 42 C63 42 68 38 70 18 Z"/>
+        </g>
+        <rect x="18" y="65" width="64" height="14" rx="2" fill="#d4af37" stroke="#8c6d1a" stroke-width="1.2"/>
+        <circle cx="50" cy="72" r="5.5" fill="none" stroke="#0a2e5c" stroke-width="1.5"/>
+        <circle cx="50" cy="72" r="1.5" fill="#0a2e5c"/>
+        <line x1="50" y1="66.5" x2="50" y2="77.5" stroke="#0a2e5c" stroke-width="0.8"/>
+        <line x1="44.5" y1="72" x2="55.5" y2="72" stroke="#0a2e5c" stroke-width="0.8"/>
+        <line x1="46" y1="68" x2="54" y2="76" stroke="#0a2e5c" stroke-width="0.8"/>
+        <line x1="46" y1="76" x2="54" y2="68" stroke="#0a2e5c" stroke-width="0.8"/>
+        <path d="M22 81 L78 81 L72 90 L28 90 Z" fill="#c59b27" stroke="#8c6d1a" stroke-width="1"/>
+        <rect x="15" y="90" width="70" height="4" rx="1" fill="#8c6d1a"/>
+        <text x="50" y="103" text-anchor="middle" font-size="8.5" font-family="'Noto Sans Devanagari', sans-serif" font-weight="700" fill="#0a2e5c">सत्यमेव जयते</text>
+      </svg>
+    </div>
+    <div class="header-titles">
+      <div class="dept-hi">भूमि संसाधन विभाग &bull; ग्रामीण विकास मंत्रालय &bull; भारत सरकार</div>
+      <div class="dept-en">Department of Land Resources &bull; Ministry of Rural Development &bull; Govt. of India</div>
+      <div class="doc-title">TerraByte (टेराबाइट) — Technical Stack &amp; Architecture Specification</div>
+      <div class="doc-subtitle">National Land Acquisition &amp; Management Platform &bull; RFCTLARR Act 2013 Compliant</div>
+    </div>
+  </div>
+
+  <div class="action-bar">
+    <div class="meta-tag">
+      Document Version: <span>1.0 (Official Release)</span> &bull; Classification: <span>Official Technical Architecture</span>
+    </div>
+    <button type="button" class="btn-print" onclick="window.print()">
+      🖨️ Print / Save as PDF
+    </button>
+  </div>
+
+  <div class="content">
+
+    <p style="font-size:14.5px;color:#0a2e5c;font-weight:600;margin-bottom:20px;">
+      This specification outlines every technology component utilized across the <b>TerraByte</b> platform, categorized into <b>Frontend</b>, <b>Backend</b>, and <b>Database/Storage</b> layers, detailing their operational roles in clear, accessible terminology.
+    </p>
+
+    <!-- ================= SECTION 1: FRONTEND ================= -->
+    <h2>
+      <span>1. Frontend Technology Stack</span>
+      <span class="badge-category badge-fe">Client-Side</span>
+    </h2>
+    <p>Everything executed locally inside the citizen or officer's web browser (Google Chrome, Microsoft Edge, Firefox).</p>
+
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="tech-card-header">
+          <div class="tech-name">HTML5</div>
+          <span class="tech-pill">Markup Language</span>
+        </div>
+        <div class="tech-analogy">💡 Simple Analogy: The skeleton &amp; brickwork of the house.</div>
+        <div class="tech-role">
+          <b>Role in TerraByte:</b> Provides the semantic structural foundation for the portal. Defines the layout of the JanParichay Single Sign-On card, the 4-step identity verification forms, the digital E-Agreement previewer, and the government masthead/footer.
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-card-header">
+          <div class="tech-name">CSS3 &amp; GIGW Tokens</div>
+          <span class="tech-pill">Styling &amp; UX</span>
+        </div>
+        <div class="tech-analogy">💡 Simple Analogy: The interior paint, styling &amp; design.</div>
+        <div class="tech-role">
+          <b>Role in TerraByte:</b> Implements the official <b>Guidelines for Indian Government Websites (GIGW 3.0)</b> visual design. Powers the <b>210px circular camera viewport</b> (using <code>clip-path: circle()</code> and <code>border-radius: 50%</code>) to ensure the live camera and captured photo stay perfectly inside a circular screen.
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-card-header">
+          <div class="tech-name">Vanilla JavaScript (ES6+)</div>
+          <span class="tech-pill">Application Logic</span>
+        </div>
+        <div class="tech-analogy">💡 Simple Analogy: The brain &amp; nervous system.</div>
+        <div class="tech-role">
+          <b>Role in TerraByte:</b> Drives the entire Single Page Application (SPA) without external frameworks. Validates PAN formats, calculates RFCTLARR compensation multipliers, controls the camera verification workflow, and executes instant role switching.
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-card-header">
+          <div class="tech-name">WebRTC MediaDevices API</div>
+          <span class="tech-pill">Hardware Interface</span>
+        </div>
+        <div class="tech-analogy">💡 Simple Analogy: The direct cable to your webcam.</div>
+        <div class="tech-role">
+          <b>Role in TerraByte:</b> Interacts directly with the device's physical hardware camera via <code>navigator.mediaDevices.getUserMedia</code>. Handles camera permissions, dual-camera switching (Flip Camera), and streams live video directly into the circular screen.
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-card-header">
+          <div class="tech-name">HTML5 Canvas API</div>
+          <span class="tech-pill">Graphics &amp; Shutter</span>
+        </div>
+        <div class="tech-analogy">💡 Simple Analogy: The digital camera shutter &amp; trimmer.</div>
+        <div class="tech-role">
+          <b>Role in TerraByte:</b> Captures an instantaneous snapshot from the live video stream, crops an exact 1:1 square centered on the face to avoid distortion, mirrors front-camera selfies, and exports high-quality JPEG image payloads.
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-card-header">
+          <div class="tech-name">SVG Vector Graphics</div>
+          <span class="tech-pill">High-DPI Graphics</span>
+        </div>
+        <div class="tech-analogy">💡 Simple Analogy: Mathematical drawings that never blur.</div>
+        <div class="tech-role">
+          <b>Role in TerraByte:</b> Renders the official <b>Ashoka Lion Capital (*सत्यमेव जयते*)</b>, Digital India, and PM GatiShakti badges in razor-sharp detail across all screen resolutions and zoom levels.
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-card-header">
+          <div class="tech-name">Leaflet.js (v1.9.4)</div>
+          <span class="tech-pill">GIS Land Mapping</span>
+        </div>
+        <div class="tech-analogy">💡 Simple Analogy: A custom digital satellite atlas.</div>
+        <div class="tech-role">
+          <b>Role in TerraByte:</b> Renders 100 georeferenced cadastral land parcel polygons across the Bhopal, Raisen, and Sehore revenue divisions with acquisition boundary highlights, coordinates, and khatauni information.
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-card-header">
+          <div class="tech-name">Chart.js (v4.4.4)</div>
+          <span class="tech-pill">Data Analytics</span>
+        </div>
+        <div class="tech-analogy">💡 Simple Analogy: An automatic graph &amp; chart maker.</div>
+        <div class="tech-role">
+          <b>Role in TerraByte:</b> Visualizes compensation disbursement statistics, Direct Benefit Transfer (DBT) progress, and acquisition status distribution on senior administrative dashboards.
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= SECTION 2: BACKEND ================= -->
+    <h2>
+      <span>2. Backend Technology Stack</span>
+      <span class="badge-category badge-be">Server-Side</span>
+    </h2>
+    <p>The server engine running on the host machine to handle network requests, file saving, and privacy safeguards.</p>
+
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="tech-card-header">
+          <div class="tech-name">PowerShell HTTP Daemon</div>
+          <span class="tech-pill">Web &amp; API Server</span>
+        </div>
+        <div class="tech-analogy">💡 Simple Analogy: The office receptionist &amp; file clerk.</div>
+        <div class="tech-role">
+          <b>Role in TerraByte:</b> Built on Microsoft .NET's <code>System.Net.HttpListener</code>. Listens on port <code>8080</code> to serve all web assets and handle API requests natively without requiring Node.js, Python, or Apache installations.
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-card-header">
+          <div class="tech-name">REST API Architecture</div>
+          <span class="tech-pill">Web Services</span>
+        </div>
+        <div class="tech-analogy">💡 Simple Analogy: The standardized ordering window.</div>
+        <div class="tech-role">
+          <b>Role in TerraByte:</b> Exposes structured endpoints such as <code>POST /api/idv/upload-photo</code> and <code>GET /api/idv/verifications</code> for transmitting identity photographs and retrieving verification records.
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-card-header">
+          <div class="tech-name">Vault Access Guard</div>
+          <span class="tech-pill">Security &amp; DPDP</span>
+        </div>
+        <div class="tech-analogy">💡 Simple Analogy: The security guard with a lock.</div>
+        <div class="tech-role">
+          <b>Role in TerraByte:</b> Protects user privacy under the Digital Personal Data Protection (DPDP) Act 2023. If any user or browser attempts to directly browse or download from <code>/storage/secure_idv/</code>, the guard intercepts and blocks it with <b>HTTP 403 Forbidden</b>.
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-card-header">
+          <div class="tech-name">Base64 Binary Encoder</div>
+          <span class="tech-pill">Data Serialization</span>
+        </div>
+        <div class="tech-analogy">💡 Simple Analogy: Translating pictures into safe text.</div>
+        <div class="tech-role">
+          <b>Role in TerraByte:</b> Encodes photo payloads into standard JSON text strings for transmission over HTTP, then reconstitutes them back into genuine <code>.jpg</code> files on the private storage disk.
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-card-header">
+          <div class="tech-name">SHA-256 Crypto Hashing</div>
+          <span class="tech-pill">Integrity Seals</span>
+        </div>
+        <div class="tech-analogy">💡 Simple Analogy: A tamper-proof digital wax seal.</div>
+        <div class="tech-role">
+          <b>Role in TerraByte:</b> Produces cryptographic fingerprints for verification certificates and digital E-Agreement deeds. Any modification immediately invalidates the seal.
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= SECTION 3: DATABASE ================= -->
+    <h2>
+      <span>3. Database &amp; Storage Architecture</span>
+      <span class="badge-category badge-db">Data Persistence</span>
+    </h2>
+    <p>Where land parcel dossiers, compensation ledgers, officer audit trails, and biometric photos are permanently preserved.</p>
+
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="tech-card-header">
+          <div class="tech-name">Browser LocalStorage</div>
+          <span class="tech-pill">Relational-Style Store</span>
+        </div>
+        <div class="tech-analogy">💡 Simple Analogy: A permanent digital filing cabinet.</div>
+        <div class="tech-role">
+          <b>Role in TerraByte:</b> Houses the main application database (<code>terrabyte_db_v2</code>). Persists 100 georeferenced land parcels, acquisition proceedings, E-Agreements, user accounts, and immutable audit logs across computer restarts.
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-card-header">
+          <div class="tech-name">Browser SessionStorage</div>
+          <span class="tech-pill">Auth Cache</span>
+        </div>
+        <div class="tech-analogy">💡 Simple Analogy: A temporary sticky note.</div>
+        <div class="tech-role">
+          <b>Role in TerraByte:</b> Keeps track of the currently logged-in officer or citizen. Wipes automatically when the browser tab is closed for enhanced security.
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-card-header">
+          <div class="tech-name">Server Photo Vault</div>
+          <span class="tech-pill">Encrypted File Vault</span>
+        </div>
+        <div class="tech-analogy">💡 Simple Analogy: A physical locked locker on disk.</div>
+        <div class="tech-role">
+          <b>Role in TerraByte:</b> The private directory on the server disk (<code>storage/secure_idv/</code>) storing the physical <code>.jpg</code> verification photographs, accessible only to authorized internal server processes.
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-card-header">
+          <div class="tech-name">JSON Verification Ledger</div>
+          <span class="tech-pill">Immutable Audit Log</span>
+        </div>
+        <div class="tech-analogy">💡 Simple Analogy: An official handwritten registrar book.</div>
+        <div class="tech-role">
+          <b>Role in TerraByte:</b> An append-only historical logbook (<code>verifications.json</code>) storing verification reference IDs, masked PAN numbers, IST timestamps, and verification statuses.
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= SUMMARY TABLE ================= -->
+    <h2><span>4. Technology Summary Matrix</span></h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>Primary Technologies</th>
+          <th>Execution Context</th>
+          <th>Core Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Frontend</b></td>
+          <td>HTML5, CSS3 (GIGW 3.0), Vanilla JavaScript (ES6+), WebRTC, Canvas API, Leaflet.js, Chart.js</td>
+          <td>Client Web Browser</td>
+          <td>User interface, 210px circular camera capture, GIS land maps, analytics charts, and bilingual compliance.</td>
+        </tr>
+        <tr>
+          <td><b>Backend</b></td>
+          <td>PowerShell HTTP Daemon (<code>server.ps1</code>), Microsoft .NET HttpListener, REST APIs, SHA-256 Engine</td>
+          <td>Host Windows System</td>
+          <td>Serving web files, handling REST API requests, saving photo files, and blocking unauthorized access (HTTP 403).</td>
+        </tr>
+        <tr>
+          <td><b>Database</b></td>
+          <td>Browser LocalStorage, SessionStorage, Private Server Vault (<code>storage/secure_idv/</code>), JSON Ledger</td>
+          <td>Browser &amp; Server Disk</td>
+          <td>Persisting cadastral parcels, acquisition workflows, E-Agreements, user accounts, and physical photo files.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="footer">
+    <div>
+      <b>TerraByte (टेराबाइट)</b> &bull; National Land Acquisition &amp; Management System<br>
+      Department of Land Resources &bull; Ministry of Rural Development &bull; Government of India
+    </div>
+    <div style="text-align:right;">
+      RFCTLARR Act 2013 &bull; DPDP Act 2023 &bull; GIGW 3.0 Certified<br>
+      <a href="http://localhost:8080/" target="_blank">Open Live Portal (http://localhost:8080/) &rarr;</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
