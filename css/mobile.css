@@ -1,0 +1,580 @@
+/* ==========================================================================
+   TERRABYTE (टेराबाइट) — MOBILE LAYOUT & DEVICE-SPECIFIC STYLESHEET
+   Active when body has class .mode-mobile or data-layout="mobile"
+   Compliant with GIGW 3.0 & WCAG 2.1 AA (48px+ tap targets, high contrast)
+   ========================================================================== */
+
+/* ==================== DESKTOP MODE VISIBILITY OVERRIDES ==================== */
+body.mode-desktop .mobile-shell-container,
+body.mode-desktop .mobile-topbar,
+body.mode-desktop .mobile-bottom-nav,
+body.mode-desktop .mobile-drawer-overlay,
+body.mode-desktop .mobile-drawer {
+  display: none !important;
+}
+
+/* ==================== MOBILE MODE ACTIVATION ==================== */
+body.mode-mobile {
+  padding-bottom: 64px !important; /* Space for fixed bottom navigation bar */
+}
+
+/* Hide desktop-only elements when in mobile layout */
+body.mode-mobile .gov-top-container,
+body.mode-mobile .gov-navbar,
+body.mode-mobile .sidebar,
+body.mode-mobile .gov-page-band .band-top-row,
+body.mode-mobile .gov-page-band .band-user-actions {
+  display: none !important;
+}
+
+/* Make content take full width */
+body.mode-mobile .app-shell {
+  display: block !important;
+  width: 100% !important;
+}
+body.mode-mobile .main {
+  width: 100% !important;
+  padding: 14px 12px 32px !important;
+}
+
+/* Mobile Page Band */
+body.mode-mobile .gov-page-band {
+  padding: 10px 14px !important;
+  border-bottom: 2px solid var(--gov-saffron);
+}
+body.mode-mobile .band-main-title {
+  font-size: 1.15rem !important;
+  line-height: 1.3 !important;
+}
+
+/* ==================== MOBILE TOP BAR ==================== */
+.mobile-topbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 52px;
+  background: var(--gov-navy);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  z-index: 1000;
+  border-bottom: 2px solid var(--gov-saffron);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hamburger Drawer Toggle Button (48x48px touch target) */
+.mobile-drawer-toggle {
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  color: #FFFFFF;
+  border-radius: var(--radius-sm);
+  transition: background 0.15s ease;
+}
+.mobile-drawer-toggle:active {
+  background: rgba(255, 255, 255, 0.15);
+}
+.hamburger-bar {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  background: #FFFFFF;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+/* Mobile Brand Title & Emblem */
+.mobile-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+.mobile-brand-emblem {
+  width: 30px;
+  height: 30px;
+  background: var(--gov-gold);
+  color: var(--gov-deep-navy);
+  font-weight: 900;
+  font-size: 0.9rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.mobile-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+.mobile-brand-title {
+  font-family: var(--font-serif);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+  line-height: 1.1;
+}
+.mobile-brand-sub {
+  font-size: 0.65rem;
+  color: #CBD5E1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Mobile Topbar Action Controls */
+.mobile-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.mobile-font-group {
+  display: flex;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.mobile-font-btn {
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  min-width: 26px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mobile-font-btn:active,
+.mobile-font-btn.active {
+  background: var(--gov-saffron);
+  color: #000000;
+}
+.mobile-lang-wrap {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 0 4px;
+}
+.mobile-lang-select {
+  background: transparent;
+  color: #FFFFFF;
+  border: none;
+  font-size: 0.786rem;
+  font-weight: 700;
+  height: 30px;
+  cursor: pointer;
+  outline: none;
+}
+.mobile-lang-select option {
+  background: var(--gov-dark-navy);
+  color: #FFFFFF;
+}
+
+/* ==================== MOBILE SLIDE-IN NAVIGATION DRAWER ==================== */
+.mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 27, 50, 0.65);
+  backdrop-filter: blur(2px);
+  z-index: 1090;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+.mobile-drawer-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 86vw;
+  max-width: 340px;
+  background: #FFFFFF;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 28px rgba(0, 0, 0, 0.35);
+  transform: translateX(-100%);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+}
+.mobile-drawer.open {
+  transform: translateX(0);
+}
+body.drawer-locked {
+  overflow: hidden !important;
+}
+
+/* Drawer Header */
+.mobile-drawer-header {
+  background: var(--gov-navy);
+  color: #FFFFFF;
+  padding: 14px 12px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--gov-saffron);
+}
+.mobile-drawer-user-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+.mobile-user-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--gov-gold);
+  color: var(--gov-deep-navy);
+  font-size: 1.2rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  flex-shrink: 0;
+}
+.mobile-user-meta {
+  flex: 1;
+  overflow: hidden;
+}
+.mobile-user-name {
+  font-weight: 800;
+  font-size: 0.929rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mobile-user-role {
+  font-size: 0.714rem;
+  color: #CBD5E1;
+  margin-top: 1px;
+}
+.mobile-user-circle {
+  font-size: 0.65rem;
+  color: var(--gov-gold);
+  font-weight: 600;
+}
+
+.mobile-drawer-close {
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+.mobile-drawer-close:active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Drawer Search Box */
+.mobile-drawer-search-box {
+  position: relative;
+  padding: 10px 12px 6px;
+  background: #F8FAFC;
+  border-bottom: 1px solid var(--gov-border);
+}
+.mobile-search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  color: var(--gov-text-muted);
+}
+.mobile-drawer-search-input {
+  width: 100%;
+  padding: 10px 10px 10px 32px;
+  font-size: 0.857rem;
+  border: 1px solid var(--gov-border);
+  border-radius: var(--radius-sm);
+  background: #FFFFFF;
+  box-sizing: border-box;
+}
+
+/* Drawer Body & Navigation Items (48px+ touch targets) */
+.mobile-drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 10px 20px;
+}
+
+.mobile-drawer-section {
+  margin-bottom: 12px;
+}
+.mobile-drawer-section-title {
+  font-size: 0.714rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--gov-navy);
+  letter-spacing: 0.05em;
+  padding: 6px 4px 4px;
+}
+
+/* Quick Touch Grid in Drawer */
+.mobile-quick-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 4px;
+}
+.mobile-quick-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 6px;
+  min-height: 52px;
+  background: #F8FAFC;
+  border: 1px solid var(--gov-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+.mobile-quick-btn:active,
+.mobile-quick-btn.active {
+  background: var(--gov-light-blue);
+  border-color: var(--gov-blue);
+  color: var(--gov-navy);
+}
+.mobile-quick-ico { font-size: 1.1rem; }
+.mobile-quick-txt { font-size: 0.714rem; font-weight: 700; line-height: 1.2; }
+
+/* Grouped Accordions */
+.mobile-nav-group {
+  margin-bottom: 12px;
+}
+.mobile-nav-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.714rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--gov-text-light);
+  letter-spacing: 0.06em;
+  padding: 8px 4px 4px;
+}
+.mobile-nav-badge {
+  background: #E2E8F0;
+  color: var(--gov-text-muted);
+  border-radius: 10px;
+  padding: 1px 6px;
+  font-size: 0.65rem;
+}
+
+/* High Ergonomic Tap Target (Minimum 48px height) */
+.mobile-nav-item {
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--gov-text);
+  font-size: 0.929rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  border-bottom: 1px solid #F1F5F9;
+}
+.mobile-nav-item:active,
+.mobile-nav-item.active {
+  background: var(--gov-light-blue);
+  color: var(--gov-navy);
+  font-weight: 700;
+}
+.mobile-nav-ico {
+  font-size: 1.15rem;
+  width: 24px;
+  text-align: center;
+}
+.mobile-nav-txt {
+  flex: 1;
+}
+.mobile-nav-arrow {
+  color: #94A3B8;
+  font-size: 1.1rem;
+}
+
+/* Drawer Footer */
+.mobile-drawer-footer {
+  padding: 12px;
+  background: #F8FAFC;
+  border-top: 1px solid var(--gov-border);
+}
+.mobile-drawer-subinfo {
+  text-align: center;
+  font-size: 0.65rem;
+  color: var(--gov-text-muted);
+}
+
+/* ==================== MOBILE BOTTOM QUICK NAVIGATION ==================== */
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: #FFFFFF;
+  border-top: 1px solid var(--gov-border);
+  box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.08);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  z-index: 999;
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background: transparent;
+  border: none;
+  padding: 4px;
+  color: var(--gov-text-muted);
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: color 0.15s ease;
+}
+.bottom-nav-item:active {
+  background: #F8FAFC;
+}
+.bottom-nav-item.active {
+  color: var(--gov-navy);
+  font-weight: 700;
+}
+.bottom-nav-item.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 3px;
+  background: var(--gov-saffron);
+  border-radius: 0 0 2px 2px;
+}
+.bottom-nav-ico {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+.bottom-nav-lbl {
+  font-size: 0.65rem;
+  letter-spacing: 0.02em;
+}
+
+/* ==================== MOBILE CONTENT & COMPONENT TUNING ==================== */
+body.mode-mobile .grid-4,
+body.mode-mobile .stat-grid,
+body.mode-mobile .gov-pillars-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 8px !important;
+}
+
+body.mode-mobile .inquiry-grid,
+body.mode-mobile .gov-footer-grid,
+body.mode-mobile .home-hero-wrap {
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+}
+
+body.mode-mobile .card {
+  padding: 14px !important;
+  margin-bottom: 12px !important;
+}
+
+/* Touch-optimized horizontal table scrolling with momentum */
+body.mode-mobile .table-wrap,
+body.mode-mobile .overflow-x {
+  position: relative;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gov-border);
+}
+body.mode-mobile .table-wrap::after {
+  content: '⇄ Swipe table to view all columns';
+  display: block;
+  font-size: 0.68rem;
+  color: var(--gov-text-muted);
+  background: #F8FAFC;
+  padding: 4px 8px;
+  text-align: right;
+  border-top: 1px dashed var(--gov-border);
+}
+
+/* Touch friendly form inputs (Minimum 44px height) */
+body.mode-mobile input[type="text"],
+body.mode-mobile input[type="password"],
+body.mode-mobile input[type="email"],
+body.mode-mobile select,
+body.mode-mobile .btn {
+  min-height: 44px !important;
+  font-size: 1rem !important; /* Prevents auto-zoom on mobile safari */
+}
+
+/* Stepper on mobile: wrapped or scrollable */
+body.mode-mobile .stepper {
+  overflow-x: auto !important;
+  padding-bottom: 6px;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+/* Mobile Modal Fullscreen/Bottom Sheet ergonomics */
+body.mode-mobile .modal {
+  width: 95vw !important;
+  max-width: 95vw !important;
+  max-height: 90vh !important;
+  margin: 10px auto !important;
+  border-radius: 8px !important;
+}
+
+/* High contrast mode for mobile components */
+html.high-contrast body.mode-mobile .mobile-topbar,
+html.high-contrast body.mode-mobile .mobile-bottom-nav,
+html.high-contrast body.mode-mobile .mobile-drawer {
+  background: #000000 !important;
+  border-color: #FFFF00 !important;
+  color: #FFFFFF !important;
+}
+html.high-contrast body.mode-mobile .bottom-nav-item.active {
+  color: #FFFF00 !important;
+}
