@@ -1088,9 +1088,9 @@ button { cursor: pointer; font-family: inherit; }
   font-size: 1.143rem;
 }
 .about-text-content {
-  font-size: 0.893rem;
-  color: var(--gov-text);
-  line-height: 1.6;
+  font-size: 1.05rem;
+  color: #1E293B;
+  line-height: 1.65;
 }
 .about-pillars-grid {
   display: grid;
@@ -1102,28 +1102,29 @@ button { cursor: pointer; font-family: inherit; }
   background: #F8FAFC;
   border: 1px solid var(--gov-border);
   border-radius: var(--radius-sm);
-  padding: 10px 12px;
+  padding: 12px 14px;
 }
 .about-pillar-title {
-  font-size: 0.857rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--gov-navy);
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 .about-pillar-sub {
-  font-size: 0.786rem;
+  font-size: 0.875rem;
   color: var(--gov-text-muted);
+  line-height: 1.5;
 }
 .btn-read-more {
   background: none;
   border: none;
   color: var(--gov-blue);
   font-weight: 700;
-  font-size: 0.857rem;
+  font-size: 0.925rem;
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  margin-top: 8px;
+  margin-top: 10px;
   padding: 0;
 }
 .btn-read-more:hover {
