@@ -28,16 +28,16 @@ ROUTES['dashboard'] = function(c){
       </div>
     </div>
     <div class="grid g4" style="margin-bottom:14px;">
-      ${statCard('कुल भूखंड (Total Parcels)', counts.total, 'across '+DISTRICTS.length+' Districts', '', 'stripe-saffron')}
-      ${statCard('सत्यापनधीन (Under Verification)', counts.verification, 'Revenue records check pending', '', 'stripe-navy')}
-      ${statCard('अधिग्रहणधीन (Under Acquisition)', counts.acquisition, 'Sec. 11(1) Notice issued', '', 'stripe-sky')}
-      ${statCard('अधिग्रहीत / हस्तांतरित (Acquired / Utilized)', counts.acquired, 'Sec. 38 Possession Complete', '', 'stripe-green')}
+      ${statCard('कुल भूखंड (Total Parcels)', counts.total, '', 'animate-slide-in', 'stripe-saffron')}
+      ${statCard('सत्यापनधीन (Under Verification)', counts.verification, '', 'animate-slide-in', 'stripe-navy')}
+      ${statCard('अधिग्रहणधीन (Under Acquisition)', counts.acquisition, '', 'animate-slide-in', 'stripe-sky')}
+      ${statCard('अधिग्रहीत / हस्तांतरित (Acquired / Utilized)', counts.acquired, '', 'animate-slide-in', 'stripe-green')}
     </div>
     <div class="grid g4" style="margin-bottom:18px;">
-      ${statCard('विवादित खसरा (Disputed Land)', counts.disputed, counts.disputed>0?'Revenue Court Intervention':'No litigations pending', '', 'stripe-clay')}
-      ${statCard('प्रतिकर देयता (Pending Compensation)', counts.pendingComp, fmtINR(compTotal-compPaid)+' DBT Pending', '', 'stripe-saffron')}
-      ${statCard('सक्रिय परियोजनाएं (Active Projects)', counts.activeProjects, DB.projects.length+' Infrastructure Works', '', 'stripe-navy')}
-      ${statCard('सतर्कता प्रकरण (Open Vigilance Alerts)', counts.alerts, 'Auto-monitored under RFCTLARR', '', 'stripe-sky')}
+      ${statCard('विवादित खसरा (Disputed Land)', counts.disputed, '', 'animate-slide-in', 'stripe-clay')}
+      ${statCard('प्रतिकर देयता (Pending Compensation)', counts.pendingComp, '', 'animate-slide-in', 'stripe-purple')}
+      ${statCard('सक्रिय परियोजनाएं (Active Projects)', counts.activeProjects, '', 'animate-slide-in', 'stripe-teal')}
+      ${statCard('सतर्कता प्रकरण (Open Vigilance Alerts)', counts.alerts, '', 'animate-slide-in', 'stripe-pink')}
     </div>
     <div class="grid g2" style="margin-bottom:16px;">
       <div class="card">

@@ -132,11 +132,20 @@ function toggleReducedMotion() {
 
 /* ============ HERO IMAGE CAROUSEL LOGIC ============ */
 let currentSlide = 0;
-const totalSlides = 4;
 let carouselTimer = null;
 
+function getTotalSlides() {
+  const track = document.getElementById('carousel-track');
+  if (track) {
+    const slides = track.querySelectorAll('.carousel-slide');
+    if (slides.length > 0) return slides.length;
+  }
+  return 6;
+}
+
 function showSlide(idx) {
-  currentSlide = (idx + totalSlides) % totalSlides;
+  const total = getTotalSlides();
+  currentSlide = (idx + total) % total;
   const track = document.getElementById('carousel-track');
   if (track) {
     track.style.transform = `translateX(-${currentSlide * 100}%)`;

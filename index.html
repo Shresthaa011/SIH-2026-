@@ -27,11 +27,11 @@
       <div class="gov-utility-container">
         <div class="gov-utility-left">
           <span class="gov-in-badge">IN</span>
-          <span><strong>भारत सरकार</strong> | Government of India</span>
+          <span>Government of India</span>
           <span style="color:rgba(255,255,255,0.4);">•</span>
-          <span><strong>ग्रामीण विकास मंत्रालय</strong> | Ministry of Rural Development</span>
+          <span>Ministry of Rural Development</span>
           <span style="color:rgba(255,255,255,0.4);">•</span>
-          <span><strong>भूमि संसाधन विभाग</strong> | Department of Land Resources</span>
+          <span>Department of Land Resources</span>
         </div>
 
         <div class="gov-utility-right">
@@ -72,13 +72,6 @@
             </select>
           </div>
 
-          <!-- Quick Modals -->
-          <button class="btn-util-modal" onclick="openAccessibilityModal()" title="Accessibility Options">♿ सुगम्यता / A11y</button>
-          <button class="btn-util-modal" onclick="openScreenReaderModal()" title="Screen Reader Guide">🔊 स्क्रीन रीडर</button>
-          <button class="btn-util-modal" onclick="openSitemapModal()" title="Portal Sitemap">🗺️ साइटमैप</button>
-          <button class="btn-util-modal" onclick="openContactModal()" title="Helpdesk">📞 संपर्क / Help</button>
-          <button class="btn-util-modal btn-device-toggle" onclick="Device.toggleMode()" title="Toggle Desktop/Mobile layout">📱 Mobile View</button>
-
           <!-- Live IST Clock -->
           <span class="ist-clock-badge" id="ist-clock">Loading IST...</span>
         </div>
@@ -115,218 +108,198 @@
 
           <!-- Institutional Hierarchy & TerraByte Title -->
           <div class="gov-titles" onclick="showHomeScreen()" style="cursor:pointer;" title="Go to Portal Home / मुख्य पृष्ठ पर जाएं">
-            <div class="gov-dept-row-hi">भूमि संसाधन विभाग • ग्रामीण विकास मंत्रालय • भारत सरकार</div>
-            <div class="gov-dept-row-en">Department of Land Resources • Ministry of Rural Development • Govt. of India</div>
             <div class="gov-brand-title">
               <span class="gov-name-en">TerraByte</span>
-              <span class="gov-name-hi">टेराबाइट</span>
+              <span class="gov-name-hi" style="color: inherit;">टेराबाइट</span>
             </div>
             <div class="gov-system-tag">
-              National Land Acquisition &amp; Management System • राष्ट्रीय भूमि अधिग्रहण एवं प्रबंधन पोर्टल
+              <div>National Land Acquisition &amp; Management System</div>
+              <div class="gov-system-tag-hi">• राष्ट्रीय भूमि अधिग्रहण एवं प्रबंधन पोर्टल</div>
             </div>
           </div>
         </div>
 
         <!-- Official Insignias -->
         <div class="gov-badges-wrap">
-          <!-- Digital India -->
-          <div class="gov-seal-card">
-            <div class="seal-icon-wrap">
-              <svg viewBox="0 0 32 32" width="26" height="26">
-                <circle cx="16" cy="16" r="14" fill="#ffffff" stroke="#ff9933" stroke-width="2"/>
-                <circle cx="16" cy="16" r="9" fill="#ffffff" stroke="#138808" stroke-width="1.5"/>
-                <circle cx="16" cy="16" r="3" fill="#073763"/>
-              </svg>
-            </div>
-            <div>
-              <div class="seal-title">Digital India</div>
-              <div class="seal-sub">Power To Empower</div>
-            </div>
-          </div>
-
-          <!-- PM GatiShakti -->
-          <div class="gov-seal-card">
-            <div class="seal-icon-wrap">
-              <svg viewBox="0 0 32 32" width="24" height="24">
-                <polygon points="8,24 16,6 24,24" fill="#ea580c"/>
-                <circle cx="16" cy="16" r="3.5" fill="#138808"/>
-              </svg>
-            </div>
-            <div>
-              <div class="seal-title">PM GatiShakti</div>
-              <div class="seal-sub">National Master Plan</div>
-            </div>
+          <!-- Real Digital India Logo -->
+          <div class="gov-seal-card" style="padding: 2px 6px; border: none; box-shadow: none; background: transparent;">
+            <img src="images/digital_india_logo.png" alt="Digital India - Power To Empower" style="height: 68px; width: auto; object-fit: contain;">
           </div>
         </div>
       </div>
+
+      <!-- Integrated White Navigation Bar in Header Section -->
+      <nav class="gov-navbar" role="navigation" aria-label="Primary Portal Navigation">
+        <div class="gov-nav-container">
+          <div class="gov-nav-links">
+            <!-- Home -->
+            <div class="gov-nav-item">
+              <button class="gov-nav-btn active" id="nav-btn-home" onclick="showHomeScreen();">
+                🏛️ HOME
+              </button>
+            </div>
+
+            <!-- About Us Dropdown -->
+            <div class="gov-nav-item">
+              <button class="gov-nav-btn">ABOUT US ▼</button>
+              <div class="gov-nav-dropdown">
+                <a href="#about-dolr" class="gov-dropdown-link" onclick="showHomeScreen(); switchPublicTab('overview');">
+                  <div class="dropdown-title-row"><span>About Department of Land Resources (DoLR)</span></div>
+                  <div class="dropdown-desc">Mandates, vision and policies under Ministry of Rural Development</div>
+                </a>
+                <a href="#about-terrabyte" class="gov-dropdown-link" onclick="showHomeScreen(); switchPublicTab('overview');">
+                  <div class="dropdown-title-row"><span>About TERRABYTE Platform</span><span class="dropdown-badge">Mission</span></div>
+                  <div class="dropdown-desc">Real-time transparent land acquisition, cadastral GIS &amp; DBT disbursal</div>
+                </a>
+                <a href="#about-framework" class="gov-dropdown-link" onclick="showHomeScreen(); switchPublicTab('overview');">
+                  <div class="dropdown-title-row"><span>Statutory RFCTLARR Act 2013 Framework</span></div>
+                  <div class="dropdown-desc">Legal pillars for transparent compensation, consent &amp; R&amp;R tracking</div>
+                </a>
+                <a href="#about-roles" class="gov-dropdown-link" onclick="showHomeScreen(); switchPublicTab('overview');">
+                  <div class="dropdown-title-row"><span>Institutional Roles &amp; CALA Directory</span></div>
+                  <div class="dropdown-desc">Central Nodal Ministry, State Revenue Authorities &amp; District Collectors</div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Projects Dropdown -->
+            <div class="gov-nav-item">
+              <button class="gov-nav-btn">PROJECTS ▼</button>
+              <div class="gov-nav-dropdown">
+                <a href="#nhai" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('projects'); else { showHomeScreen(); switchPublicTab('overview'); }">
+                  <div class="dropdown-title-row"><span>Highways &amp; Expressways (NHAI)</span><span class="dropdown-badge">Bharatmala</span></div>
+                  <div class="dropdown-desc">Real-time acquisition corridors for Greenfield &amp; Brownfield expressways</div>
+                </a>
+                <a href="#dfccil" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('projects'); else { showHomeScreen(); switchPublicTab('overview'); }">
+                  <div class="dropdown-title-row"><span>Dedicated Freight Corridors (DFCCIL / Railways)</span></div>
+                  <div class="dropdown-desc">Eastern and Western Dedicated Freight Corridors alignment monitoring</div>
+                </a>
+                <a href="#bullet" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('projects'); else { showHomeScreen(); switchPublicTab('overview'); }">
+                  <div class="dropdown-title-row"><span>High Speed Rail Corridors (NHSRCL)</span></div>
+                  <div class="dropdown-desc">Mumbai-Ahmedabad Bullet Train alignment and corridor parcels</div>
+                </a>
+                <a href="#gatishakti" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('projects'); else { showHomeScreen(); switchPublicTab('overview'); }">
+                  <div class="dropdown-title-row"><span>PM GatiShakti Multi-Modal Infrastructure</span></div>
+                  <div class="dropdown-desc">Integrated port connectivity, industrial smart cities and energy pipelines</div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Guidelines & Acts -->
+            <div class="gov-nav-item">
+              <button class="gov-nav-btn">GUIDELINES &amp; ACTS ▼</button>
+              <div class="gov-nav-dropdown">
+                <a href="#act" class="gov-dropdown-link" onclick="showHomeScreen(); switchPublicTab('overview');">
+                  <div class="dropdown-title-row"><span>RFCTLARR Act, 2013 (Full Text)</span></div>
+                  <div class="dropdown-desc">Right to Fair Compensation and Transparency in Land Acquisition</div>
+                </a>
+                <a href="#rules" class="gov-dropdown-link" onclick="showHomeScreen(); switchPublicTab('overview');">
+                  <div class="dropdown-title-row"><span>State Rules &amp; Local Amendments</span></div>
+                  <div class="dropdown-desc">State-specific multiplier factors and administrative procedures</div>
+                </a>
+                <a href="#tribunal" class="gov-dropdown-link" onclick="showHomeScreen(); switchPublicTab('overview');">
+                  <div class="dropdown-title-row"><span>Judicial Precedents &amp; Tribunal Orders</span></div>
+                  <div class="dropdown-desc">Land Acquisition, Rehabilitation &amp; Resettlement Authority rulings</div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Contact Us -->
+            <div class="gov-nav-item">
+              <button class="gov-nav-btn" onclick="openContactModal()">📞 CONTACT US</button>
+            </div>
+          </div>
+
+          <!-- Right Action Section: LOGIN / REGISTER & Right-Corner Menu Bar -->
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button class="gov-nav-btn highlighted" id="nav-btn-login" onclick="if(CURRENT_USER){ logout(); } else { showLoginPage(); }">
+              🔑 LOGIN / REGISTER
+            </button>
+
+            <!-- Three-Lined Menu Bar in Right Corner -->
+            <div class="gov-nav-item gov-main-menu-item">
+              <button class="gov-nav-btn gov-menu-btn" id="nav-btn-menu" aria-label="Toggle Main Menu">
+                <span class="hamburger-icon">☰</span>
+                <span class="menu-label">MENU</span>
+              </button>
+              <div class="gov-nav-dropdown gov-main-menu-dropdown" style="right: 0; left: auto;">
+                <!-- 1. Land Acquisition -->
+                <div class="menu-category-block">
+                  <div class="menu-category-header">🏢 LAND ACQUISITION / भूमि अधिग्रहण</div>
+                  <a href="#sec4" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('cases'); else { showHomeScreen(); switchPublicTab('overview'); }">
+                    <div class="dropdown-title-row"><span>Section 4 Preliminary Notifications</span><span class="dropdown-badge">Sec 4</span></div>
+                    <div class="dropdown-desc">Public purpose declaration and notification of proposed survey numbers</div>
+                  </a>
+                  <a href="#sia" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('cases'); else { showHomeScreen(); switchPublicTab('overview'); }">
+                    <div class="dropdown-title-row"><span>Social Impact Assessment (SIA) Reports</span></div>
+                    <div class="dropdown-desc">Public hearings, affected families baseline, and Expert Group appraisals</div>
+                  </a>
+                  <a href="#sec11" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('cases'); else { showHomeScreen(); switchPublicTab('overview'); }">
+                    <div class="dropdown-title-row"><span>Section 11 Declaration of Acquisition</span><span class="dropdown-badge">Sec 11</span></div>
+                    <div class="dropdown-desc">Final declaration &amp; summary of Rehabilitation &amp; Resettlement scheme</div>
+                  </a>
+                  <a href="#jms" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('cases'); else { showHomeScreen(); switchPublicTab('overview'); }">
+                    <div class="dropdown-title-row"><span>Joint Measurement Survey (JMS)</span></div>
+                    <div class="dropdown-desc">On-ground geo-tagged verification with Revenue &amp; Project authorities</div>
+                  </a>
+                  <a href="#awards" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('compensation'); else { showHomeScreen(); switchPublicTab('overview'); }">
+                    <div class="dropdown-title-row"><span>Compensation Award Status</span></div>
+                    <div class="dropdown-desc">Sec 26-30 award determination and Direct Benefit Transfer tracking</div>
+                  </a>
+                </div>
+
+                <!-- 2. Land Management -->
+                <div class="menu-category-block">
+                  <div class="menu-category-header">🏞️ LAND MANAGEMENT / भूमि प्रबंधन</div>
+                  <a href="#registry" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('parcels'); else { showHomeScreen(); switchPublicTab('overview'); }">
+                    <div class="dropdown-title-row"><span>National Land Parcel Registry (Khasra/RoR)</span></div>
+                    <div class="dropdown-desc">Integrated land records database synchronized with State Bhulekh portals</div>
+                  </a>
+                  <a href="#cadastral" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('map'); else { showHomeScreen(); switchPublicTab('overview'); }">
+                    <div class="dropdown-title-row"><span>Cadastral Geo-Reference Verification</span></div>
+                    <div class="dropdown-desc">Verification of digitized village boundaries and parcel GIS coordinates</div>
+                  </a>
+                  <a href="#titling" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('documents'); else { showHomeScreen(); switchPublicTab('overview'); }">
+                    <div class="dropdown-title-row"><span>Title Verification &amp; Khatedar Registry</span></div>
+                    <div class="dropdown-desc">Clear ownership titles, co-sharer percentages, and mutation records</div>
+                  </a>
+                  <a href="#rr" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('cases'); else { showHomeScreen(); switchPublicTab('overview'); }">
+                    <div class="dropdown-title-row"><span>Rehabilitation &amp; Resettlement (R&amp;R) Tracking</span></div>
+                    <div class="dropdown-desc">Monitoring alternative housing plots, annuity options &amp; family entitlements</div>
+                  </a>
+                </div>
+
+                <!-- 3. GIS Maps -->
+                <div class="menu-category-block">
+                  <div class="menu-category-header">🗺️ GIS MAPS / जीआईएस मानचित्र</div>
+                  <a href="#gis" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('map'); else { toast('कृपया पहले पोर्टल पर प्रवेश करें / Please Sign In to access GIS maps'); showLoginPage(); }">
+                    <div class="dropdown-title-row"><span>Interactive Cadastral GIS Mapping</span><span class="dropdown-badge">GIS Live</span></div>
+                    <div class="dropdown-desc">View geo-tagged land parcels, Drone survey layers, and project overlays</div>
+                  </a>
+                </div>
+
+                <!-- 4. Documents -->
+                <div class="menu-category-block">
+                  <div class="menu-category-header">📄 DOCUMENTS / दस्तावेज़</div>
+                  <a href="#gazettes" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('documents'); else { showHomeScreen(); switchPublicTab('overview'); }">
+                    <div class="dropdown-title-row"><span>Gazette Notifications Archive</span></div>
+                    <div class="dropdown-desc">Searchable repository of Part II, Section 3 Central &amp; State Gazettes</div>
+                  </a>
+                  <a href="#sops" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('documents'); else { showHomeScreen(); switchPublicTab('overview'); }">
+                    <div class="dropdown-title-row"><span>Standard Operating Procedures (SOPs)</span></div>
+                    <div class="dropdown-desc">Guidelines for District Collectors, CALA, and Survey Inspection teams</div>
+                  </a>
+                  <a href="#forms" class="gov-dropdown-link" onclick="showHomeScreen(); switchPublicTab('inquiry');">
+                    <div class="dropdown-title-row"><span>Citizen Objection &amp; Claim Forms</span></div>
+                    <div class="dropdown-desc">Statutory Form 3A, Bank Mandate forms and NOC submission formats</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
-
-    <!-- Sticky Navigation Bar with Multi-Level Dropdowns -->
-    <nav class="gov-navbar" role="navigation" aria-label="Primary Portal Navigation">
-      <div class="gov-nav-container">
-        <div class="gov-nav-links">
-          <!-- Home -->
-          <div class="gov-nav-item">
-            <button class="gov-nav-btn active" id="nav-btn-home" onclick="showHomeScreen();">
-              🏛️ HOME
-            </button>
-          </div>
-
-          <!-- About Us Dropdown -->
-          <div class="gov-nav-item">
-            <button class="gov-nav-btn">ABOUT US ▼</button>
-            <div class="gov-nav-dropdown">
-              <a href="#about-dolr" class="gov-dropdown-link" onclick="showHomeScreen(); switchPublicTab('overview');">
-                <div class="dropdown-title-row"><span>About Department of Land Resources (DoLR)</span></div>
-                <div class="dropdown-desc">Mandates, vision and policies under Ministry of Rural Development</div>
-              </a>
-              <a href="#about-terrabyte" class="gov-dropdown-link" onclick="showHomeScreen(); switchPublicTab('overview');">
-                <div class="dropdown-title-row"><span>About TERRABYTE Platform</span><span class="dropdown-badge">Mission</span></div>
-                <div class="dropdown-desc">Real-time transparent land acquisition, cadastral GIS &amp; DBT disbursal</div>
-              </a>
-              <a href="#about-framework" class="gov-dropdown-link" onclick="showHomeScreen(); switchPublicTab('overview');">
-                <div class="dropdown-title-row"><span>Statutory RFCTLARR Act 2013 Framework</span></div>
-                <div class="dropdown-desc">Legal pillars for transparent compensation, consent &amp; R&amp;R tracking</div>
-              </a>
-              <a href="#about-roles" class="gov-dropdown-link" onclick="showHomeScreen(); switchPublicTab('overview');">
-                <div class="dropdown-title-row"><span>Institutional Roles &amp; CALA Directory</span></div>
-                <div class="dropdown-desc">Central Nodal Ministry, State Revenue Authorities &amp; District Collectors</div>
-              </a>
-            </div>
-          </div>
-
-          <!-- Land Acquisition Dropdown -->
-          <div class="gov-nav-item">
-            <button class="gov-nav-btn">LAND ACQUISITION ▼</button>
-            <div class="gov-nav-dropdown">
-              <a href="#sec4" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('cases'); else { showHomeScreen(); switchPublicTab('overview'); }">
-                <div class="dropdown-title-row"><span>Section 4 Preliminary Notifications</span><span class="dropdown-badge">Sec 4</span></div>
-                <div class="dropdown-desc">Public purpose declaration and notification of proposed survey numbers</div>
-              </a>
-              <a href="#sia" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('cases'); else { showHomeScreen(); switchPublicTab('overview'); }">
-                <div class="dropdown-title-row"><span>Social Impact Assessment (SIA) Reports</span></div>
-                <div class="dropdown-desc">Public hearings, affected families baseline, and Expert Group appraisals</div>
-              </a>
-              <a href="#sec11" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('cases'); else { showHomeScreen(); switchPublicTab('overview'); }">
-                <div class="dropdown-title-row"><span>Section 11 Declaration of Acquisition</span><span class="dropdown-badge">Sec 11</span></div>
-                <div class="dropdown-desc">Final declaration &amp; summary of Rehabilitation &amp; Resettlement scheme</div>
-              </a>
-              <a href="#jms" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('cases'); else { showHomeScreen(); switchPublicTab('overview'); }">
-                <div class="dropdown-title-row"><span>Joint Measurement Survey (JMS)</span></div>
-                <div class="dropdown-desc">On-ground geo-tagged verification with Revenue &amp; Project authorities</div>
-              </a>
-              <a href="#awards" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('compensation'); else { showHomeScreen(); switchPublicTab('overview'); }">
-                <div class="dropdown-title-row"><span>Compensation Award Status</span></div>
-                <div class="dropdown-desc">Sec 26-30 award determination and Direct Benefit Transfer tracking</div>
-              </a>
-            </div>
-          </div>
-
-          <!-- Land Management Dropdown -->
-          <div class="gov-nav-item">
-            <button class="gov-nav-btn">LAND MANAGEMENT ▼</button>
-            <div class="gov-nav-dropdown">
-              <a href="#registry" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('parcels'); else { showHomeScreen(); switchPublicTab('overview'); }">
-                <div class="dropdown-title-row"><span>National Land Parcel Registry (Khasra/RoR)</span></div>
-                <div class="dropdown-desc">Integrated land records database synchronized with State Bhulekh portals</div>
-              </a>
-              <a href="#cadastral" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('map'); else { showHomeScreen(); switchPublicTab('overview'); }">
-                <div class="dropdown-title-row"><span>Cadastral Geo-Reference Verification</span></div>
-                <div class="dropdown-desc">Verification of digitized village boundaries and parcel GIS coordinates</div>
-              </a>
-              <a href="#titling" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('documents'); else { showHomeScreen(); switchPublicTab('overview'); }">
-                <div class="dropdown-title-row"><span>Title Verification &amp; Khatedar Registry</span></div>
-                <div class="dropdown-desc">Clear ownership titles, co-sharer percentages, and mutation records</div>
-              </a>
-              <a href="#rr" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('cases'); else { showHomeScreen(); switchPublicTab('overview'); }">
-                <div class="dropdown-title-row"><span>Rehabilitation &amp; Resettlement (R&amp;R) Tracking</span></div>
-                <div class="dropdown-desc">Monitoring alternative housing plots, annuity options &amp; family entitlements</div>
-              </a>
-            </div>
-          </div>
-
-          <!-- Projects Dropdown -->
-          <div class="gov-nav-item">
-            <button class="gov-nav-btn">PROJECTS ▼</button>
-            <div class="gov-nav-dropdown">
-              <a href="#nhai" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('projects'); else { showHomeScreen(); switchPublicTab('overview'); }">
-                <div class="dropdown-title-row"><span>Highways &amp; Expressways (NHAI)</span><span class="dropdown-badge">Bharatmala</span></div>
-                <div class="dropdown-desc">Real-time acquisition corridors for Greenfield &amp; Brownfield expressways</div>
-              </a>
-              <a href="#dfccil" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('projects'); else { showHomeScreen(); switchPublicTab('overview'); }">
-                <div class="dropdown-title-row"><span>Dedicated Freight Corridors (DFCCIL / Railways)</span></div>
-                <div class="dropdown-desc">Eastern and Western Dedicated Freight Corridors alignment monitoring</div>
-              </a>
-              <a href="#bullet" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('projects'); else { showHomeScreen(); switchPublicTab('overview'); }">
-                <div class="dropdown-title-row"><span>High Speed Rail Corridors (NHSRCL)</span></div>
-                <div class="dropdown-desc">Mumbai-Ahmedabad Bullet Train alignment and corridor parcels</div>
-              </a>
-              <a href="#gatishakti" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('projects'); else { showHomeScreen(); switchPublicTab('overview'); }">
-                <div class="dropdown-title-row"><span>PM GatiShakti Multi-Modal Infrastructure</span></div>
-                <div class="dropdown-desc">Integrated port connectivity, industrial smart cities and energy pipelines</div>
-              </a>
-            </div>
-          </div>
-
-          <!-- GIS Map Direct -->
-          <div class="gov-nav-item">
-            <button class="gov-nav-btn" onclick="if(CURRENT_USER) navigate('map'); else { toast('कृपया पहले पोर्टल पर प्रवेश करें / Please Sign In to access GIS maps'); showLoginPage(); }">
-              🗺️ GIS MAP
-            </button>
-          </div>
-
-          <!-- Documents Dropdown -->
-          <div class="gov-nav-item">
-            <button class="gov-nav-btn">DOCUMENTS ▼</button>
-            <div class="gov-nav-dropdown">
-              <a href="#gazettes" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('documents'); else { showHomeScreen(); switchPublicTab('overview'); }">
-                <div class="dropdown-title-row"><span>Gazette Notifications Archive</span></div>
-                <div class="dropdown-desc">Searchable repository of Part II, Section 3 Central &amp; State Gazettes</div>
-              </a>
-              <a href="#sops" class="gov-dropdown-link" onclick="if(CURRENT_USER) navigate('documents'); else { showHomeScreen(); switchPublicTab('overview'); }">
-                <div class="dropdown-title-row"><span>Standard Operating Procedures (SOPs)</span></div>
-                <div class="dropdown-desc">Guidelines for District Collectors, CALA, and Survey Inspection teams</div>
-              </a>
-              <a href="#forms" class="gov-dropdown-link" onclick="showHomeScreen(); switchPublicTab('inquiry');">
-                <div class="dropdown-title-row"><span>Citizen Objection &amp; Claim Forms</span></div>
-                <div class="dropdown-desc">Statutory Form 3A, Bank Mandate forms and NOC submission formats</div>
-              </a>
-            </div>
-          </div>
-
-          <!-- Guidelines & Acts -->
-          <div class="gov-nav-item">
-            <button class="gov-nav-btn">GUIDELINES &amp; ACTS ▼</button>
-            <div class="gov-nav-dropdown">
-              <a href="#act" class="gov-dropdown-link" onclick="showHomeScreen(); switchPublicTab('overview');">
-                <div class="dropdown-title-row"><span>RFCTLARR Act, 2013 (Full Text)</span></div>
-                <div class="dropdown-desc">Right to Fair Compensation and Transparency in Land Acquisition</div>
-              </a>
-              <a href="#rules" class="gov-dropdown-link" onclick="showHomeScreen(); switchPublicTab('overview');">
-                <div class="dropdown-title-row"><span>State Rules &amp; Local Amendments</span></div>
-                <div class="dropdown-desc">State-specific multiplier factors and administrative procedures</div>
-              </a>
-              <a href="#tribunal" class="gov-dropdown-link" onclick="showHomeScreen(); switchPublicTab('overview');">
-                <div class="dropdown-title-row"><span>Judicial Precedents &amp; Tribunal Orders</span></div>
-                <div class="dropdown-desc">Land Acquisition, Rehabilitation &amp; Resettlement Authority rulings</div>
-              </a>
-            </div>
-          </div>
-
-          <!-- Contact Us -->
-          <div class="gov-nav-item">
-            <button class="gov-nav-btn" onclick="openContactModal()">📞 CONTACT US</button>
-          </div>
-        </div>
-
-        <!-- Highlighted Login / Portal Action -->
-        <div>
-          <button class="gov-nav-btn highlighted" id="nav-btn-login" onclick="if(CURRENT_USER){ logout(); } else { showLoginPage(); }">
-            🔑 LOGIN / SSO
-          </button>
-        </div>
-      </div>
-    </nav>
 
     <!-- Government Notice Announcement Ticker -->
     <div class="gov-ticker-wrap" aria-label="Latest Announcements">
@@ -369,41 +342,31 @@
         <!-- Slide 1 -->
         <div class="carousel-slide">
           <img src="images/slide1.jpg" alt="National Land Acquisition Review Meeting">
-          <div class="carousel-slide-overlay"></div>
-          <div class="carousel-caption">
-            <div class="carousel-caption-title">National Land Acquisition &amp; Management Review</div>
-            <div class="carousel-caption-sub">High-level national coordination under Ministry of Rural Development for fast-track statutory corridor clearance.</div>
-          </div>
         </div>
 
-        <!-- Slide 2 -->
+        <!-- Slide 2: Proposed Western Bypass Road Route Map -->
         <div class="carousel-slide">
-          <img src="images/slide2.jpg" alt="Drone-based Cadastral Survey & Geo-referencing">
-          <div class="carousel-slide-overlay"></div>
-          <div class="carousel-caption">
-            <div class="carousel-caption-title">Drone-based Cadastral Survey &amp; Geo-referencing</div>
-            <div class="carousel-caption-sub">High-precision orthomosaic mapping and ground-truthed boundary demarcation for complete transparency.</div>
-          </div>
+          <img src="images/slide2.jpg" alt="Proposed Western Bypass Road Route Map">
         </div>
 
         <!-- Slide 3 -->
         <div class="carousel-slide">
           <img src="images/slide3.jpg" alt="Real-time GIS Spatial Analytics Dashboard">
-          <div class="carousel-slide-overlay"></div>
-          <div class="carousel-caption">
-            <div class="carousel-caption-title">Real-time GIS Spatial Analytics Dashboard</div>
-            <div class="carousel-caption-sub">End-to-end alignment tracking across National Highways, Dedicated Freight Corridors and High-Speed Rail.</div>
-          </div>
         </div>
 
         <!-- Slide 4 -->
         <div class="carousel-slide">
           <img src="images/slide4.jpg" alt="Rehabilitation & Resettlement Colony Tracking">
-          <div class="carousel-slide-overlay"></div>
-          <div class="carousel-caption">
-            <div class="carousel-caption-title">Rehabilitation &amp; Resettlement (R&amp;R) Colony Tracking</div>
-            <div class="carousel-caption-sub">Monitoring community welfare, alternative housing plots, and entitlement release under RFCTLARR Act 2013.</div>
-          </div>
+        </div>
+
+        <!-- Slide 5: NHAI Regional Office Meeting -->
+        <div class="carousel-slide">
+          <img src="images/nhai_meeting.jpg" alt="NHAI Regional Office Meeting">
+        </div>
+
+        <!-- Slide 6: Proposed Western Bypass Road Route Map -->
+        <div class="carousel-slide">
+          <img src="images/slide6.png" alt="Proposed Western Bypass Road Route Map">
         </div>
       </div>
 
@@ -417,6 +380,8 @@
         <button class="carousel-dot" onclick="showSlide(1)" role="tab" aria-label="Slide 2"></button>
         <button class="carousel-dot" onclick="showSlide(2)" role="tab" aria-label="Slide 3"></button>
         <button class="carousel-dot" onclick="showSlide(3)" role="tab" aria-label="Slide 4"></button>
+        <button class="carousel-dot" onclick="showSlide(4)" role="tab" aria-label="Slide 5"></button>
+        <button class="carousel-dot" onclick="showSlide(5)" role="tab" aria-label="Slide 6"></button>
       </div>
     </div>
 
@@ -444,10 +409,6 @@
               </div>
               <div class="metric-icon-wrap">🗺️</div>
             </div>
-            <div class="metric-footer">
-              <span style="color:var(--gov-text-light);">142 National Infrastructure Corridors</span>
-              <span class="metric-badge badge-pos">+1,240 Ha this month</span>
-            </div>
           </div>
 
           <div class="metric-card accent-green">
@@ -457,10 +418,6 @@
                 <div class="metric-val">₹18,945.20 Cr</div>
               </div>
               <div class="metric-icon-wrap">💳</div>
-            </div>
-            <div class="metric-footer">
-              <span style="color:var(--gov-text-light);">128,490 Verified Khatedars</span>
-              <span class="metric-badge badge-pos">92.4% velocity</span>
             </div>
           </div>
 
@@ -472,10 +429,6 @@
               </div>
               <div class="metric-icon-wrap">📜</div>
             </div>
-            <div class="metric-footer">
-              <span style="color:var(--gov-text-light);">Sec 4: 840 | Sec 11: 642</span>
-              <span class="metric-badge badge-neg">28 this week</span>
-            </div>
           </div>
 
           <div class="metric-card accent-navy">
@@ -485,10 +438,6 @@
                 <div class="metric-val">96.8 %</div>
               </div>
               <div class="metric-icon-wrap">⚖️</div>
-            </div>
-            <div class="metric-footer">
-              <span style="color:var(--gov-text-light);">18,420 of 19,028 resolved</span>
-              <span class="metric-badge badge-pos">Avg: 11 Days</span>
             </div>
           </div>
         </div>
