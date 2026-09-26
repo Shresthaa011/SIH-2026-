@@ -674,7 +674,7 @@ button { cursor: pointer; font-family: inherit; }
 .gov-ticker-marquee {
   display: inline-block;
   white-space: nowrap;
-  animation: ticker-scroll 5s linear infinite;
+  animation: ticker-scroll 10s linear infinite;
   will-change: transform;
 }
 .gov-ticker-marquee:hover {
