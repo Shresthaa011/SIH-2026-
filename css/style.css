@@ -1413,10 +1413,12 @@ button { cursor: pointer; font-family: inherit; }
   margin-bottom: 6px;
 }
 .pillars-section-header .section-heading {
-  font-size: 1.55rem;
+  font-size: 1.85rem;
   font-weight: 800;
   color: #0C4A6E;
   margin: 0 0 8px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
 }
 .pillars-section-header .section-sub {
   font-size: 1.05rem;
