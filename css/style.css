@@ -743,6 +743,7 @@ button { cursor: pointer; font-family: inherit; }
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: saturate(0.85);
 }
 .carousel-slide-overlay {
   position: absolute;
