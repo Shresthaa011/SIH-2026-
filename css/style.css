@@ -1395,71 +1395,74 @@ button { cursor: pointer; font-family: inherit; }
   background: #FFFFFF;
   border: 1px solid var(--gov-border);
   border-radius: 12px;
-  padding: 24px;
+  padding: 26px 28px;
   box-shadow: var(--shadow-card);
-  margin-bottom: 24px;
+  margin-bottom: 26px;
 }
 .pillars-section-header {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   border-bottom: none !important; /* Removed line in between cards and text of key statutory */
   padding-bottom: 4px;
 }
 .pillars-section-header .section-tag {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   letter-spacing: 0.08em;
-  color: var(--gov-blue);
-  font-weight: 700;
-  margin-bottom: 4px;
+  color: #0284C7;
+  font-weight: 800;
+  margin-bottom: 6px;
 }
 .pillars-section-header .section-heading {
-  font-size: 1.3rem;
-  color: var(--gov-navy);
-  margin: 0 0 6px;
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #0C4A6E;
+  margin: 0 0 8px;
 }
 .pillars-section-header .section-sub {
-  font-size: 0.92rem;
-  color: var(--gov-text-muted);
-  line-height: 1.5;
+  font-size: 1.05rem;
+  color: #334155;
+  line-height: 1.6;
   margin: 0;
-  max-width: 900px;
+  max-width: 950px;
 }
 .gov-pillars-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
+  gap: 18px;
 }
 .gov-pillar-card-home {
-  background: #F8FAFC;
-  border: 1px solid var(--gov-border);
-  border-radius: 10px;
-  padding: 18px;
+  background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+  border: 1px solid #BAE6FD;
+  border-radius: 12px;
+  padding: 22px 20px;
+  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.06);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  will-change: transform;
 }
 .gov-pillar-card-home:hover {
-  transform: translateY(-4px) scale(1.025);
-  box-shadow: 0 8px 20px rgba(7, 55, 99, 0.12);
+  transform: translateY(-5px) scale(1.035) !important;
+  box-shadow: 0 12px 26px rgba(14, 165, 233, 0.22);
   border-color: #38BDF8;
-  background: #F0F9FF;
+  background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
 }
 .pillar-card-icon {
-  font-size: 1.857rem;
-  margin-bottom: 10px;
+  font-size: 2.1rem;
+  margin-bottom: 12px;
   display: inline-block;
 }
 .pillar-card-title {
-  font-size: 0.964rem;
-  font-weight: 700;
-  color: var(--gov-navy);
-  margin-bottom: 6px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0C4A6E;
+  margin-bottom: 8px;
 }
 .pillar-card-desc {
-  font-size: 0.821rem;
-  color: var(--gov-text-muted);
-  line-height: 1.55;
+  font-size: 0.95rem;
+  color: #1E293B;
+  line-height: 1.6;
 }
 
 /* ============ HOMEPAGE LOGIN CALL-TO-ACTION CARD ============ */
