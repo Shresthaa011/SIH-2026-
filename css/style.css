@@ -1392,13 +1392,24 @@ button { cursor: pointer; font-family: inherit; }
 
 /* ============ HOMEPAGE STATUTORY PILLARS SECTION ============ */
 .gov-pillars-section {
-  background: #FFFFFF;
-  border: 1px solid var(--gov-border);
-  border-radius: 12px;
+  background: linear-gradient(135deg, #FFF9F5 0%, #FFF2E8 100%);
+  border: 1px solid #FDBA74;
+  border-radius: 14px;
   padding: 26px 28px;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 4px 18px rgba(234, 88, 12, 0.08);
   margin-bottom: 26px;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+  will-change: transform;
+  cursor: pointer;
 }
+
+.gov-pillars-section:hover {
+  transform: translateY(-5px) scale(1.02) !important;
+  box-shadow: 0 14px 35px rgba(234, 88, 12, 0.16);
+  border-color: #FB923C;
+  background: linear-gradient(135deg, #FFF5ED 0%, #FFEAD9 100%);
+}
+
 .pillars-section-header {
   margin-bottom: 20px;
   border-bottom: none !important; /* Removed line in between cards and text of key statutory */
@@ -1408,21 +1419,21 @@ button { cursor: pointer; font-family: inherit; }
   font-family: var(--font-mono);
   font-size: 0.82rem;
   letter-spacing: 0.08em;
-  color: #0284C7;
+  color: #C2410C;
   font-weight: 800;
   margin-bottom: 6px;
 }
 .pillars-section-header .section-heading {
   font-size: 1.85rem;
   font-weight: 800;
-  color: #0C4A6E;
+  color: #7C2D12;
   margin: 0 0 8px;
   line-height: 1.25;
   letter-spacing: -0.015em;
 }
 .pillars-section-header .section-sub {
   font-size: 1.05rem;
-  color: #334155;
+  color: #431407;
   line-height: 1.6;
   margin: 0;
   max-width: 950px;
