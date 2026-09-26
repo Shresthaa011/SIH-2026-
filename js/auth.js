@@ -226,8 +226,8 @@ function triggerDashboardAnimations() {
     try {
       const { animate } = window.Motion;
       if (tabs) animate(tabs, { opacity: [0, 1], y: [25, 0] }, { duration: 0.65, easing: [0.16, 1, 0.3, 1] });
-      if (aboutText) animate(aboutText, { opacity: [0, 1], x: [-140, 0] }, { duration: 1.6, easing: [0.16, 1, 0.3, 1] });
-      if (aboutImg) animate(aboutImg, { opacity: [0, 1], x: [140, 0] }, { duration: 1.6, easing: [0.16, 1, 0.3, 1] });
+      if (aboutText) animate(aboutText, { opacity: [0, 1], x: [-140, 0] }, { duration: 1.6, delay: 1.5, easing: [0.16, 1, 0.3, 1] });
+      if (aboutImg) animate(aboutImg, { opacity: [0, 1], x: [140, 0] }, { duration: 1.6, delay: 1.5, easing: [0.16, 1, 0.3, 1] });
     } catch (e) {
       // Graceful fallback to CSS animations
     }

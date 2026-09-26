@@ -943,12 +943,12 @@ button { cursor: pointer; font-family: inherit; }
 }
 
 .animate-about-left {
-  animation: slideInFromLeft 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0s forwards;
+  animation: slideInFromLeft 1.6s cubic-bezier(0.16, 1, 0.3, 1) 1.5s forwards;
   opacity: 0;
 }
 
 .animate-about-right {
-  animation: slideInFromRight 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0s forwards;
+  animation: slideInFromRight 1.6s cubic-bezier(0.16, 1, 0.3, 1) 1.5s forwards;
   opacity: 0;
 }
 
