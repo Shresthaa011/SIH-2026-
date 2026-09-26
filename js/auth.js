@@ -630,7 +630,7 @@ function showHomeScreen() {
   if (navHome) navHome.classList.add('active');
   if (navLogin && !CURRENT_USER) {
     navLogin.classList.remove('active');
-    navLogin.innerHTML = '🔑 LOGIN / SSO';
+    navLogin.innerHTML = '🔑 LOGIN / REGISTER';
   }
 
   if (window.location.hash === '#login') {
@@ -714,7 +714,7 @@ function logout() {
   
   const navLoginBtn = document.getElementById('nav-btn-login');
   if (navLoginBtn) {
-    navLoginBtn.innerHTML = '🔑 LOGIN / SSO';
+    navLoginBtn.innerHTML = '🔑 LOGIN / REGISTER';
     navLoginBtn.classList.remove('active');
   }
 

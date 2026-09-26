@@ -60,7 +60,7 @@ const TRANSLATIONS = {
     nav_documents: "DOCUMENTS",
     nav_guidelines: "GUIDELINES & ACTS",
     nav_contact_us: "CONTACT US",
-    nav_login: "LOGIN / SSO",
+    nav_login: "LOGIN / REGISTER",
     nav_logout: "SIGN OUT",
     back_to_home: "← Back to Portal Home",
     home_crumb: "Home",

@@ -165,7 +165,7 @@
         </div>
       `;
     } else {
-      const loginText = (typeof t === 'function') ? t('nav_login', 'LOGIN / SSO') : 'LOGIN / SSO';
+      const loginText = (typeof t === 'function') ? t('nav_login', 'LOGIN / REGISTER') : 'LOGIN / REGISTER';
       card.innerHTML = `
         <div class="mobile-user-avatar">🏛️</div>
         <div class="mobile-user-meta">
@@ -276,7 +276,7 @@
       const navHome = (typeof t === 'function') ? t('nav_home', 'HOME') : 'HOME';
       const navAbout = (typeof t === 'function') ? t('nav_about', 'ABOUT US') : 'ABOUT US';
       const navAcq = (typeof t === 'function') ? t('nav_acquisition', 'LAND ACQUISITION') : 'LAND ACQUISITION';
-      const navLogin = (typeof t === 'function') ? t('nav_login', 'LOGIN / SSO') : 'LOGIN / SSO';
+      const navLogin = (typeof t === 'function') ? t('nav_login', 'LOGIN / REGISTER') : 'LOGIN / REGISTER';
       const navHelp = (typeof t === 'function') ? t('contact_btn', 'Helpdesk') : 'Helpdesk';
 
       html += `
