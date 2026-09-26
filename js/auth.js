@@ -174,7 +174,16 @@ function initCarousel() {
   }
 }
 
-/* ============ PUBLIC TABS SWITCHER ============ */
+/* ============ PUBLIC TABS SWITCHER & CARD ANIMATIONS ============ */
+function triggerDashboardAnimations() {
+  const grid = document.querySelector('.metric-grid');
+  if (grid) {
+    grid.classList.remove('animate-dash-cards');
+    void grid.offsetWidth; // Force DOM reflow to restart CSS keyframe animations
+    grid.classList.add('animate-dash-cards');
+  }
+}
+
 function switchPublicTab(tabId) {
   document.querySelectorAll('.gov-tab-btn').forEach(btn => btn.classList.remove('active'));
   document.querySelectorAll('.public-tab-panel').forEach(p => p.style.display = 'none');
@@ -182,7 +191,12 @@ function switchPublicTab(tabId) {
   const activeBtn = document.getElementById('tab-btn-' + tabId);
   const activePanel = document.getElementById('panel-' + tabId);
   if (activeBtn) activeBtn.classList.add('active');
-  if (activePanel) activePanel.style.display = 'block';
+  if (activePanel) {
+    activePanel.style.display = 'block';
+    if (tabId === 'overview') {
+      triggerDashboardAnimations();
+    }
+  }
 }
 
 /* ============ ABOUT US READ MORE TOGGLE ============ */
