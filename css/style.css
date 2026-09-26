@@ -894,13 +894,14 @@ button { cursor: pointer; font-family: inherit; }
   box-shadow: 0 4px 15px rgba(14, 165, 233, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
   position: relative;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, background 0.35s ease, border-color 0.35s ease;
   will-change: transform, opacity;
+  cursor: pointer;
 }
 .metric-card:hover {
-  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.22), 0 4px 10px rgba(2, 132, 199, 0.12);
-  transform: translateY(-5px) scale(1.02);
-  border-color: #7DD3FC;
+  box-shadow: 0 14px 32px rgba(14, 165, 233, 0.25), 0 6px 14px rgba(2, 132, 199, 0.15);
+  transform: translateY(-6px) scale(1.045);
+  border-color: #38BDF8;
   background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
 }
 
@@ -1024,16 +1025,16 @@ button { cursor: pointer; font-family: inherit; }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: background 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   will-change: transform, opacity;
+  cursor: pointer;
 }
 
 .gov-about-card:hover {
   background: linear-gradient(135deg, #FFF9F5 0%, #FFF2E8 100%);
   border-color: #FDBA74;
-  box-shadow: 0 12px 35px rgba(234, 88, 12, 0.16);
+  box-shadow: 0 14px 35px rgba(234, 88, 12, 0.16);
   transform: translateY(-6px) scale(1.035);
-  z-index: 2;
 }
 
 /* Removed white background box behind side GIS image */
@@ -1048,6 +1049,7 @@ button { cursor: pointer; font-family: inherit; }
   justify-content: center;
   overflow: visible;
   will-change: transform, opacity;
+  cursor: pointer;
 }
 
 .about-gis-img {
@@ -1056,11 +1058,12 @@ button { cursor: pointer; font-family: inherit; }
   max-height: 420px;
   object-fit: contain;
   filter: drop-shadow(0 12px 28px rgba(14, 165, 233, 0.15));
-  transition: transform 0.4s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
 }
 
 .about-image-card:hover .about-gis-img {
-  transform: scale(1.03);
+  transform: scale(1.05);
+  filter: drop-shadow(0 16px 36px rgba(14, 165, 233, 0.28));
 }
 
 .about-header-row {
