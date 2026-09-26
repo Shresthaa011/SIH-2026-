@@ -197,18 +197,9 @@ function triggerMetricCardsAnimation() {
   }
 }
 
-function triggerDashboardAnimations() {
-  const tabs = document.querySelector('.gov-tabs-bar');
+function triggerAboutAnimation() {
   const aboutText = document.getElementById('about-section');
   const aboutImg = document.getElementById('about-image-wrap');
-
-  if (tabs) {
-    tabs.classList.remove('animate-headline');
-    void tabs.offsetWidth;
-    tabs.classList.add('animate-headline');
-  }
-
-  triggerMetricCardsAnimation();
 
   if (aboutText) {
     aboutText.classList.remove('animate-about-left');
@@ -225,9 +216,30 @@ function triggerDashboardAnimations() {
   if (window.Motion && typeof window.Motion.animate === 'function') {
     try {
       const { animate } = window.Motion;
+      if (aboutText) animate(aboutText, { opacity: [0, 1], x: [-140, 0] }, { duration: 1.2, delay: 0.1, easing: [0.16, 1, 0.3, 1] });
+      if (aboutImg) animate(aboutImg, { opacity: [0, 1], x: [140, 0] }, { duration: 1.2, delay: 0.1, easing: [0.16, 1, 0.3, 1] });
+    } catch (e) {
+      // Graceful fallback to CSS animations
+    }
+  }
+}
+
+function triggerDashboardAnimations() {
+  const tabs = document.querySelector('.gov-tabs-bar');
+
+  if (tabs) {
+    tabs.classList.remove('animate-headline');
+    void tabs.offsetWidth;
+    tabs.classList.add('animate-headline');
+  }
+
+  triggerMetricCardsAnimation();
+  triggerAboutAnimation();
+
+  if (window.Motion && typeof window.Motion.animate === 'function') {
+    try {
+      const { animate } = window.Motion;
       if (tabs) animate(tabs, { opacity: [0, 1], y: [25, 0] }, { duration: 0.65, easing: [0.16, 1, 0.3, 1] });
-      if (aboutText) animate(aboutText, { opacity: [0, 1], x: [-140, 0] }, { duration: 1.6, delay: 1.5, easing: [0.16, 1, 0.3, 1] });
-      if (aboutImg) animate(aboutImg, { opacity: [0, 1], x: [140, 0] }, { duration: 1.6, delay: 1.5, easing: [0.16, 1, 0.3, 1] });
     } catch (e) {
       // Graceful fallback to CSS animations
     }
@@ -246,7 +258,7 @@ function initScrollObserver() {
           if (entry.target.classList.contains('metric-grid')) {
             triggerMetricCardsAnimation();
           } else if (entry.target.id === 'about-container') {
-            triggerDashboardAnimations();
+            triggerAboutAnimation();
           }
         }
       });
