@@ -943,7 +943,12 @@ button { cursor: pointer; font-family: inherit; }
 }
 
 .animate-about-left {
-  animation: slideInFromLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  animation: slideInFromLeft 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0s forwards;
+  opacity: 0;
+}
+
+.animate-about-right {
+  animation: slideInFromRight 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0s forwards;
   opacity: 0;
 }
 
@@ -972,7 +977,7 @@ button { cursor: pointer; font-family: inherit; }
 @keyframes slideInFromLeft {
   0% {
     opacity: 0;
-    transform: translateX(-120px);
+    transform: translateX(-140px);
   }
   100% {
     opacity: 1;
@@ -983,7 +988,7 @@ button { cursor: pointer; font-family: inherit; }
 @keyframes slideInFromRight {
   0% {
     opacity: 0;
-    transform: translateX(120px);
+    transform: translateX(140px);
   }
   100% {
     opacity: 1;
@@ -996,7 +1001,7 @@ button { cursor: pointer; font-family: inherit; }
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 22px;
-  align-items: stretch;
+  align-items: center;
   margin-bottom: 28px;
   overflow: hidden;
   padding: 4px;
@@ -1022,30 +1027,31 @@ button { cursor: pointer; font-family: inherit; }
   will-change: transform, opacity;
 }
 
+/* Removed white background box behind side GIS image */
 .about-image-card {
-  background: #FFFFFF;
-  border: 1px solid var(--gov-border);
-  border-radius: 12px;
-  padding: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
   will-change: transform, opacity;
 }
 
 .about-gis-img {
   width: 100%;
-  height: 100%;
-  max-height: 380px;
-  object-fit: cover;
-  border-radius: 8px;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 28px rgba(14, 165, 233, 0.15));
   transition: transform 0.4s ease;
 }
 
 .about-image-card:hover .about-gis-img {
-  transform: scale(1.025);
+  transform: scale(1.03);
 }
 
 .about-header-row {
