@@ -178,7 +178,8 @@ function initCarousel() {
 function triggerDashboardAnimations() {
   const tabs = document.querySelector('.gov-tabs-bar');
   const grid = document.querySelector('.metric-grid');
-  const about = document.getElementById('about-section');
+  const aboutText = document.getElementById('about-section');
+  const aboutImg = document.getElementById('about-image-wrap');
 
   if (tabs) {
     tabs.classList.remove('animate-headline');
@@ -192,22 +193,49 @@ function triggerDashboardAnimations() {
     grid.classList.add('animate-dash-cards');
   }
 
-  if (about) {
-    about.classList.remove('animate-about-left');
-    void about.offsetWidth;
-    about.classList.add('animate-about-left');
+  if (aboutText) {
+    aboutText.classList.remove('animate-about-left');
+    void aboutText.offsetWidth;
+    aboutText.classList.add('animate-about-left');
+  }
+
+  if (aboutImg) {
+    aboutImg.classList.remove('animate-about-right');
+    void aboutImg.offsetWidth;
+    aboutImg.classList.add('animate-about-right');
   }
 
   if (window.Motion && typeof window.Motion.animate === 'function') {
     try {
       const { animate } = window.Motion;
       if (tabs) animate(tabs, { opacity: [0, 1], y: [25, 0] }, { duration: 0.65, easing: [0.16, 1, 0.3, 1] });
-      if (about) animate(about, { opacity: [0, 1], x: [-120, 0] }, { duration: 0.8, delay: 0.15, easing: [0.16, 1, 0.3, 1] });
+      if (aboutText) animate(aboutText, { opacity: [0, 1], x: [-120, 0] }, { duration: 0.8, delay: 0.15, easing: [0.16, 1, 0.3, 1] });
+      if (aboutImg) animate(aboutImg, { opacity: [0, 1], x: [120, 0] }, { duration: 0.8, delay: 0.25, easing: [0.16, 1, 0.3, 1] });
     } catch (e) {
       // Graceful fallback to CSS animations
     }
   }
 }
+
+// Intersection Observer: Trigger slide-in animation automatically when visible on screen
+function initScrollObserver() {
+  const aboutContainer = document.getElementById('about-container');
+  if (aboutContainer && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          triggerDashboardAnimations();
+        }
+      });
+    }, { threshold: 0.15 });
+
+    observer.observe(aboutContainer);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initScrollObserver();
+});
 
 function switchPublicTab(tabId) {
   document.querySelectorAll('.gov-tab-btn').forEach(btn => btn.classList.remove('active'));
