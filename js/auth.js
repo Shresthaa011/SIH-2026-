@@ -175,9 +175,30 @@ function initCarousel() {
 }
 
 /* ============ PUBLIC TABS SWITCHER & MOTION ANIMATIONS ============ */
+function triggerMetricCardsAnimation() {
+  const grid = document.querySelector('.metric-grid');
+  const cards = document.querySelectorAll('.metric-card');
+
+  if (grid) {
+    grid.classList.remove('animate-dash-cards');
+    void grid.offsetWidth; // Force DOM reflow to restart CSS keyframe animations
+    grid.classList.add('animate-dash-cards');
+  }
+
+  if (window.Motion && typeof window.Motion.animate === 'function' && cards.length) {
+    try {
+      const { animate } = window.Motion;
+      cards.forEach(card => {
+        animate(card, { opacity: [0, 1], y: [60, 0] }, { duration: 1.6, easing: [0.16, 1, 0.3, 1] });
+      });
+    } catch (e) {
+      // Graceful fallback to CSS animations
+    }
+  }
+}
+
 function triggerDashboardAnimations() {
   const tabs = document.querySelector('.gov-tabs-bar');
-  const grid = document.querySelector('.metric-grid');
   const aboutText = document.getElementById('about-section');
   const aboutImg = document.getElementById('about-image-wrap');
 
@@ -187,11 +208,7 @@ function triggerDashboardAnimations() {
     tabs.classList.add('animate-headline');
   }
 
-  if (grid) {
-    grid.classList.remove('animate-dash-cards');
-    void grid.offsetWidth;
-    grid.classList.add('animate-dash-cards');
-  }
+  triggerMetricCardsAnimation();
 
   if (aboutText) {
     aboutText.classList.remove('animate-about-left');
@@ -217,19 +234,26 @@ function triggerDashboardAnimations() {
   }
 }
 
-// Intersection Observer: Trigger slide-in animation automatically when visible on screen
+// Intersection Observer: Trigger slide-in animations automatically when visible on screen
 function initScrollObserver() {
+  const metricGrid = document.querySelector('.metric-grid');
   const aboutContainer = document.getElementById('about-container');
-  if (aboutContainer && 'IntersectionObserver' in window) {
+
+  if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          triggerDashboardAnimations();
+          if (entry.target.classList.contains('metric-grid')) {
+            triggerMetricCardsAnimation();
+          } else if (entry.target.id === 'about-container') {
+            triggerDashboardAnimations();
+          }
         }
       });
     }, { threshold: 0.15 });
 
-    observer.observe(aboutContainer);
+    if (metricGrid) observer.observe(metricGrid);
+    if (aboutContainer) observer.observe(aboutContainer);
   }
 }
 

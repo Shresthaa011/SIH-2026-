@@ -932,20 +932,9 @@ button { cursor: pointer; font-family: inherit; }
   letter-spacing: -0.02em;
 }
 
-/* Motion Slide Entrance Animations */
-.animate-dash-cards .metric-card:nth-child(1) {
-  animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0s forwards;
-}
-.animate-dash-cards .metric-card:nth-child(2) {
-  animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
-  opacity: 0;
-}
-.animate-dash-cards .metric-card:nth-child(3) {
-  animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.24s forwards;
-  opacity: 0;
-}
-.animate-dash-cards .metric-card:nth-child(4) {
-  animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.36s forwards;
+/* Motion Slide Entrance Animations - All 4 Cards Slide Up Together Slowly (1.6s) */
+.animate-dash-cards .metric-card {
+  animation: slideUpFade 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0s forwards;
   opacity: 0;
 }
 
