@@ -1475,10 +1475,32 @@ button { cursor: pointer; font-family: inherit; }
   border-color: #38BDF8;
   background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
 }
-.pillar-card-icon {
-  font-size: 2.1rem;
-  margin-bottom: 12px;
-  display: inline-block;
+.pillar-card-icon-wrap {
+  width: 100%;
+  height: 110px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  background: rgba(241, 245, 249, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(186, 230, 253, 0.8);
+}
+.pillar-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.35s ease;
+}
+.pillar-img-contain {
+  object-fit: contain !important;
+  background: transparent !important;
+  padding: 6px;
+}
+.gov-pillar-card-home:hover .pillar-card-img {
+  transform: scale(1.06);
 }
 .pillar-card-title {
   font-size: 1.1rem;
