@@ -2367,17 +2367,6 @@ tr:hover td {
   font-size: 0.821rem;
   margin-top: auto;
   user-select: none;
-}
-.prototype-disclaimer-strip {
-  background: var(--gov-maroon);
-  color: #FFFFFF;
-  padding: 8px 16px;
-  border-bottom: 1px solid #991B1B;
-  text-align: center;
-  font-size: 0.786rem;
-  font-weight: 600;
-  line-height: 1.4;
-}
 .gov-footer-grid {
   max-width: 1440px;
   margin: 0 auto;
