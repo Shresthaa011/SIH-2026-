@@ -174,13 +174,38 @@ function initCarousel() {
   }
 }
 
-/* ============ PUBLIC TABS SWITCHER & CARD ANIMATIONS ============ */
+/* ============ PUBLIC TABS SWITCHER & MOTION ANIMATIONS ============ */
 function triggerDashboardAnimations() {
+  const tabs = document.querySelector('.gov-tabs-bar');
   const grid = document.querySelector('.metric-grid');
+  const about = document.getElementById('about-section');
+
+  if (tabs) {
+    tabs.classList.remove('animate-headline');
+    void tabs.offsetWidth;
+    tabs.classList.add('animate-headline');
+  }
+
   if (grid) {
     grid.classList.remove('animate-dash-cards');
-    void grid.offsetWidth; // Force DOM reflow to restart CSS keyframe animations
+    void grid.offsetWidth;
     grid.classList.add('animate-dash-cards');
+  }
+
+  if (about) {
+    about.classList.remove('animate-about-left');
+    void about.offsetWidth;
+    about.classList.add('animate-about-left');
+  }
+
+  if (window.Motion && typeof window.Motion.animate === 'function') {
+    try {
+      const { animate } = window.Motion;
+      if (tabs) animate(tabs, { opacity: [0, 1], y: [25, 0] }, { duration: 0.65, easing: [0.16, 1, 0.3, 1] });
+      if (about) animate(about, { opacity: [0, 1], x: [-120, 0] }, { duration: 0.8, delay: 0.15, easing: [0.16, 1, 0.3, 1] });
+    } catch (e) {
+      // Graceful fallback to CSS animations
+    }
   }
 }
 

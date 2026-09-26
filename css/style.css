@@ -886,11 +886,11 @@ button { cursor: pointer; font-family: inherit; }
   background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
   border: 1px solid #BAE6FD;
   border-radius: 12px;
-  padding: 22px 24px;
-  min-height: 135px;
+  padding: 24px 22px;
+  min-height: 125px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   box-shadow: 0 4px 15px rgba(14, 165, 233, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
   position: relative;
   overflow: hidden;
@@ -903,25 +903,16 @@ button { cursor: pointer; font-family: inherit; }
   border-color: #7DD3FC;
   background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
 }
+
+/* Removed above top blue borderline from cards as requested */
 .metric-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #0284C7, #38BDF8);
-  border-radius: 12px 12px 0 0;
+  display: none !important;
 }
-.metric-card.accent-blue::before { background: linear-gradient(90deg, #0284C7, #0ea5e9); }
-.metric-card.accent-green::before { background: linear-gradient(90deg, #059669, #10B981); }
-.metric-card.accent-saffron::before { background: linear-gradient(90deg, #EA580C, #F97316); }
-.metric-card.accent-navy::before { background: linear-gradient(90deg, #1E3A8A, #3B82F6); }
 
 .metric-header {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
 }
 .metric-title {
@@ -930,101 +921,75 @@ button { cursor: pointer; font-family: inherit; }
   color: #0369A1;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 .metric-val {
-  font-size: 1.85rem;
+  font-size: 1.9rem;
   font-weight: 900;
   color: #0C4A6E;
   font-family: var(--font-sans);
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
-.metric-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #0284C7;
-  background: rgba(224, 242, 254, 0.8);
-  padding: 3px 8px;
-  border-radius: 6px;
-  border: 1px solid #7DD3FC;
-  margin-top: 8px;
-  width: fit-content;
+
+/* Motion Slide Entrance Animations */
+.animate-dash-cards .metric-card:nth-child(1) {
+  animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0s forwards;
 }
-.metric-icon-wrap {
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-  background: #E0F2FE;
-  border: 1px solid #BAE6FD;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #0284C7;
-  font-size: 1.2rem;
+.animate-dash-cards .metric-card:nth-child(2) {
+  animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
+  opacity: 0;
+}
+.animate-dash-cards .metric-card:nth-child(3) {
+  animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.24s forwards;
+  opacity: 0;
+}
+.animate-dash-cards .metric-card:nth-child(4) {
+  animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.36s forwards;
+  opacity: 0;
 }
 
-/* Slide Entrance Animations for Dashboard Cards */
-.animate-dash-cards .metric-card-left:nth-child(1) {
-  animation: slideInFromLeft 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0s forwards;
+.animate-headline {
+  animation: headlineFadeSlideUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-.animate-dash-cards .metric-card-left:nth-child(2) {
-  animation: slideInFromLeft 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+
+.animate-about-left {
+  animation: slideInFromLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
   opacity: 0;
 }
-.animate-dash-cards .metric-card-right:nth-child(3) {
-  animation: slideInFromRight 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
-  opacity: 0;
+
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.animate-dash-cards .metric-card-right:nth-child(4) {
-  animation: slideInFromRight 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
-  opacity: 0;
+
+@keyframes headlineFadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideInFromLeft {
   0% {
     opacity: 0;
-    transform: translateX(-140px);
+    transform: translateX(-120px);
   }
   100% {
     opacity: 1;
     transform: translateX(0);
   }
 }
-
-@keyframes slideInFromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(140px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-  font-size: 1.2rem;
-  flex-shrink: 0;
-}
-.metric-footer {
-  margin-top: 12px;
-  padding-top: 8px;
-  border-top: 1px solid #F1F5F9;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.786rem;
-}
-.metric-badge {
-  font-size: 0.714rem;
-  font-weight: 700;
-  padding: 1px 6px;
-  border-radius: var(--radius-sm);
-}
-.badge-pos { background: #D1FAE5; color: #065F46; border: 1px solid #6EE7B7; }
-.badge-neg { background: #FEF3C7; color: #92400E; border: 1px solid #FCD34D; }
 
 /* ============ INSTITUTIONAL ABOUT US CARD ============ */
 .gov-about-card {
@@ -1032,17 +997,20 @@ button { cursor: pointer; font-family: inherit; }
   border: 1px solid var(--gov-border);
   border-top: 4px solid var(--gov-navy);
   border-radius: var(--radius-sm);
-  padding: 20px;
+  padding: 22px 24px;
   box-shadow: var(--shadow-card);
   margin-bottom: 24px;
+  will-change: transform, opacity;
 }
 .about-header-row {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--gov-border);
-  padding-bottom: 12px;
-  margin-bottom: 14px;
+  justify-content: center;
+  text-align: center;
+  border-bottom: none !important; /* Removed border line between header and text */
+  padding-bottom: 4px;
+  margin-bottom: 8px;
 }
 .about-badge-icon {
   width: 34px;

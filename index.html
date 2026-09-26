@@ -393,7 +393,7 @@
     <!-- Main Portal Body Container -->
     <main class="gov-portal-main" role="main">
       <!-- Quick Switcher Tabs -->
-      <div class="gov-tabs-bar" role="tablist">
+      <div class="gov-tabs-bar animate-headline" role="tablist">
         <button class="gov-tab-btn active" id="tab-btn-overview" onclick="switchPublicTab('overview')" role="tab">
           National Dashboard &amp; Registry (राष्ट्रीय अवलोकन)
         </button>
@@ -404,63 +404,44 @@
 
       <!-- ================= TAB 1: OVERVIEW & REGISTRY ================= -->
       <div class="public-tab-panel" id="panel-overview" style="display:block;">
-        <!-- 4-Card Government Metric Grid -->
+        <!-- 4-Card Government Metric Grid (Clean Boxes Only) -->
         <div class="metric-grid animate-dash-cards">
-          <div class="metric-card metric-card-left accent-blue">
+          <div class="metric-card">
             <div class="metric-header">
-              <div>
-                <div class="metric-title">Total Land Under Acquisition</div>
-                <div class="metric-val">42,850.75 Ha</div>
-              </div>
-              <div class="metric-icon-wrap">🗺️</div>
+              <div class="metric-title">Total Land Under Acquisition</div>
+              <div class="metric-val">42,850.75 Ha</div>
             </div>
-            <div class="metric-badge">Geo-Referenced Cadastre</div>
           </div>
 
-          <div class="metric-card metric-card-left accent-green">
+          <div class="metric-card">
             <div class="metric-header">
-              <div>
-                <div class="metric-title">Direct Benefit Transfer (DBT) Disbursed</div>
-                <div class="metric-val">₹18,945.20 Cr</div>
-              </div>
-              <div class="metric-icon-wrap">💳</div>
+              <div class="metric-title">Direct Benefit Transfer (DBT) Disbursed</div>
+              <div class="metric-val">₹18,945.20 Cr</div>
             </div>
-            <div class="metric-badge">Zero-Leakage PFMS DBT</div>
           </div>
 
-          <div class="metric-card metric-card-right accent-saffron">
+          <div class="metric-card">
             <div class="metric-header">
-              <div>
-                <div class="metric-title">Active Gazette Notifications</div>
-                <div class="metric-val">1,482</div>
-              </div>
-              <div class="metric-icon-wrap">📜</div>
+              <div class="metric-title">Active Gazette Notifications</div>
+              <div class="metric-val">1,482</div>
             </div>
-            <div class="metric-badge">Sec 4 to 38 E-Gazette</div>
           </div>
 
-          <div class="metric-card metric-card-right accent-navy">
+          <div class="metric-card">
             <div class="metric-header">
-              <div>
-                <div class="metric-title">Claims &amp; Grievances Resolved</div>
-                <div class="metric-val">96.8 %</div>
-              </div>
-              <div class="metric-icon-wrap">⚡</div>
+              <div class="metric-title">Claims &amp; Grievances Resolved</div>
+              <div class="metric-val">96.8 %</div>
             </div>
-            <div class="metric-badge">Algorithmic Accountability</div>
           </div>
         </div>
 
-        <!-- Institutional About Us Card -->
-        <section class="gov-about-card" id="about-section">
+        <!-- Institutional About Us Card (Sliding in from Left) -->
+        <section class="gov-about-card animate-about-left" id="about-section">
           <div class="about-header-row">
-            <div style="display:flex;align-items:center;gap:12px;">
-              <div>
-                <h3 style="font-size:16px;color:var(--gov-navy);margin:0;">About Us — TERRABYTE Platform</h3>
-                <div style="font-size:11px;color:var(--gov-text-muted);">Department of Land Resources • Ministry of Rural Development • Government of India</div>
-              </div>
+            <div style="text-align:center;width:100%;">
+              <h3 style="font-size:17px;color:var(--gov-navy);margin:0 0 4px 0;text-align:center;">About Us — TERRABYTE Platform</h3>
+              <div style="font-size:11.5px;color:var(--gov-text-muted);text-align:center;">Department of Land Resources • Ministry of Rural Development • Government of India</div>
             </div>
-            <span class="badge badge-active">RFCTLARR Act 2013</span>
           </div>
 
           <div class="about-text-content">
@@ -1001,6 +982,7 @@
   <!-- External CDN Dependencies -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/motion@10.17.0/dist/motion.js"></script>
 
   <!-- Core Architecture Modules in Dependency Order -->
   <script src="js/device.js"></script>
