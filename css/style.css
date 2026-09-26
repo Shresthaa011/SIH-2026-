@@ -899,9 +899,9 @@ button { cursor: pointer; font-family: inherit; }
   cursor: pointer;
 }
 .metric-card:hover {
-  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.18), 0 3px 8px rgba(2, 132, 199, 0.1);
-  transform: translateY(-3px) scale(1.02);
-  border-color: #7DD3FC;
+  box-shadow: 0 12px 28px rgba(14, 165, 233, 0.22), 0 4px 10px rgba(2, 132, 199, 0.12);
+  transform: translateY(-5px) scale(1.035) !important;
+  border-color: #38BDF8;
   background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
 }
 
@@ -1033,8 +1033,8 @@ button { cursor: pointer; font-family: inherit; }
 .gov-about-card:hover {
   background: linear-gradient(135deg, #FFF9F5 0%, #FFF2E8 100%);
   border-color: #FDBA74;
-  box-shadow: 0 8px 24px rgba(234, 88, 12, 0.12);
-  transform: translateY(-3px) scale(1.015);
+  box-shadow: 0 12px 28px rgba(234, 88, 12, 0.15);
+  transform: translateY(-5px) scale(1.028) !important;
 }
 
 /* Removed white background box behind side GIS image */
@@ -1062,8 +1062,8 @@ button { cursor: pointer; font-family: inherit; }
 }
 
 .about-image-card:hover .about-gis-img {
-  transform: scale(1.02);
-  filter: drop-shadow(0 14px 30px rgba(14, 165, 233, 0.22));
+  transform: scale(1.04) !important;
+  filter: drop-shadow(0 16px 36px rgba(14, 165, 233, 0.25));
 }
 
 .about-header-row {
