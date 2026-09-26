@@ -1024,7 +1024,15 @@ button { cursor: pointer; font-family: inherit; }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: background 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   will-change: transform, opacity;
+}
+
+.gov-about-card:hover {
+  background: linear-gradient(135deg, #FFF9F5 0%, #FFF2E8 100%);
+  border-color: #FDBA74;
+  box-shadow: 0 10px 30px rgba(234, 88, 12, 0.12);
+  transform: translateY(-4px) scale(1.015);
 }
 
 /* Removed white background box behind side GIS image */
