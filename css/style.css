@@ -1394,16 +1394,15 @@ button { cursor: pointer; font-family: inherit; }
 .gov-pillars-section {
   background: #FFFFFF;
   border: 1px solid var(--gov-border);
-  border-top: 4px solid var(--gov-blue);
-  border-radius: var(--radius-sm);
+  border-radius: 12px;
   padding: 24px;
   box-shadow: var(--shadow-card);
   margin-bottom: 24px;
 }
 .pillars-section-header {
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--gov-border);
-  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: none !important; /* Removed line in between cards and text of key statutory */
+  padding-bottom: 4px;
 }
 .pillars-section-header .section-tag {
   font-family: var(--font-mono);
@@ -1414,12 +1413,12 @@ button { cursor: pointer; font-family: inherit; }
   margin-bottom: 4px;
 }
 .pillars-section-header .section-heading {
-  font-size: 1.286rem;
+  font-size: 1.3rem;
   color: var(--gov-navy);
   margin: 0 0 6px;
 }
 .pillars-section-header .section-sub {
-  font-size: 0.893rem;
+  font-size: 0.92rem;
   color: var(--gov-text-muted);
   line-height: 1.5;
   margin: 0;
@@ -1433,16 +1432,18 @@ button { cursor: pointer; font-family: inherit; }
 .gov-pillar-card-home {
   background: #F8FAFC;
   border: 1px solid var(--gov-border);
-  border-radius: var(--radius-sm);
-  padding: 16px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 10px;
+  padding: 18px;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 .gov-pillar-card-home:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(7, 55, 99, 0.08);
-  border-color: var(--gov-blue);
+  transform: translateY(-4px) scale(1.025);
+  box-shadow: 0 8px 20px rgba(7, 55, 99, 0.12);
+  border-color: #38BDF8;
+  background: #F0F9FF;
 }
 .pillar-card-icon {
   font-size: 1.857rem;
