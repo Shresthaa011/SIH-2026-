@@ -246,6 +246,46 @@ function triggerDashboardAnimations() {
   }
 }
 
+// Standalone Zoom-In Hover Interaction Fallback Handler (Zero Dependencies Required)
+function initZoomHoverInteractions() {
+  const cards = document.querySelectorAll('.metric-card');
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transform = 'translateY(-3px) scale(1.02)';
+      card.style.boxShadow = '0 8px 24px rgba(14, 165, 233, 0.18), 0 3px 8px rgba(2, 132, 199, 0.1)';
+      card.style.transition = 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      card.style.boxShadow = '';
+    });
+  });
+
+  const aboutCard = document.getElementById('about-section');
+  if (aboutCard) {
+    aboutCard.addEventListener('mouseenter', () => {
+      aboutCard.style.transform = 'translateY(-3px) scale(1.015)';
+      aboutCard.style.boxShadow = '0 8px 24px rgba(234, 88, 12, 0.12)';
+      aboutCard.style.transition = 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease';
+    });
+    aboutCard.addEventListener('mouseleave', () => {
+      aboutCard.style.transform = '';
+      aboutCard.style.boxShadow = '';
+    });
+  }
+
+  const aboutImg = document.querySelector('.about-gis-img');
+  if (aboutImg) {
+    aboutImg.addEventListener('mouseenter', () => {
+      aboutImg.style.transform = 'scale(1.02)';
+      aboutImg.style.transition = 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
+    });
+    aboutImg.addEventListener('mouseleave', () => {
+      aboutImg.style.transform = '';
+    });
+  }
+}
+
 // Intersection Observer: Trigger slide-in animations automatically when visible on screen
 function initScrollObserver() {
   const metricGrid = document.querySelector('.metric-grid');
@@ -271,6 +311,7 @@ function initScrollObserver() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initScrollObserver();
+  initZoomHoverInteractions();
 });
 
 function switchPublicTab(tabId) {
