@@ -357,132 +357,141 @@
 
       <!-- ================= TAB 1: OVERVIEW & REGISTRY ================= -->
       <div class="public-tab-panel" id="panel-overview" style="display:block;">
-        <!-- 4-Card Government Metric Grid (Clean Boxes Only) -->
-        <div class="metric-grid animate-dash-cards">
-          <div class="metric-card">
-            <div class="metric-header">
-              <div class="metric-title">Total Land Under Acquisition</div>
-              <div class="metric-val">42,850.75 Ha</div>
-            </div>
-          </div>
 
-          <div class="metric-card">
-            <div class="metric-header">
-              <div class="metric-title">Direct Benefit Transfer (DBT) Disbursed</div>
-              <div class="metric-val">₹18,945.20 Cr</div>
-            </div>
-          </div>
-
-          <div class="metric-card">
-            <div class="metric-header">
-              <div class="metric-title">Active Gazette Notifications</div>
-              <div class="metric-val">1,482</div>
-            </div>
-          </div>
-
-          <div class="metric-card">
-            <div class="metric-header">
-              <div class="metric-title">Claims &amp; Grievances Resolved</div>
-              <div class="metric-val">96.8 %</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Institutional About Us Section (Side-by-side with GIS Survey Image) -->
-        <div class="about-container-grid" id="about-container">
-          <!-- Left: About Us Text Box (Slides in from Left) -->
-          <section class="gov-about-card animate-about-left" id="about-section">
-            <div class="about-header-row">
-              <div style="text-align:center;width:100%;">
-                <h3 style="font-size:19px;font-weight:800;color:var(--gov-navy);margin:0 0 6px 0;text-align:center;text-transform:uppercase;letter-spacing:0.05em;">ABOUT US — TERRABYTE PLATFORM</h3>
-                <div style="font-size:13px;font-weight:600;color:var(--gov-text-muted);text-align:center;">Department of Land Resources • Ministry of Rural Development • Government of India</div>
+        <!-- PART 1: NATIONAL DASHBOARD -->
+        <section class="home-section-part" id="part-national-dashboard" aria-label="National Dashboard Metrics">
+          <!-- 4-Card Government Metric Grid (Clean Boxes Only) -->
+          <div class="metric-grid animate-dash-cards">
+            <div class="metric-card">
+              <div class="metric-header">
+                <div class="metric-title">Total Land Under Acquisition</div>
+                <div class="metric-val">42,850.75 Ha</div>
               </div>
             </div>
 
-            <div class="about-text-content">
-              <p style="margin:0 0 10px;">
-                <strong>TERRABYTE (National Land Acquisition &amp; Management System)</strong> is the unified digital public infrastructure engineered to bring complete transparency, algorithmic accountability, and direct citizen benefit transfer to land acquisition proceedings across India.
-              </p>
-
-              <div id="about-more-content" style="display:none;margin-top:12px;padding-top:12px;border-top:1px dashed var(--gov-border);">
-                <p style="margin:0 0 10px;">
-                  Operating in strict compliance with the <strong>Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement (RFCTLARR) Act, 2013</strong>, the platform bridges Central Infrastructure Ministries (NHAI, MoRTH, DFCCIL, Indian Railways, MoPNG), State Revenue Departments, and over 1.2 Crore land-owning citizens (Khatedars).
-                </p>
-                <div class="about-pillars-grid">
-                  <div class="about-pillar-box">
-                    <div class="about-pillar-title">⚖️ Statutory Workflow Automation</div>
-                    <div class="about-pillar-sub">Automated milestones from Section 4 SIA to Section 38 physical land handover.</div>
-                  </div>
-                  <div class="about-pillar-box">
-                    <div class="about-pillar-title">MAP Geo-Referenced Cadastre</div>
-                    <div class="about-pillar-sub">Satellite imagery overlay with sub-meter cadastral polygon verification.</div>
-                  </div>
-                  <div class="about-pillar-box">
-                    <div class="about-pillar-title">✍️ Aadhaar e-Sign &amp; DSC</div>
-                    <div class="about-pillar-sub">Legally enforceable ₹100 E-Stamp deeds signed via Aadhaar OTP and Class-3 DSC.</div>
-                  </div>
-                  <div class="about-pillar-box">
-                    <div class="about-pillar-title">💳 Zero-Leakage PFMS DBT</div>
-                    <div class="about-pillar-sub">Direct disbursement of statutory compensation (Base + 100% Solatium + 12% Interest).</div>
-                  </div>
-                </div>
+            <div class="metric-card">
+              <div class="metric-header">
+                <div class="metric-title">Direct Benefit Transfer (DBT) Disbursed</div>
+                <div class="metric-val">₹18,945.20 Cr</div>
               </div>
-
-              <button class="btn-read-more" id="btn-about-toggle" onclick="toggleAboutReadMore()">
-                विस्तृत विवरण देखें / Read More ▼
-              </button>
-            </div>
-          </section>
-
-          <!-- Right: GIS Land Survey Image Card (Slides in from Right) -->
-          <div class="about-image-card animate-about-right" id="about-image-wrap">
-            <img src="images/about_gis.png" alt="GIS Survey Plot Mapping, Cadastral Deeds &amp; Legal Dashboard" class="about-gis-img">
-          </div>
-        </div>
-
-        <!-- Key Statutory Pillars & Digital Infrastructure Highlights -->
-        <section class="gov-pillars-section">
-          <div class="pillars-section-header">
-            <div class="section-tag">RFCTLARR ACT 2013 COMPLIANT • DIGITAL PUBLIC INFRASTRUCTURE</div>
-            <h3 class="section-heading">Key Statutory Pillars &amp; Digital Governance</h3>
-            <p class="section-sub">A single unified digital architecture ensuring complete transparency, geospatial precision, and algorithmic accountability across national corridor acquisitions.</p>
-          </div>
-
-          <div class="gov-pillars-grid">
-            <div class="gov-pillar-card-home">
-              <div class="pillar-card-icon-wrap">
-                <img src="images/pillar1.jpg" alt="RFCTLARR Statutory Pipeline &amp; Mischief to Law Purpose" class="pillar-card-img">
-              </div>
-              <div class="pillar-card-title">RFCTLARR Statutory Pipeline</div>
-              <div class="pillar-card-desc">10-stage automated statutory compliance tracking from preliminary Section 4 SIA to Section 38 final land handover.</div>
             </div>
 
-            <div class="gov-pillar-card-home">
-              <div class="pillar-card-icon-wrap">
-                <img src="images/pillar2.jpg" alt="GIS Cadastral Polygon Map" class="pillar-card-img">
+            <div class="metric-card">
+              <div class="metric-header">
+                <div class="metric-title">Active Gazette Notifications</div>
+                <div class="metric-val">1,482</div>
               </div>
-              <div class="pillar-card-title">GIS Cadastral &amp; Drone Mapping</div>
-              <div class="pillar-card-desc">Sub-meter cadastral boundaries overlaid with high-resolution satellite imagery and automated RoR cross-verification.</div>
             </div>
 
-            <div class="gov-pillar-card-home">
-              <div class="pillar-card-icon-wrap">
-                <img src="images/pillar3.png" alt="Zero-Intermediary PFMS DBT &amp; Compensation Claims" class="pillar-card-img pillar-img-contain">
+            <div class="metric-card">
+              <div class="metric-header">
+                <div class="metric-title">Claims &amp; Grievances Resolved</div>
+                <div class="metric-val">96.8 %</div>
               </div>
-              <div class="pillar-card-title">Zero-Intermediary PFMS DBT</div>
-              <div class="pillar-card-desc">Aadhaar-seeded direct benefit transfers for 100% Solatium, base market value, and interest with zero leakages.</div>
-            </div>
-
-            <div class="gov-pillar-card-home">
-              <div class="pillar-card-icon-wrap">
-                <img src="images/pillar4.jpg" alt="Aadhaar e-Sign &amp; Rs. 100 E-Stamp Deed Tablet" class="pillar-card-img pillar-img-contain">
-              </div>
-              <div class="pillar-card-title">Aadhaar e-Sign &amp; E-Stamp Deeds</div>
-              <div class="pillar-card-desc">Legally enforceable digital deeds signed with Aadhaar OTP by citizens and Class-3 DSC by Competent Authorities.</div>
             </div>
           </div>
         </section>
 
+        <!-- PART 2: ABOUT US SECTION -->
+        <section class="home-section-part" id="part-about-us" aria-label="About Us Platform Details">
+          <!-- Institutional About Us Section (Side-by-side with GIS Survey Image) -->
+          <div class="about-container-grid" id="about-container">
+            <!-- Left: About Us Text Box (Slides in from Left) -->
+            <div class="gov-about-card animate-about-left" id="about-section">
+              <div class="about-header-row">
+                <div style="text-align:center;width:100%;">
+                  <h3 style="font-size:19px;font-weight:800;color:var(--gov-navy);margin:0 0 6px 0;text-align:center;text-transform:uppercase;letter-spacing:0.05em;">ABOUT US — TERRABYTE PLATFORM</h3>
+                  <div style="font-size:13px;font-weight:600;color:var(--gov-text-muted);text-align:center;">Department of Land Resources • Ministry of Rural Development • Government of India</div>
+                </div>
+              </div>
+
+              <div class="about-text-content">
+                <p style="margin:0 0 10px;">
+                  <strong>TERRABYTE (National Land Acquisition &amp; Management System)</strong> is the unified digital public infrastructure engineered to bring complete transparency, algorithmic accountability, and direct citizen benefit transfer to land acquisition proceedings across India.
+                </p>
+
+                <div id="about-more-content" style="display:none;margin-top:12px;padding-top:12px;border-top:1px dashed var(--gov-border);">
+                  <p style="margin:0 0 10px;">
+                    Operating in strict compliance with the <strong>Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement (RFCTLARR) Act, 2013</strong>, the platform bridges Central Infrastructure Ministries (NHAI, MoRTH, DFCCIL, Indian Railways, MoPNG), State Revenue Departments, and over 1.2 Crore land-owning citizens (Khatedars).
+                  </p>
+                  <div class="about-pillars-grid">
+                    <div class="about-pillar-box">
+                      <div class="about-pillar-title">⚖️ Statutory Workflow Automation</div>
+                      <div class="about-pillar-sub">Automated milestones from Section 4 SIA to Section 38 physical land handover.</div>
+                    </div>
+                    <div class="about-pillar-box">
+                      <div class="about-pillar-title">MAP Geo-Referenced Cadastre</div>
+                      <div class="about-pillar-sub">Satellite imagery overlay with sub-meter cadastral polygon verification.</div>
+                    </div>
+                    <div class="about-pillar-box">
+                      <div class="about-pillar-title">✍️ Aadhaar e-Sign &amp; DSC</div>
+                      <div class="about-pillar-sub">Legally enforceable ₹100 E-Stamp deeds signed via Aadhaar OTP and Class-3 DSC.</div>
+                    </div>
+                    <div class="about-pillar-box">
+                      <div class="about-pillar-title">💳 Zero-Leakage PFMS DBT</div>
+                      <div class="about-pillar-sub">Direct disbursement of statutory compensation (Base + 100% Solatium + 12% Interest).</div>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="btn-read-more" id="btn-about-toggle" onclick="toggleAboutReadMore()">
+                  विस्तृत विवरण देखें / Read More ▼
+                </button>
+              </div>
+            </div>
+
+            <!-- Right: GIS Land Survey Image Card (Slides in from Right) -->
+            <div class="about-image-card animate-about-right" id="about-image-wrap">
+              <img src="images/about_gis.png" alt="GIS Survey Plot Mapping, Cadastral Deeds &amp; Legal Dashboard" class="about-gis-img">
+            </div>
+          </div>
+        </section>
+
+        <!-- PART 3: KEY STATUTORY SECTION -->
+        <section class="home-section-part" id="part-key-statutory" aria-label="Key Statutory Pillars">
+          <!-- Key Statutory Pillars & Digital Infrastructure Highlights -->
+          <div class="gov-pillars-section">
+            <div class="pillars-section-header">
+              <div class="section-tag">RFCTLARR ACT 2013 COMPLIANT • DIGITAL PUBLIC INFRASTRUCTURE</div>
+              <h3 class="section-heading">Key Statutory Pillars &amp; Digital Governance</h3>
+              <p class="section-sub">A single unified digital architecture ensuring complete transparency, geospatial precision, and algorithmic accountability across national corridor acquisitions.</p>
+            </div>
+
+            <div class="gov-pillars-grid">
+              <div class="gov-pillar-card-home">
+                <div class="pillar-card-icon-wrap">
+                  <img src="images/pillar1.jpg" alt="RFCTLARR Statutory Pipeline &amp; Mischief to Law Purpose" class="pillar-card-img">
+                </div>
+                <div class="pillar-card-title">RFCTLARR Statutory Pipeline</div>
+                <div class="pillar-card-desc">10-stage automated statutory compliance tracking from preliminary Section 4 SIA to Section 38 final land handover.</div>
+              </div>
+
+              <div class="gov-pillar-card-home">
+                <div class="pillar-card-icon-wrap">
+                  <img src="images/pillar2.jpg" alt="GIS Cadastral Polygon Map" class="pillar-card-img">
+                </div>
+                <div class="pillar-card-title">GIS Cadastral &amp; Drone Mapping</div>
+                <div class="pillar-card-desc">Sub-meter cadastral boundaries overlaid with high-resolution satellite imagery and automated RoR cross-verification.</div>
+              </div>
+
+              <div class="gov-pillar-card-home">
+                <div class="pillar-card-icon-wrap">
+                  <img src="images/pillar3.png" alt="Zero-Intermediary PFMS DBT &amp; Compensation Claims" class="pillar-card-img pillar-img-contain">
+                </div>
+                <div class="pillar-card-title">Zero-Intermediary PFMS DBT</div>
+                <div class="pillar-card-desc">Aadhaar-seeded direct benefit transfers for 100% Solatium, base market value, and interest with zero leakages.</div>
+              </div>
+
+              <div class="gov-pillar-card-home">
+                <div class="pillar-card-icon-wrap">
+                  <img src="images/pillar4.jpg" alt="Aadhaar e-Sign &amp; Rs. 100 E-Stamp Deed Tablet" class="pillar-card-img pillar-img-contain">
+                </div>
+                <div class="pillar-card-title">Aadhaar e-Sign &amp; E-Stamp Deeds</div>
+                <div class="pillar-card-desc">Legally enforceable digital deeds signed with Aadhaar OTP by citizens and Class-3 DSC by Competent Authorities.</div>
+              </div>
+            </div>
+          </div>
+        </section>
 
       </div>
 

@@ -868,16 +868,6 @@ button { cursor: pointer; font-family: inherit; }
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
 }
 
-/* ============ NATIONAL DASHBOARD TAB PANEL LIGHT BACKGROUND ============ */
-#panel-overview {
-  background: linear-gradient(135deg, rgba(248, 250, 252, 0.85) 0%, rgba(240, 249, 255, 0.88) 100%), url('../images/dashboard_bg.jpg') no-repeat center center / cover;
-  border-radius: 0 0 16px 16px;
-  padding: 24px 20px 32px;
-  border: 1px solid var(--gov-border);
-  border-top: none;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-}
-
 /* ============ METRIC GRID & ANIMATED LIGHT BLUE CARDS ============ */
 .metric-grid {
   display: grid;
@@ -1007,13 +997,26 @@ button { cursor: pointer; font-family: inherit; }
   }
 }
 
+/* ============ THREE DISTINCT HOME SECTIONS (DIVIDED WITH NO VISIBLE LINES/SEPARATORS) ============ */
+.home-section-part {
+  margin-bottom: 32px;
+  padding: 0;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.home-section-part:last-child {
+  margin-bottom: 0;
+}
+
 /* ============ INSTITUTIONAL ABOUT US SECTION & SIDE IMAGE GRID ============ */
 .about-container-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 22px;
   align-items: center;
-  margin-bottom: 28px;
+  margin-bottom: 0;
   overflow: hidden;
   padding: 4px;
 }
