@@ -1076,11 +1076,11 @@ button { cursor: pointer; font-family: inherit; }
 
 .ashok-chakra-watermark {
   position: absolute;
-  top: -52px;
-  left: -42px;
-  width: 135px;
-  height: 135px;
-  opacity: 0.32;
+  top: -68px;
+  left: -58px;
+  width: 140px;
+  height: 140px;
+  opacity: 0.35;
   pointer-events: none;
   z-index: 1;
   animation: spinAshokChakra 24s linear infinite;
