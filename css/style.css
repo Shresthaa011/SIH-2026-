@@ -1521,7 +1521,8 @@ button { cursor: pointer; font-family: inherit; }
 .gov-pillars-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 22px;
+  perspective: 1200px;
 }
 @media (max-width: 992px) {
   .gov-pillars-grid {
@@ -1532,57 +1533,96 @@ button { cursor: pointer; font-family: inherit; }
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
-  background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+  gap: 22px;
+  background: linear-gradient(145deg, #FFFFFF 0%, #F0F9FF 55%, #E0F2FE 100%);
   border: 1px solid #BAE6FD;
-  border-radius: 14px;
-  padding: 18px 22px;
-  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.06);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+  border-top: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 
+    0 10px 25px -5px rgba(14, 165, 233, 0.12),
+    0 4px 10px -2px rgba(2, 132, 199, 0.06),
+    inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease;
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  will-change: transform;
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
 }
+
+/* 3D Gloss / Light Shimmer Reflection */
+.gov-pillar-card-home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+  border-radius: 16px 16px 0 0;
+}
+
 .gov-pillar-card-home:hover {
-  transform: translateY(-5px) scale(1.025) !important;
-  box-shadow: 0 12px 26px rgba(14, 165, 233, 0.22);
-  border-color: #38BDF8;
-  background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
+  transform: translateY(-8px) scale(1.025) rotateX(1.5deg) rotateY(-1.5deg) !important;
+  box-shadow: 
+    0 22px 45px -8px rgba(14, 165, 233, 0.28),
+    0 10px 20px -4px rgba(2, 132, 199, 0.18),
+    inset 0 1px 2px rgba(255, 255, 255, 1);
+  border-color: #0284C7;
+  background: linear-gradient(145deg, #FFFFFF 0%, #E0F2FE 55%, #BAE6FD 100%);
 }
+
 .pillar-card-icon-wrap {
   width: 140px;
   height: 110px;
   flex-shrink: 0;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   margin-bottom: 0;
-  background: rgba(255, 255, 255, 0.9);
+  background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(186, 230, 253, 0.9);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(186, 230, 253, 0.95);
+  box-shadow: 
+    0 8px 18px rgba(14, 165, 233, 0.16),
+    0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  transform: translateZ(12px);
 }
+
+.gov-pillar-card-home:hover .pillar-card-icon-wrap {
+  transform: translateZ(24px) scale(1.04);
+  box-shadow: 
+    0 12px 24px rgba(14, 165, 233, 0.25),
+    0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
 .pillar-card-img {
   width: 100%;
   height: 100%;
-  object-fit: contain !important; /* Full image visible on the left side */
-  border-radius: 8px;
-  transition: transform 0.35s ease;
-  padding: 4px;
+  object-fit: contain !important;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+  padding: 5px;
 }
+
 .pillar-img-contain {
   object-fit: contain !important;
   background: transparent !important;
   padding: 4px;
 }
+
 .pillar-card-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex: 1;
+  transform: translateZ(8px);
 }
+
 .gov-pillar-card-home:hover .pillar-card-img {
   transform: scale(1.06);
 }
