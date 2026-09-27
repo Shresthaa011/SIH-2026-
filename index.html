@@ -396,9 +396,9 @@
         <section class="home-section-part" id="part-about-us" aria-label="About Us Platform Details">
           <!-- Institutional About Us Section (Side-by-side with GIS Survey Image) -->
           <div class="about-container-grid" id="about-container">
-            <!-- Left: About Us Text Box (Slides in from Left) -->
-            <div class="gov-about-card animate-about-left" id="about-section">
-              <!-- Watermark Background: Rotating Ashok Chakra at Top-Left Corner -->
+            <!-- Left: About Us Text Box Wrapper with Top-Left Rotating Ashok Chakra -->
+            <div style="position:relative;" class="animate-about-left">
+              <!-- Rotating Ashok Chakra (Positioned outside top-left, partially behind text box) -->
               <svg class="ashok-chakra-watermark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <circle cx="100" cy="100" r="95" fill="none" stroke="#000080" stroke-width="5"/>
                 <circle cx="100" cy="100" r="88" fill="none" stroke="#000080" stroke-width="2.5"/>
@@ -432,45 +432,48 @@
                 </g>
               </svg>
 
-              <div class="about-header-row">
-                <div style="text-align:center;width:100%;">
-                  <h3 style="font-size:19px;font-weight:800;color:var(--gov-navy);margin:0 0 6px 0;text-align:center;text-transform:uppercase;letter-spacing:0.05em;">ABOUT US — TERRABYTE PLATFORM</h3>
-                  <div style="font-size:13px;font-weight:600;color:var(--gov-text-muted);text-align:center;">Department of Land Resources • Ministry of Rural Development • Government of India</div>
-                </div>
-              </div>
-
-              <div class="about-text-content">
-                <p style="margin:0 0 10px;">
-                  <strong>TERRABYTE (National Land Acquisition &amp; Management System)</strong> is the unified digital public infrastructure engineered to bring complete transparency, algorithmic accountability, and direct citizen benefit transfer to land acquisition proceedings across India.
-                </p>
-
-                <div id="about-more-content" style="display:none;margin-top:12px;padding-top:12px;border-top:1px dashed var(--gov-border);">
-                  <p style="margin:0 0 10px;">
-                    Operating in strict compliance with the <strong>Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement (RFCTLARR) Act, 2013</strong>, the platform bridges Central Infrastructure Ministries (NHAI, MoRTH, DFCCIL, Indian Railways, MoPNG), State Revenue Departments, and over 1.2 Crore land-owning citizens (Khatedars).
-                  </p>
-                  <div class="about-pillars-grid">
-                    <div class="about-pillar-box">
-                      <div class="about-pillar-title">⚖️ Statutory Workflow Automation</div>
-                      <div class="about-pillar-sub">Automated milestones from Section 4 SIA to Section 38 physical land handover.</div>
-                    </div>
-                    <div class="about-pillar-box">
-                      <div class="about-pillar-title">MAP Geo-Referenced Cadastre</div>
-                      <div class="about-pillar-sub">Satellite imagery overlay with sub-meter cadastral polygon verification.</div>
-                    </div>
-                    <div class="about-pillar-box">
-                      <div class="about-pillar-title">✍️ Aadhaar e-Sign &amp; DSC</div>
-                      <div class="about-pillar-sub">Legally enforceable ₹100 E-Stamp deeds signed via Aadhaar OTP and Class-3 DSC.</div>
-                    </div>
-                    <div class="about-pillar-box">
-                      <div class="about-pillar-title">💳 Zero-Leakage PFMS DBT</div>
-                      <div class="about-pillar-sub">Direct disbursement of statutory compensation (Base + 100% Solatium + 12% Interest).</div>
-                    </div>
+              <!-- About Us Text Box -->
+              <div class="gov-about-card" id="about-section">
+                <div class="about-header-row">
+                  <div style="text-align:center;width:100%;">
+                    <h3 style="font-size:19px;font-weight:800;color:var(--gov-navy);margin:0 0 6px 0;text-align:center;text-transform:uppercase;letter-spacing:0.05em;">ABOUT US — TERRABYTE PLATFORM</h3>
+                    <div style="font-size:13px;font-weight:600;color:var(--gov-text-muted);text-align:center;">Department of Land Resources • Ministry of Rural Development • Government of India</div>
                   </div>
                 </div>
 
-                <button class="btn-read-more" id="btn-about-toggle" onclick="toggleAboutReadMore()">
-                  विस्तृत विवरण देखें / Read More ▼
-                </button>
+                <div class="about-text-content">
+                  <p style="margin:0 0 10px;">
+                    <strong>TERRABYTE (National Land Acquisition &amp; Management System)</strong> is the unified digital public infrastructure engineered to bring complete transparency, algorithmic accountability, and direct citizen benefit transfer to land acquisition proceedings across India.
+                  </p>
+
+                  <div id="about-more-content" style="display:none;margin-top:12px;padding-top:12px;border-top:1px dashed var(--gov-border);">
+                    <p style="margin:0 0 10px;">
+                      Operating in strict compliance with the <strong>Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement (RFCTLARR) Act, 2013</strong>, the platform bridges Central Infrastructure Ministries (NHAI, MoRTH, DFCCIL, Indian Railways, MoPNG), State Revenue Departments, and over 1.2 Crore land-owning citizens (Khatedars).
+                    </p>
+                    <div class="about-pillars-grid">
+                      <div class="about-pillar-box">
+                        <div class="about-pillar-title">⚖️ Statutory Workflow Automation</div>
+                        <div class="about-pillar-sub">Automated milestones from Section 4 SIA to Section 38 physical land handover.</div>
+                      </div>
+                      <div class="about-pillar-box">
+                        <div class="about-pillar-title">MAP Geo-Referenced Cadastre</div>
+                        <div class="about-pillar-sub">Satellite imagery overlay with sub-meter cadastral polygon verification.</div>
+                      </div>
+                      <div class="about-pillar-box">
+                        <div class="about-pillar-title">✍️ Aadhaar e-Sign &amp; DSC</div>
+                        <div class="about-pillar-sub">Legally enforceable ₹100 E-Stamp deeds signed via Aadhaar OTP and Class-3 DSC.</div>
+                      </div>
+                      <div class="about-pillar-box">
+                        <div class="about-pillar-title">💳 Zero-Leakage PFMS DBT</div>
+                        <div class="about-pillar-sub">Direct disbursement of statutory compensation (Base + 100% Solatium + 12% Interest).</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button class="btn-read-more" id="btn-about-toggle" onclick="toggleAboutReadMore()">
+                    विस्तृत विवरण देखें / Read More ▼
+                  </button>
+                </div>
               </div>
             </div>
 
