@@ -1051,6 +1051,8 @@ button { cursor: pointer; font-family: inherit; }
 }
 
 .gov-about-card {
+  position: relative;
+  overflow: hidden;
   background: #FFFFFF;
   border: 1px solid var(--gov-border);
   border-top: none !important; /* Removed top border line about about us box */
@@ -1064,6 +1066,34 @@ button { cursor: pointer; font-family: inherit; }
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   will-change: transform, opacity;
   cursor: pointer;
+}
+
+.about-header-row,
+.about-text-content {
+  position: relative;
+  z-index: 1;
+}
+
+.ashok-chakra-watermark {
+  position: absolute;
+  top: -45px;
+  left: -45px;
+  width: 220px;
+  height: 220px;
+  opacity: 0.095;
+  pointer-events: none;
+  z-index: 0;
+  animation: spinAshokChakra 28s linear infinite;
+  will-change: transform;
+}
+
+@keyframes spinAshokChakra {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .gov-about-card:hover {
