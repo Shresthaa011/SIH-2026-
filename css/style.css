@@ -1015,12 +1015,12 @@ button { cursor: pointer; font-family: inherit; }
 }
 
 .gov-about-card {
-  background: #FFFFFF;
-  border: 1px solid var(--gov-border);
+  background: #F0F9FF; /* Very lightish blue background */
+  border: 1px solid #BAE6FD;
   border-top: none !important; /* Removed top border line about about us box */
   border-radius: 12px;
   padding: 22px 24px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.06);
   margin-bottom: 0;
   display: flex;
   flex-direction: column;
@@ -1031,9 +1031,9 @@ button { cursor: pointer; font-family: inherit; }
 }
 
 .gov-about-card:hover {
-  background: linear-gradient(135deg, #FFF9F5 0%, #FFF2E8 100%);
-  border-color: #FDBA74;
-  box-shadow: 0 12px 28px rgba(234, 88, 12, 0.15);
+  background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
+  border-color: #38BDF8;
+  box-shadow: 0 12px 28px rgba(14, 165, 233, 0.18);
   transform: translateY(-5px) scale(1.028) !important;
 }
 
@@ -1099,8 +1099,8 @@ button { cursor: pointer; font-family: inherit; }
   margin-top: 16px;
 }
 .about-pillar-box {
-  background: #F8FAFC;
-  border: 1px solid var(--gov-border);
+  background: #FFFFFF;
+  border: 1px solid #E0F2FE;
   border-radius: var(--radius-sm);
   padding: 12px 14px;
 }
