@@ -917,10 +917,10 @@ button { cursor: pointer; font-family: inherit; }
   cursor: pointer;
 }
 .metric-card:hover {
-  box-shadow: 0 14px 30px rgba(14, 165, 233, 0.28), 0 4px 10px rgba(2, 132, 199, 0.15);
+  box-shadow: 0 14px 30px rgba(2, 132, 199, 0.28), 0 4px 10px rgba(12, 74, 110, 0.18);
   transform: translateY(-5px) scale(1.035) !important;
-  border-color: #38BDF8;
-  background: linear-gradient(135deg, rgba(240, 249, 255, 0.92) 0%, rgba(224, 242, 254, 0.92) 100%);
+  border-color: #0284C7 !important;
+  background: linear-gradient(135deg, rgba(224, 242, 254, 0.95) 0%, rgba(186, 230, 253, 0.96) 100%) !important;
 }
 
 /* Removed above top blue borderline from cards as requested */
@@ -1040,9 +1040,8 @@ button { cursor: pointer; font-family: inherit; }
   gap: 22px;
   align-items: center;
   margin-bottom: 0;
-  overflow: visible !important;
+  overflow: hidden;
   padding: 4px;
-  position: relative;
 }
 
 @media (max-width: 992px) {
@@ -1053,8 +1052,7 @@ button { cursor: pointer; font-family: inherit; }
 
 .gov-about-card {
   position: relative;
-  z-index: 2; /* Text box sits on top, covering lower portion of Ashok Chakra */
-  overflow: hidden;
+  overflow: visible !important; /* Allow rotating Ashok Chakra to sit cleanly above text box */
   background: #FFFFFF;
   border: 1px solid var(--gov-border);
   border-top: none !important; /* Removed top border line about about us box */
@@ -1078,14 +1076,14 @@ button { cursor: pointer; font-family: inherit; }
 
 .ashok-chakra-watermark {
   position: absolute;
-  top: -85px;
-  left: 30px;
-  width: 155px;
-  height: 155px;
-  opacity: 0.35;
+  top: -42px;
+  left: -18px;
+  width: 85px;
+  height: 85px;
+  opacity: 0.28;
   pointer-events: none;
-  z-index: 1; /* Placed behind .gov-about-card (z-index: 2) */
-  animation: spinAshokChakra 24s linear infinite;
+  z-index: 5;
+  animation: spinAshokChakra 22s linear infinite;
   will-change: transform;
 }
 
