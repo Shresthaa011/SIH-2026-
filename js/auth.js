@@ -197,37 +197,16 @@ function triggerMetricCardsAnimation() {
   }
 }
 
-function triggerAboutAnimation() {
-  const aboutText = document.getElementById('about-section');
-  const aboutWrapper = aboutText ? aboutText.parentElement : null;
-  const aboutImg = document.getElementById('about-image-wrap');
+function triggerAboutAnimation(isVisible = true) {
+  const aboutContainer = document.getElementById('about-container');
+  if (!aboutContainer) return;
 
-  if (aboutWrapper && aboutWrapper.classList.contains('animate-about-left')) {
-    aboutWrapper.classList.remove('animate-about-left');
-    void aboutWrapper.offsetWidth;
-    aboutWrapper.classList.add('animate-about-left');
-  }
-
-  if (aboutText) {
-    aboutText.classList.remove('animate-about-left');
-    void aboutText.offsetWidth;
-    aboutText.classList.add('animate-about-left');
-  }
-
-  if (aboutImg) {
-    aboutImg.classList.remove('animate-about-right');
-    void aboutImg.offsetWidth;
-    aboutImg.classList.add('animate-about-right');
-  }
-
-  if (window.Motion && typeof window.Motion.animate === 'function') {
-    try {
-      const { animate } = window.Motion;
-      if (aboutText) animate(aboutText, { opacity: [0, 1], x: [-140, 0] }, { duration: 1.2, delay: 0.1, easing: [0.16, 1, 0.3, 1] });
-      if (aboutImg) animate(aboutImg, { opacity: [0, 1], x: [140, 0] }, { duration: 1.2, delay: 0.1, easing: [0.16, 1, 0.3, 1] });
-    } catch (e) {
-      // Graceful fallback to CSS animations
-    }
+  if (isVisible) {
+    aboutContainer.classList.remove('about-box-out');
+    aboutContainer.classList.add('about-box-in');
+  } else {
+    aboutContainer.classList.remove('about-box-in');
+    aboutContainer.classList.add('about-box-out');
   }
 }
 
@@ -241,7 +220,7 @@ function triggerDashboardAnimations() {
   }
 
   triggerMetricCardsAnimation();
-  triggerAboutAnimation();
+  triggerAboutAnimation(true);
 
   if (window.Motion && typeof window.Motion.animate === 'function') {
     try {
@@ -266,18 +245,23 @@ function initScrollObserver() {
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          if (entry.target.classList.contains('metric-grid')) {
+        if (entry.target.classList.contains('metric-grid')) {
+          if (entry.isIntersecting) {
             triggerMetricCardsAnimation();
-          } else if (entry.target.id === 'about-container') {
-            triggerAboutAnimation();
           }
+        } else if (entry.target.id === 'about-container') {
+          triggerAboutAnimation(entry.isIntersecting);
         }
       });
     }, { threshold: 0.15 });
 
     if (metricGrid) observer.observe(metricGrid);
-    if (aboutContainer) observer.observe(aboutContainer);
+    if (aboutContainer) {
+      observer.observe(aboutContainer);
+      const rect = aboutContainer.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+      triggerAboutAnimation(inView);
+    }
   }
 }
 
