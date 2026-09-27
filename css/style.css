@@ -829,41 +829,11 @@ button { cursor: pointer; font-family: inherit; }
 }
 
 /* ============ PUBLIC PORTAL CONTAINER & TABS ============ */
-.gov-portal-main,
-#app-screen .main {
-  position: relative;
+.gov-portal-main {
   max-width: 1440px;
   margin: 0 auto;
   padding: 24px 20px 48px;
   width: 100%;
-}
-.gov-portal-main::before,
-#app-screen .main::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: linear-gradient(
-      180deg,
-      rgba(248, 250, 252, 0.88) 0%,
-      rgba(241, 245, 249, 0.92) 50%,
-      rgba(248, 250, 252, 0.95) 100%
-    ),
-    url('../images/dashboard_bg.jpg');
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  opacity: 0.18;
-  pointer-events: none;
-  z-index: 0;
-  border-radius: 12px;
-}
-.gov-portal-main > *,
-#app-screen .main > * {
-  position: relative;
-  z-index: 1;
 }
 .gov-tabs-bar {
   display: flex;
@@ -896,6 +866,16 @@ button { cursor: pointer; font-family: inherit; }
   color: var(--gov-blue);
   background: var(--gov-light-blue);
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+/* ============ NATIONAL DASHBOARD TAB PANEL LIGHT BACKGROUND ============ */
+#panel-overview {
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.85) 0%, rgba(240, 249, 255, 0.88) 100%), url('../images/dashboard_bg.jpg') no-repeat center center / cover;
+  border-radius: 0 0 16px 16px;
+  padding: 24px 20px 32px;
+  border: 1px solid var(--gov-border);
+  border-top: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
 
 /* ============ METRIC GRID & ANIMATED LIGHT BLUE CARDS ============ */
