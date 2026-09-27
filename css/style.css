@@ -1053,6 +1053,7 @@ button { cursor: pointer; font-family: inherit; }
 .gov-about-card {
   position: relative;
   overflow: visible !important; /* Allow rotating Ashok Chakra to sit cleanly above text box */
+  z-index: 2;
   background: #FFFFFF;
   border: 1px solid var(--gov-border);
   border-top: none !important; /* Removed top border line about about us box */
@@ -1071,19 +1072,19 @@ button { cursor: pointer; font-family: inherit; }
 .about-header-row,
 .about-text-content {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .ashok-chakra-watermark {
   position: absolute;
-  top: -42px;
-  left: -18px;
-  width: 85px;
-  height: 85px;
-  opacity: 0.28;
+  top: -48px;
+  left: -28px;
+  width: 125px;
+  height: 125px;
+  opacity: 0.32;
   pointer-events: none;
-  z-index: 5;
-  animation: spinAshokChakra 22s linear infinite;
+  z-index: -1; /* Placed BEHIND the text box background so part of it hides behind card */
+  animation: spinAshokChakra 24s linear infinite;
   will-change: transform;
 }
 
