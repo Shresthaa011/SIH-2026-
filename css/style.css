@@ -1657,16 +1657,69 @@ button { cursor: pointer; font-family: inherit; }
 .gov-pillar-card-home:hover .pillar-card-img {
   transform: scale(1.06);
 }
+
+.pillar-card-title,
+.pillar-card-desc {
+  opacity: 0.68;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), color 0.45s ease;
+  will-change: opacity, transform;
+}
+
 .pillar-card-title {
   font-size: 1.1rem;
   font-weight: 800;
   color: #0C4A6E;
   margin-bottom: 8px;
+  transform: translateY(3px);
 }
+
 .pillar-card-desc {
   font-size: 0.95rem;
   color: #1E293B;
   line-height: 1.6;
+  transform: translateY(3px);
+}
+
+/* Key Statutory Card Text Fade-In when cursor comes to the card */
+.gov-pillar-card-home:hover .pillar-card-title,
+.gov-pillar-card-home:hover .pillar-card-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gov-pillar-card-home:hover .pillar-card-title {
+  color: #0369A1;
+}
+
+/* Key Statutory Section Breathe In & Breathe Out Scroll Animations */
+#part-key-statutory {
+  transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+#part-key-statutory.statutory-box-out {
+  transform: scale(0.90);
+  opacity: 0;
+  transition: transform 1.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.3s ease;
+}
+
+#part-key-statutory.statutory-box-in {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Continuous graceful breathing pulse when visible */
+#part-key-statutory.statutory-box-in .gov-pillars-section {
+  animation: keyStatutoryBreathe 6s ease-in-out infinite alternate;
+}
+
+@keyframes keyStatutoryBreathe {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.012);
+  }
 }
 
 /* ============ HOMEPAGE LOGIN CALL-TO-ACTION CARD ============ */
