@@ -870,15 +870,15 @@ button { cursor: pointer; font-family: inherit; }
 
 /* ============ METRIC GRID & ANIMATED LIGHT BLUE CARDS WITH LIGHT THEME BACKGROUND ============ */
 #part-national-dashboard {
-  position: relative;
-  border-radius: 16px;
-  padding: 30px 24px;
-  background-image: linear-gradient(135deg, rgba(240, 249, 255, 0.48) 0%, rgba(224, 242, 254, 0.55) 100%), url('../images/dashboard_bg.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  box-shadow: 0 8px 25px rgba(14, 165, 233, 0.15);
-  overflow: hidden;
+  position: relative !important;
+  border-radius: 16px !important;
+  padding: 30px 24px !important;
+  background-image: linear-gradient(135deg, rgba(240, 249, 255, 0.45) 0%, rgba(224, 242, 254, 0.52) 100%), url('../images/dashboard_bg.jpg') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  box-shadow: 0 8px 25px rgba(14, 165, 233, 0.15) !important;
+  overflow: hidden !important;
   transition: box-shadow 0.35s ease;
 }
 #part-national-dashboard:hover {
@@ -1022,7 +1022,6 @@ button { cursor: pointer; font-family: inherit; }
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
-  background: transparent !important;
 }
 .home-section-part:last-child {
   margin-bottom: 0;
