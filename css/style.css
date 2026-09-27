@@ -868,21 +868,21 @@ button { cursor: pointer; font-family: inherit; }
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
 }
 
-/* ============ METRIC GRID & ANIMATED LIGHT BLUE CARDS WITH LIGHT THEME BACKGROUND ============ */
+/* ============ METRIC GRID & ANIMATED LIGHT BLUE CARDS WITH LIGHT ORANGISH BACKGROUND ============ */
 #part-national-dashboard {
   position: relative !important;
   border-radius: 16px !important;
   padding: 30px 24px !important;
-  background-image: linear-gradient(135deg, rgba(240, 249, 255, 0.45) 0%, rgba(224, 242, 254, 0.52) 100%), url('../images/dashboard_bg.jpg') !important;
+  background-image: linear-gradient(135deg, rgba(255, 248, 240, 0.48) 0%, rgba(254, 215, 170, 0.56) 100%), url('../images/dashboard_bg.jpg') !important;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
-  box-shadow: 0 8px 25px rgba(14, 165, 233, 0.15) !important;
+  box-shadow: 0 8px 25px rgba(234, 88, 12, 0.12) !important;
   overflow: hidden !important;
   transition: box-shadow 0.35s ease;
 }
 #part-national-dashboard:hover {
-  box-shadow: 0 12px 32px rgba(14, 165, 233, 0.22);
+  box-shadow: 0 12px 32px rgba(234, 88, 12, 0.20) !important;
 }
 
 .metric-grid {
