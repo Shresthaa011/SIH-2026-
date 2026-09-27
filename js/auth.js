@@ -199,7 +199,14 @@ function triggerMetricCardsAnimation() {
 
 function triggerAboutAnimation() {
   const aboutText = document.getElementById('about-section');
+  const aboutWrapper = aboutText ? aboutText.parentElement : null;
   const aboutImg = document.getElementById('about-image-wrap');
+
+  if (aboutWrapper && aboutWrapper.classList.contains('animate-about-left')) {
+    aboutWrapper.classList.remove('animate-about-left');
+    void aboutWrapper.offsetWidth;
+    aboutWrapper.classList.add('animate-about-left');
+  }
 
   if (aboutText) {
     aboutText.classList.remove('animate-about-left');
