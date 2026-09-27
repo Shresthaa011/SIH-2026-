@@ -184,7 +184,8 @@ button { cursor: pointer; font-family: inherit; }
   user-select: none;
 }
 .gov-utility-container {
-  max-width: 1440px;
+  max-width: 96%;
+  width: 96%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -321,7 +322,8 @@ button { cursor: pointer; font-family: inherit; }
   z-index: 30;
 }
 .gov-masthead-container {
-  max-width: 1440px;
+  max-width: 96%;
+  width: 96%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -830,10 +832,10 @@ button { cursor: pointer; font-family: inherit; }
 
 /* ============ PUBLIC PORTAL CONTAINER & TABS ============ */
 .gov-portal-main {
-  max-width: 1440px;
+  max-width: 97%;
+  width: 97%;
   margin: 0 auto;
-  padding: 24px 20px 48px;
-  width: 100%;
+  padding: 24px 0 48px;
 }
 .gov-tabs-bar {
   display: flex;
@@ -2327,7 +2329,7 @@ button { cursor: pointer; font-family: inherit; }
   display: none; /* Replaced by the GovPageBand */
 }
 .content {
-  max-width: 1380px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
