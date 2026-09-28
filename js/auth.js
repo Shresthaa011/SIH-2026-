@@ -210,19 +210,6 @@ function triggerAboutAnimation(isVisible = true) {
   }
 }
 
-function triggerStatutoryAnimation(isVisible = true) {
-  const section = document.getElementById('part-key-statutory');
-  if (!section) return;
-
-  if (isVisible) {
-    section.classList.remove('statutory-box-out');
-    section.classList.add('statutory-box-in');
-  } else {
-    section.classList.remove('statutory-box-in');
-    section.classList.add('statutory-box-out');
-  }
-}
-
 function triggerDashboardAnimations() {
   const tabs = document.querySelector('.gov-tabs-bar');
 
@@ -234,7 +221,6 @@ function triggerDashboardAnimations() {
 
   triggerMetricCardsAnimation();
   triggerAboutAnimation(true);
-  triggerStatutoryAnimation(true);
 
   if (window.Motion && typeof window.Motion.animate === 'function') {
     try {
@@ -255,7 +241,6 @@ function initZoomHoverInteractions() {
 function initScrollObserver() {
   const metricGrid = document.querySelector('.metric-grid');
   const aboutContainer = document.getElementById('about-container');
-  const statutorySection = document.getElementById('part-key-statutory');
 
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
@@ -266,8 +251,6 @@ function initScrollObserver() {
           }
         } else if (entry.target.id === 'about-container') {
           triggerAboutAnimation(entry.isIntersecting);
-        } else if (entry.target.id === 'part-key-statutory') {
-          triggerStatutoryAnimation(entry.isIntersecting);
         }
       });
     }, { threshold: 0.15 });
@@ -278,12 +261,6 @@ function initScrollObserver() {
       const rect = aboutContainer.getBoundingClientRect();
       const inView = rect.top < window.innerHeight && rect.bottom > 0;
       triggerAboutAnimation(inView);
-    }
-    if (statutorySection) {
-      observer.observe(statutorySection);
-      const rect = statutorySection.getBoundingClientRect();
-      const inView = rect.top < window.innerHeight && rect.bottom > 0;
-      triggerStatutoryAnimation(inView);
     }
   }
 }

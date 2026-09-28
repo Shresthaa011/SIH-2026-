@@ -1657,69 +1657,16 @@ button { cursor: pointer; font-family: inherit; }
 .gov-pillar-card-home:hover .pillar-card-img {
   transform: scale(1.06);
 }
-
-.pillar-card-title,
-.pillar-card-desc {
-  opacity: 0.68;
-  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), color 0.45s ease;
-  will-change: opacity, transform;
-}
-
 .pillar-card-title {
   font-size: 1.1rem;
   font-weight: 800;
   color: #0C4A6E;
   margin-bottom: 8px;
-  transform: translateY(3px);
 }
-
 .pillar-card-desc {
   font-size: 0.95rem;
   color: #1E293B;
   line-height: 1.6;
-  transform: translateY(3px);
-}
-
-/* Key Statutory Card Text Fade-In when cursor comes to the card */
-.gov-pillar-card-home:hover .pillar-card-title,
-.gov-pillar-card-home:hover .pillar-card-desc {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.gov-pillar-card-home:hover .pillar-card-title {
-  color: #0369A1;
-}
-
-/* Key Statutory Section Breathe In & Breathe Out Scroll Animations */
-#part-key-statutory {
-  transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, opacity;
-}
-
-#part-key-statutory.statutory-box-out {
-  transform: scale(0.90);
-  opacity: 0;
-  transition: transform 1.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.3s ease;
-}
-
-#part-key-statutory.statutory-box-in {
-  transform: scale(1);
-  opacity: 1;
-}
-
-/* Continuous graceful breathing pulse when visible */
-#part-key-statutory.statutory-box-in .gov-pillars-section {
-  animation: keyStatutoryBreathe 6s ease-in-out infinite alternate;
-}
-
-@keyframes keyStatutoryBreathe {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.012);
-  }
 }
 
 /* ============ HOMEPAGE LOGIN CALL-TO-ACTION CARD ============ */
@@ -2869,3 +2816,125 @@ tr:hover td {
 .card.stripe-purple { border-top: 3px solid #8b5cf6; }
 .card.stripe-teal { border-top: 3px solid #14b8a6; }
 .card.stripe-pink { border-top: 3px solid #ec4899; }
+
+/* ==========================================================================
+   IMPORTANT NOTICE TICKER BAR (RUNNING AT 0.5x SPEED)
+   ========================================================================== */
+.gov-notice-bar {
+  background: #002543; /* Deep Indian Gov Navy */
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  height: 38px;
+  border-bottom: 2px solid var(--gov-saffron);
+  position: relative;
+  z-index: 90;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+}
+
+.notice-badge-label {
+  background: linear-gradient(135deg, #D97706 0%, #B45309 100%); /* Premium Gov Saffron Gradient */
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  padding: 0 16px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  z-index: 2;
+  box-shadow: 4px 0 12px rgba(0,0,0,0.3);
+  text-transform: uppercase;
+}
+
+.notice-badge-label .pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #EF4444;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulseNoticeDot 1.5s infinite;
+}
+
+@keyframes pulseNoticeDot {
+  0% { transform: scale(0.9); opacity: 0.8; box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { transform: scale(1.15); opacity: 1; box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+  100% { transform: scale(0.9); opacity: 0.8; box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.notice-ticker-wrapper {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.notice-ticker-content {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: scrollNoticeMarquee 65s linear infinite; /* 0.5x speed - smooth, slow, readable */
+  will-change: transform;
+}
+
+.notice-ticker-content:hover {
+  animation-play-state: paused;
+}
+
+.notice-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 28px;
+  color: #F0F9FF;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.notice-item:hover {
+  color: #FDE68A;
+  text-decoration: underline;
+}
+
+.notice-item strong {
+  color: #FDBA74;
+  font-weight: 700;
+}
+
+.notice-separator {
+  color: #38BDF8;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+@keyframes scrollNoticeMarquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .gov-notice-bar {
+    height: 34px;
+    font-size: 12px;
+  }
+  .notice-badge-label {
+    font-size: 11px;
+    padding: 0 10px;
+  }
+  .notice-item {
+    padding: 0 16px;
+  }
+}
