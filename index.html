@@ -282,43 +282,58 @@
         </div>
       </nav>
 
-      <!-- Important Notices Ticker Bar (Headlines Moving One by One at 0.5x Speed) -->
+      <!-- Important Notices Ticker Bar (All Notices in One Line, One After Another at 0.5x Speed) -->
       <div class="gov-notice-bar" role="region" aria-label="Important Notices Ticker">
         <div class="notice-badge-label">
           <span class="pulse-dot"></span>
-          📢 IMPORTANT NOTICE / महत्वपूर्ण सूचना
+          📢 IMPORTANT NOTICES / महत्वपूर्ण सूचना
         </div>
-        
-        <div class="notice-ticker-wrapper" id="notice-ticker-wrapper">
-          <div class="notice-headline-container" id="notice-headline-container">
-            <!-- Notice 1 -->
-            <a href="#sec4" class="notice-single-item active" onclick="showHomeScreen(); switchPublicTab('overview');">
-              <span class="notice-tag">[Gazette Notification]</span> Section 4 Preliminary Notification DL-33004/24 published for NH-44 Greenfield Expressway Corridor. Objections open under Sec 15 for 60 days.
+        <div class="notice-ticker-wrapper">
+          <div class="notice-ticker-content">
+            <!-- Set 1 -->
+            <a href="#sec4" class="notice-item" onclick="showHomeScreen(); switchPublicTab('overview');">
+              <strong>[Gazette Notification]</strong> Section 4 Preliminary Notification DL-33004/24 published for NH-44 Greenfield Expressway Corridor. Objections open under Sec 15 for 60 days.
             </a>
-            <!-- Notice 2 -->
-            <a href="#aadhaar" class="notice-single-item" onclick="showHomeScreen(); switchPublicTab('overview');">
-              <span class="notice-tag">[Aadhaar e-KYC Mandate]</span> All Khatedars are advised to link Aadhaar with land record parcels for direct DBT compensation credit via PFMS.
+            <span class="notice-separator">•</span>
+            <a href="#aadhaar" class="notice-item" onclick="showHomeScreen(); switchPublicTab('overview');">
+              <strong>[Aadhaar e-KYC Mandate]</strong> All Khatedars are advised to link Aadhaar with land record parcels for direct DBT compensation credit via PFMS.
             </a>
-            <!-- Notice 3 -->
-            <a href="#rfctlarr" class="notice-single-item" onclick="showHomeScreen(); switchPublicTab('overview');">
-              <span class="notice-tag">[RFCTLARR Act 2013]</span> Solatium at 100% &amp; 12% statutory interest automatically calculated for all Section 37 awards.
+            <span class="notice-separator">•</span>
+            <a href="#rfctlarr" class="notice-item" onclick="showHomeScreen(); switchPublicTab('overview');">
+              <strong>[RFCTLARR Act 2013]</strong> Solatium at 100% &amp; 12% statutory interest automatically calculated for all Section 37 awards.
             </a>
-            <!-- Notice 4 -->
-            <a href="#gis" class="notice-single-item" onclick="showHomeScreen(); switchPublicTab('overview');">
-              <span class="notice-tag">[GIS Cadastral Survey]</span> Drone &amp; High-Res Satellite survey completed for 12,400 parcels across 14 infrastructure corridors.
+            <span class="notice-separator">•</span>
+            <a href="#gis" class="notice-item" onclick="showHomeScreen(); switchPublicTab('overview');">
+              <strong>[GIS Cadastral Survey]</strong> Drone &amp; High-Res Satellite survey completed for 12,400 parcels across 14 infrastructure corridors.
             </a>
-            <!-- Notice 5 -->
-            <a href="#dbt" class="notice-single-item" onclick="showHomeScreen(); switchPublicTab('overview');">
-              <span class="notice-tag">[Zero-Leakage DBT]</span> Over ₹8,450 Crore compensation disbursed directly into beneficiaries' Aadhaar-seeded bank accounts.
+            <span class="notice-separator">•</span>
+            <a href="#dbt" class="notice-item" onclick="showHomeScreen(); switchPublicTab('overview');">
+              <strong>[Zero-Leakage DBT]</strong> Over ₹8,450 Crore compensation disbursed directly into beneficiaries' Aadhaar-seeded bank accounts.
             </a>
-          </div>
-        </div>
+            <span class="notice-separator">•</span>
 
-        <!-- Headline Ticker Controls (Index Counter & Manual Navigation) -->
-        <div class="notice-controls">
-          <span class="notice-count" id="notice-count-badge">1/5</span>
-          <button class="notice-ctrl-btn" onclick="prevNoticeHeadline()" title="Previous Notice / पिछला नोटिस">◀</button>
-          <button class="notice-ctrl-btn" onclick="nextNoticeHeadline()" title="Next Notice / अगला नोटिस">▶</button>
+            <!-- Set 2 (Identical Duplicate for Infinite Seamless Marquee Loop) -->
+            <a href="#sec4" class="notice-item" onclick="showHomeScreen(); switchPublicTab('overview');">
+              <strong>[Gazette Notification]</strong> Section 4 Preliminary Notification DL-33004/24 published for NH-44 Greenfield Expressway Corridor. Objections open under Sec 15 for 60 days.
+            </a>
+            <span class="notice-separator">•</span>
+            <a href="#aadhaar" class="notice-item" onclick="showHomeScreen(); switchPublicTab('overview');">
+              <strong>[Aadhaar e-KYC Mandate]</strong> All Khatedars are advised to link Aadhaar with land record parcels for direct DBT compensation credit via PFMS.
+            </a>
+            <span class="notice-separator">•</span>
+            <a href="#rfctlarr" class="notice-item" onclick="showHomeScreen(); switchPublicTab('overview');">
+              <strong>[RFCTLARR Act 2013]</strong> Solatium at 100% &amp; 12% statutory interest automatically calculated for all Section 37 awards.
+            </a>
+            <span class="notice-separator">•</span>
+            <a href="#gis" class="notice-item" onclick="showHomeScreen(); switchPublicTab('overview');">
+              <strong>[GIS Cadastral Survey]</strong> Drone &amp; High-Res Satellite survey completed for 12,400 parcels across 14 infrastructure corridors.
+            </a>
+            <span class="notice-separator">•</span>
+            <a href="#dbt" class="notice-item" onclick="showHomeScreen(); switchPublicTab('overview');">
+              <strong>[Zero-Leakage DBT]</strong> Over ₹8,450 Crore compensation disbursed directly into beneficiaries' Aadhaar-seeded bank accounts.
+            </a>
+            <span class="notice-separator">•</span>
+          </div>
         </div>
       </div>
     </header>

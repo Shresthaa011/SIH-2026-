@@ -2818,7 +2818,7 @@ tr:hover td {
 .card.stripe-pink { border-top: 3px solid #ec4899; }
 
 /* ==========================================================================
-   IMPORTANT NOTICE HEADLINE TICKER (SHOWING ONE NOTICE AT A TIME AT 0.5x SPEED)
+   IMPORTANT NOTICE TICKER BAR (ALL NOTICES IN ONE LINE AT 0.5x SPEED)
    ========================================================================== */
 .gov-notice-bar {
   background: #002543; /* Deep Indian Gov Navy */
@@ -2848,7 +2848,7 @@ tr:hover td {
   gap: 8px;
   white-space: nowrap;
   flex-shrink: 0;
-  z-index: 5;
+  z-index: 2;
   box-shadow: 4px 0 12px rgba(0,0,0,0.3);
   text-transform: uppercase;
 }
@@ -2877,114 +2877,52 @@ tr:hover td {
   height: 100%;
 }
 
-.notice-headline-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
+.notice-ticker-content {
   display: flex;
   align-items: center;
-  overflow: hidden;
-}
-
-.notice-single-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  align-items: center;
-  padding: 0 20px;
-  color: #F0F9FF;
-  font-weight: 500;
-  text-decoration: none;
   white-space: nowrap;
-  font-size: 13.5px;
-  transition: color 0.2s ease;
+  animation: scrollNoticeMarquee 65s linear infinite; /* 0.5x speed - smooth, slow, readable */
+  will-change: transform;
 }
 
-.notice-single-item:hover {
-  color: #FDE68A;
-}
-
-.notice-single-item .notice-tag {
-  color: #FDBA74;
-  font-weight: 700;
-  margin-right: 8px;
-}
-
-/* Active Single Headline - Moves slowly at 0.5x speed across screen */
-.notice-single-item.active {
-  display: flex;
-  animation: moveSingleHeadlineSlow 12s linear forwards;
-  will-change: transform, opacity;
-}
-
-.gov-notice-bar:hover .notice-single-item.active {
+.notice-ticker-content:hover {
   animation-play-state: paused;
 }
 
-@keyframes moveSingleHeadlineSlow {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  6% {
-    opacity: 1;
-  }
-  94% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-}
-
-/* Right Corner Controls: Index Counter & Manual Prev/Next */
-.notice-controls {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0 12px;
-  height: 100%;
-  background: rgba(0, 21, 38, 0.95);
-  flex-shrink: 0;
-  z-index: 5;
-  border-left: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: -4px 0 12px rgba(0,0,0,0.25);
-}
-
-.notice-count {
-  font-size: 11px;
-  font-weight: 700;
-  color: #FDBA74;
-  padding: 2px 6px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 4px;
-  font-family: var(--font-mono, monospace);
-  letter-spacing: 0.05em;
-}
-
-.notice-ctrl-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #FFFFFF;
-  border-radius: 4px;
-  width: 22px;
-  height: 22px;
+.notice-item {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  gap: 8px;
+  padding: 0 28px;
+  color: #F0F9FF;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.notice-ctrl-btn:hover {
-  background: var(--gov-saffron);
-  border-color: var(--gov-saffron);
-  color: #000;
+.notice-item:hover {
+  color: #FDE68A;
+  text-decoration: underline;
+}
+
+.notice-item strong {
+  color: #FDBA74;
+  font-weight: 700;
+}
+
+.notice-separator {
+  color: #38BDF8;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+@keyframes scrollNoticeMarquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @media (max-width: 768px) {
@@ -2996,11 +2934,7 @@ tr:hover td {
     font-size: 11px;
     padding: 0 10px;
   }
-  .notice-single-item {
-    font-size: 12px;
-    padding: 0 10px;
-  }
-  .notice-controls {
-    padding: 0 6px;
+  .notice-item {
+    padding: 0 16px;
   }
 }

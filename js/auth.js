@@ -268,67 +268,7 @@ function initScrollObserver() {
 document.addEventListener('DOMContentLoaded', () => {
   initScrollObserver();
   initZoomHoverInteractions();
-  initNoticeHeadlineTicker();
 });
-
-/* ==================== ONE-BY-ONE HEADLINE NOTICE TICKER ==================== */
-let currentNoticeIndex = 0;
-let noticeTimerFallback = null;
-
-function showNoticeHeadline(index) {
-  const items = document.querySelectorAll('.notice-single-item');
-  const countBadge = document.getElementById('notice-count-badge');
-  if (!items || items.length === 0) return;
-
-  currentNoticeIndex = (index + items.length) % items.length;
-
-  items.forEach((item) => {
-    item.classList.remove('active');
-  });
-
-  const activeItem = items[currentNoticeIndex];
-  if (activeItem) {
-    // Force DOM reflow to restart CSS keyframe animation smoothly
-    void activeItem.offsetWidth;
-    activeItem.classList.add('active');
-  }
-
-  if (countBadge) {
-    countBadge.textContent = `${currentNoticeIndex + 1}/${items.length}`;
-  }
-
-  // Backup fallback timer in case tab backgrounded or animationend delayed
-  if (noticeTimerFallback) clearTimeout(noticeTimerFallback);
-  noticeTimerFallback = setTimeout(() => {
-    nextNoticeHeadline();
-  }, 12500);
-}
-
-function nextNoticeHeadline() {
-  showNoticeHeadline(currentNoticeIndex + 1);
-}
-
-function prevNoticeHeadline() {
-  showNoticeHeadline(currentNoticeIndex - 1);
-}
-
-function initNoticeHeadlineTicker() {
-  const container = document.getElementById('notice-headline-container');
-  if (!container) return;
-
-  const items = container.querySelectorAll('.notice-single-item');
-  if (!items || items.length === 0) return;
-
-  // Listen for animationend to automatically transition to next headline
-  items.forEach(item => {
-    item.addEventListener('animationend', () => {
-      nextNoticeHeadline();
-    });
-  });
-
-  // Start with the first notice
-  showNoticeHeadline(0);
-}
 
 function switchPublicTab(tabId) {
   document.querySelectorAll('.gov-tab-btn').forEach(btn => btn.classList.remove('active'));
