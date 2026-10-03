@@ -578,3 +578,126 @@ html.high-contrast body.mode-mobile .mobile-drawer {
 html.high-contrast body.mode-mobile .bottom-nav-item.active {
   color: #FFFF00 !important;
 }
+
+/* ==================== RESPONSIVE BREAKPOINT & HAMBURGER TOGGLE STYLES ==================== */
+.gov-masthead-hamburger,
+.app-band-hamburger {
+  display: none; /* hidden on wide desktop screen widths */
+  width: 44px;
+  height: 44px;
+  background: var(--gov-navy);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4.5px;
+  padding: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background 0.15s ease, transform 0.15s ease;
+  flex-shrink: 0;
+}
+.gov-masthead-hamburger:hover,
+.app-band-hamburger:hover {
+  background: var(--gov-dark-navy);
+  border-color: var(--gov-saffron);
+}
+.gov-masthead-hamburger:active,
+.app-band-hamburger:active {
+  transform: scale(0.95);
+}
+.gov-masthead-hamburger .hamburger-bar,
+.app-band-hamburger .hamburger-bar {
+  display: block;
+  width: 20px;
+  height: 2.5px;
+  background: #FFFFFF;
+  border-radius: 2px;
+}
+
+/* 1. MEDIA BREAKPOINT FOR TABLET / MEDIUM SCREENS (<= 992px) */
+@media screen and (max-width: 992px) {
+  .gov-masthead-hamburger,
+  .app-band-hamburger {
+    display: flex !important;
+  }
+
+  .gov-masthead-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 8px !important;
+    gap: 10px !important;
+  }
+
+  .gov-brand-title .gov-name-en {
+    font-size: 1.25rem !important;
+  }
+  .gov-brand-title .gov-name-hi {
+    font-size: 1.15rem !important;
+  }
+  .gov-system-tag {
+    font-size: 0.72rem !important;
+  }
+  .gov-badges-wrap {
+    display: none !important; /* Hide secondary logos on phone to avoid overflow */
+  }
+
+  .gov-nav-links {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    white-space: nowrap !important;
+    padding-bottom: 2px !important;
+  }
+
+  /* App Shell Sidebar Responsive Collapse */
+  .app-shell {
+    display: block !important;
+  }
+  .app-shell .sidebar {
+    display: none !important; /* Sidebar converts to slide-out drawer accessible via hamburger button */
+  }
+  .app-shell .main {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 14px 12px 28px !important;
+  }
+
+  .gov-page-band {
+    padding: 10px 14px !important;
+  }
+  .band-top-row {
+    font-size: 0.72rem !important;
+  }
+  .band-title-row {
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+  .band-main-title {
+    font-size: 1.15rem !important;
+  }
+  .band-user-actions {
+    gap: 6px !important;
+    flex-wrap: wrap !important;
+  }
+  .band-user-actions .circle-badge {
+    display: none !important;
+  }
+}
+
+/* 2. MEDIA BREAKPOINT FOR SMALL MOBILE SCREENS (<= 768px) */
+@media screen and (max-width: 768px) {
+  .gov-logo-img {
+    height: 52px !important;
+  }
+  .gov-brand-title .gov-name-en {
+    font-size: 1.05rem !important;
+  }
+  .gov-system-tag-hi {
+    display: none !important;
+  }
+  .gov-utility-left span:nth-child(n+3) {
+    display: none !important; /* Compact top utility bar */
+  }
+}
+

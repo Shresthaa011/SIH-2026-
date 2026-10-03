@@ -82,6 +82,13 @@
     <!-- Official Government Masthead -->
     <header class="gov-masthead" role="banner">
       <div class="gov-masthead-container">
+        <!-- Mobile/Tablet Responsive Hamburger Menu Toggle -->
+        <button class="gov-masthead-hamburger" id="masthead-hamburger-btn" onclick="MobileLayout.toggleDrawer()" aria-label="Toggle Navigation Menu" title="Toggle Navigation Menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+
         <div class="gov-brand-wrap">
           <!-- Official Custom National Emblem & Land Platform Logo -->
           <div class="gov-emblem-box" style="display:flex; align-items:center; justify-content:center;">
@@ -850,8 +857,16 @@
       </div>
 
       <div class="band-title-row">
-        <div>
-          <div class="band-main-title" id="topbar-title">डैशबोर्ड / Central Monitoring Dashboard</div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <!-- App Sidebar Hamburger Toggle for Mobile/Tablet Breakpoint -->
+          <button class="app-band-hamburger" id="app-hamburger-btn" onclick="MobileLayout.toggleDrawer()" aria-label="Toggle Navigation Menu" title="Toggle Navigation Menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+          <div>
+            <div class="band-main-title" id="topbar-title">डैशबोर्ड / Central Monitoring Dashboard</div>
+          </div>
         </div>
 
         <div class="band-user-actions">

@@ -324,6 +324,7 @@
   }
 
   function openDrawer() {
+    renderMobileShell();
     drawerOpen = true;
     const overlay = document.getElementById('mobile-drawer-overlay');
     const drawer = document.getElementById('mobile-drawer');
