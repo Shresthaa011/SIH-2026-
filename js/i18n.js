@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TERRABYTE (टेराबाइट) — MULTILINGUAL i18n SYSTEM
+   GeoSetu-India (जिओसेतु-इंडिया) — MULTILINGUAL i18n SYSTEM
    Compliant with Guidelines for Indian Government Websites (GIGW 3.0)
    Supporting 22 Eighth Schedule Constitutional Languages + English
    ========================================================================== */
@@ -38,7 +38,7 @@ const TRANSLATIONS = {
     gov_in: "Government of India",
     ministry: "Ministry of Rural Development",
     dept: "Department of Land Resources",
-    portal_brand: "TerraByte",
+    portal_brand: "GeoSetu-India",
     portal_tag: "National Land Acquisition & Management System",
     satyam: "Satyameva Jayate",
     
@@ -133,7 +133,7 @@ const TRANSLATIONS = {
     title_decision_support: ["Decision Support", "Geospatial Alignment & Parcel Feasibility DSS"],
     title_alerts: ["Vigilance", "Statutory Delays, Notice Expirations & Alerts"],
     title_audit: ["Audit Trail", "Cryptographic Immutable Activity Audit Trail"],
-    title_ai: ["Digital India AI", "TerraByte AI Assistant & Legal Enquiry"],
+    title_ai: ["Digital India AI", "GeoSetu-India AI Assistant & Legal Enquiry"],
     title_users: ["Security Administration", "Portal Users, Roles & Jurisdiction Directory"],
 
     // Common UI Text
@@ -156,7 +156,7 @@ const TRANSLATIONS = {
     gov_in: "भारत सरकार",
     ministry: "ग्रामीण विकास मंत्रालय",
     dept: "भूमि संसाधन विभाग",
-    portal_brand: "टेराबाइट",
+    portal_brand: "जिओसेतु-इंडिया",
     portal_tag: "राष्ट्रीय भूमि अधिग्रहण एवं प्रबंधन पोर्टल",
     satyam: "सत्यमेव जयते",
 
@@ -251,7 +251,7 @@ const TRANSLATIONS = {
     title_decision_support: ["निर्णय सहायता", "भू-संरेखण व भूखंड उपयुक्तता निर्णय सहायता प्रणाली"],
     title_alerts: ["सतर्कता व निगरानी", "सांविधिक विलंब, सूचना समय-सीमा व सतर्कता अलर्ट"],
     title_audit: ["लेखा परीक्षा", "अपरिवर्तनीय डिजिटल ऑडिट लॉग व अभिलेख"],
-    title_ai: ["डिजिटल इंडिया एआई", "टेराबाइट विधिक एआई सहायक व नागरिक पूछताछ"],
+    title_ai: ["डिजिटल इंडिया एआई", "जिओसेतु-इंडिया विधिक एआई सहायक व नागरिक पूछताछ"],
     title_users: ["सुरक्षा प्रशासन", "प्रयोक्ता, भूमिकाएं व क्षेत्राधिकार निर्देशिका"],
 
     // Common UI Text
@@ -282,7 +282,7 @@ const TRANSLATIONS = {
     gov_in: `${langNative} | Govt. of India`,
     ministry: "Ministry of Rural Development",
     dept: "Department of Land Resources",
-    portal_brand: "TerraByte",
+    portal_brand: "GeoSetu-India",
     portal_tag: "National Land Acquisition & Management System",
     lang_switched: `Language selected: ${langNative} (${langName})`
   };
@@ -308,7 +308,7 @@ function getWorkflowLabel(state) {
 }
 
 function getRouteTitle(routeKey) {
-  const def = TITLES[routeKey] || ['TerraByte', 'Portal'];
+  const def = TITLES[routeKey] || ['GeoSetu-India', 'Portal'];
   const trans = t(`title_${routeKey}`);
   return Array.isArray(trans) ? trans : def;
 }

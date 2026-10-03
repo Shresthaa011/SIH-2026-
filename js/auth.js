@@ -1,5 +1,5 @@
 /* --------------------------------------------------------------------------
-   TERRABYTE (टेराबाइट) — AUTHENTICATION, ACCESSIBILITY & GIGW SYSTEM
+   GeoSetu-India (जिओसेतु-इंडिया) — AUTHENTICATION, ACCESSIBILITY & GIGW SYSTEM
    -------------------------------------------------------------------------- */
 
 let CURRENT_USER = null;
@@ -385,7 +385,7 @@ function openAccessibilityModal() {
 
       <h4 style="color:var(--gov-navy);margin-bottom:6px;font-size:13px;">GIGW 3.0 & WCAG 2.1 Level AA Statement</h4>
       <p style="font-size:11.5px;color:var(--gov-text-muted);line-height:1.5;margin-bottom:8px;">
-        TERRABYTE adheres to the <strong>Guidelines for Indian Government Websites (GIGW 3.0)</strong> and aligns with the <strong>W3C Web Content Accessibility Guidelines (WCAG 2.1 Level AA)</strong>.
+        GeoSetu-India adheres to the <strong>Guidelines for Indian Government Websites (GIGW 3.0)</strong> and aligns with the <strong>W3C Web Content Accessibility Guidelines (WCAG 2.1 Level AA)</strong>.
       </p>
       <ul style="font-size:11px;color:var(--gov-text-muted);padding-left:18px;margin:0 0 10px;line-height:1.5;">
         <li>100% full keyboard operability (Tab, Shift+Tab, Enter, Escape, Space).</li>
@@ -408,7 +408,7 @@ function openScreenReaderModal() {
     </div>
     <div class="modal-body">
       <p style="font-size:12px;color:var(--gov-text-muted);margin-bottom:14px;">
-        TERRABYTE supports leading screen readers in compliance with GIGW 3.0 standards:
+        GeoSetu-India supports leading screen readers in compliance with GIGW 3.0 standards:
       </p>
       
       <table style="margin-bottom:14px;">
@@ -466,7 +466,7 @@ function openContactModal() {
         <div style="font-size:11px;color:var(--gov-text-muted);margin-top:2px;">Monday to Saturday (09:30 AM to 06:00 PM IST)</div>
       </div>
 
-      <div class="kv"><span>Demonstration Email:</span><span style="font-family:var(--font-mono);">support-terrabyte@gov-demo.in</span></div>
+      <div class="kv"><span>Demonstration Email:</span><span style="font-family:var(--font-mono);">support-geosetu@gov-demo.in</span></div>
       <div class="kv"><span>Headquarters:</span><span>NBO Building, Nirman Bhawan, New Delhi - 110011</span></div>
       <div class="kv"><span>Department:</span><span>Department of Land Resources (DoLR), MoRD, GoI</span></div>
 
@@ -483,7 +483,7 @@ function openContactModal() {
 function openSitemapModal() {
   const sections = [
     { title: "1. Home & Institutional Identity", links: ["Portal Overview", "National Land Acquisition Indicators", "Gazette Ticker", "Latest Updates"] },
-    { title: "2. About Us", links: ["About DoLR", "TerraByte Mission & Vision", "Organizational Hierarchy", "RFCTLARR Act Framework"] },
+    { title: "2. About Us", links: ["About DoLR", "GeoSetu-India Mission & Vision", "Organizational Hierarchy", "RFCTLARR Act Framework"] },
     { title: "3. Land Acquisition", links: ["Section 4 Preliminary Notifications", "Section 11 Declaration Registry", "Social Impact Assessment (SIA)", "Joint Measurement Surveys"] },
     { title: "4. Land Management", links: ["Khasra & Survey Cadastral Mapping", "Record of Rights (RoR) Integration", "Land Parcel Titling", "Disputed Land Registry"] },
     { title: "5. Projects", links: ["Highways & Expressways (NHAI)", "Dedicated Freight Corridors (DFCCIL)", "High Speed Rail (Bullet Train)", "PM GatiShakti Multi-modal"] },
@@ -498,12 +498,12 @@ function openSitemapModal() {
 
   openModal(`
     <div class="modal-header">
-      <div class="modal-title">🗺️ TERRABYTE National Portal Sitemap</div>
+      <div class="modal-title">🗺️ GeoSetu-India National Portal Sitemap</div>
       <button class="modal-close-btn" onclick="closeModal()">×</button>
     </div>
     <div class="modal-body" style="max-height:65vh;overflow-y:auto;">
       <p style="font-size:12px;color:var(--gov-text-muted);margin-bottom:14px;">
-        Hierarchical directory of all statutory modules, cadastral registries, and digital services hosted on the TerraByte portal.
+        Hierarchical directory of all statutory modules, cadastral registries, and digital services hosted on the GeoSetu-India portal.
       </p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:12px;">
         ${sections.map(s => `

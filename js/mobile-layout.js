@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TERRABYTE (टेराबाइट) — MOBILE LAYOUT COMPONENT & INTERFACE ENGINE
+   GeoSetu-India (जिओसेतु-इंडिया) — MOBILE LAYOUT COMPONENT & INTERFACE ENGINE
    Mobile-first navigation shell with slide-out drawer, bottom quick nav,
    larger tap targets (48px+), and stacked responsive content density
    ========================================================================== */
@@ -27,9 +27,9 @@
         </button>
 
         <div class="mobile-brand" onclick="MobileLayout.handleBrandClick()" role="button" tabindex="0">
-          <div class="mobile-brand-emblem">TB</div>
+          <div class="mobile-brand-emblem">GS</div>
           <div class="mobile-brand-text">
-            <span class="mobile-brand-title">TerraByte</span>
+            <span class="mobile-brand-title">GeoSetu-India</span>
             <span class="mobile-brand-sub" id="mobile-route-badge">Govt. of India</span>
           </div>
         </div>
@@ -107,7 +107,7 @@
             🖥️ Desktop Site
           </button>
           <div class="mobile-drawer-subinfo">
-            TerraByte Mobile v2.1 • GIGW 3.0 Aligned
+            GeoSetu-India Mobile v2.1 • GIGW 3.0 Aligned
           </div>
         </div>
       </aside>
@@ -368,7 +368,7 @@
     if (titles && titles[0]) {
       badge.textContent = titles[0];
     } else {
-      badge.textContent = 'TerraByte Portal';
+      badge.textContent = 'GeoSetu-India Portal';
     }
   }
 

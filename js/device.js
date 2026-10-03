@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TERRABYTE (टेराबाइट) — DEVICE DETECTION & DYNAMIC LAYOUT SWITCHER
+   GeoSetu-India (जिओसेतु-इंडिया) — DEVICE DETECTION & DYNAMIC LAYOUT SWITCHER
    Device-based layout switching supporting Desktop, Tablet, and Mobile
    Compliant with GIGW 3.0 & WCAG 2.1 Level AA Accessibility Standards
    ========================================================================== */

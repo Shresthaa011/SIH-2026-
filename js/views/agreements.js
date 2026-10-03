@@ -817,7 +817,7 @@ function openDeedPreview(agrId){
         <!-- Verification Footer -->
         <div style="margin-top:20px;padding-top:14px;border-top:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center;font-size:10.5px;color:#64748b;">
           <div>
-            <b>TerraByte National Land Records Registry</b> &bull; GIGW 3.0 &bull; Tamper Evident
+            <b>GeoSetu-India National Land Records Registry</b> &bull; GIGW 3.0 &bull; Tamper Evident
           </div>
           <div style="font-family:var(--font-mono);">
             SHA-256 Seal: 8a4c9f1...77e02 | NIC Cert Validated

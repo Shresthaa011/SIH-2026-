@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TerraByte (टेराबाइट) — Technical Architecture &amp; Technology Stack Specification</title>
+<title>GeoSetu-India (जिओसेतु-इंडिया) — Technical Architecture &amp; Technology Stack Specification</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Source+Serif+4:wght@600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
@@ -232,7 +232,7 @@
     <div class="header-titles">
       <div class="dept-hi">भूमि संसाधन विभाग &bull; ग्रामीण विकास मंत्रालय &bull; भारत सरकार</div>
       <div class="dept-en">Department of Land Resources &bull; Ministry of Rural Development &bull; Govt. of India</div>
-      <div class="doc-title">TerraByte (टेराबाइट) — Technical Stack &amp; Architecture Specification</div>
+      <div class="doc-title">GeoSetu-India (जिओसेतु-इंडिया) — Technical Stack &amp; Architecture Specification</div>
       <div class="doc-subtitle">National Land Acquisition &amp; Management Platform &bull; RFCTLARR Act 2013 Compliant</div>
     </div>
   </div>
@@ -249,7 +249,7 @@
   <div class="content">
 
     <p style="font-size:14.5px;color:#0a2e5c;font-weight:600;margin-bottom:20px;">
-      This specification outlines every technology component utilized across the <b>TerraByte</b> platform, categorized into <b>Frontend</b>, <b>Backend</b>, and <b>Database/Storage</b> layers, detailing their operational roles in clear, accessible terminology.
+      This specification outlines every technology component utilized across the <b>GeoSetu-India</b> platform, categorized into <b>Frontend</b>, <b>Backend</b>, and <b>Database/Storage</b> layers, detailing their operational roles in clear, accessible terminology.
     </p>
 
     <!-- ================= SECTION 1: FRONTEND ================= -->
@@ -267,7 +267,7 @@
         </div>
         <div class="tech-analogy">💡 Simple Analogy: The skeleton &amp; brickwork of the house.</div>
         <div class="tech-role">
-          <b>Role in TerraByte:</b> Provides the semantic structural foundation for the portal. Defines the layout of the JanParichay Single Sign-On card, the 4-step identity verification forms, the digital E-Agreement previewer, and the government masthead/footer.
+          <b>Role in GeoSetu-India:</b> Provides the semantic structural foundation for the portal. Defines the layout of the JanParichay Single Sign-On card, the 4-step identity verification forms, the digital E-Agreement previewer, and the government masthead/footer.
         </div>
       </div>
 
@@ -278,7 +278,7 @@
         </div>
         <div class="tech-analogy">💡 Simple Analogy: The interior paint, styling &amp; design.</div>
         <div class="tech-role">
-          <b>Role in TerraByte:</b> Implements the official <b>Guidelines for Indian Government Websites (GIGW 3.0)</b> visual design. Powers the <b>210px circular camera viewport</b> (using <code>clip-path: circle()</code> and <code>border-radius: 50%</code>) to ensure the live camera and captured photo stay perfectly inside a circular screen.
+          <b>Role in GeoSetu-India:</b> Implements the official <b>Guidelines for Indian Government Websites (GIGW 3.0)</b> visual design. Powers the <b>210px circular camera viewport</b> (using <code>clip-path: circle()</code> and <code>border-radius: 50%</code>) to ensure the live camera and captured photo stay perfectly inside a circular screen.
         </div>
       </div>
 
@@ -289,7 +289,7 @@
         </div>
         <div class="tech-analogy">💡 Simple Analogy: The brain &amp; nervous system.</div>
         <div class="tech-role">
-          <b>Role in TerraByte:</b> Drives the entire Single Page Application (SPA) without external frameworks. Validates PAN formats, calculates RFCTLARR compensation multipliers, controls the camera verification workflow, and executes instant role switching.
+          <b>Role in GeoSetu-India:</b> Drives the entire Single Page Application (SPA) without external frameworks. Validates PAN formats, calculates RFCTLARR compensation multipliers, controls the camera verification workflow, and executes instant role switching.
         </div>
       </div>
 
@@ -300,7 +300,7 @@
         </div>
         <div class="tech-analogy">💡 Simple Analogy: The direct cable to your webcam.</div>
         <div class="tech-role">
-          <b>Role in TerraByte:</b> Interacts directly with the device's physical hardware camera via <code>navigator.mediaDevices.getUserMedia</code>. Handles camera permissions, dual-camera switching (Flip Camera), and streams live video directly into the circular screen.
+          <b>Role in GeoSetu-India:</b> Interacts directly with the device's physical hardware camera via <code>navigator.mediaDevices.getUserMedia</code>. Handles camera permissions, dual-camera switching (Flip Camera), and streams live video directly into the circular screen.
         </div>
       </div>
 
@@ -311,7 +311,7 @@
         </div>
         <div class="tech-analogy">💡 Simple Analogy: The digital camera shutter &amp; trimmer.</div>
         <div class="tech-role">
-          <b>Role in TerraByte:</b> Captures an instantaneous snapshot from the live video stream, crops an exact 1:1 square centered on the face to avoid distortion, mirrors front-camera selfies, and exports high-quality JPEG image payloads.
+          <b>Role in GeoSetu-India:</b> Captures an instantaneous snapshot from the live video stream, crops an exact 1:1 square centered on the face to avoid distortion, mirrors front-camera selfies, and exports high-quality JPEG image payloads.
         </div>
       </div>
 
@@ -322,7 +322,7 @@
         </div>
         <div class="tech-analogy">💡 Simple Analogy: Mathematical drawings that never blur.</div>
         <div class="tech-role">
-          <b>Role in TerraByte:</b> Renders the official <b>Ashoka Lion Capital (*सत्यमेव जयते*)</b>, Digital India, and PM GatiShakti badges in razor-sharp detail across all screen resolutions and zoom levels.
+          <b>Role in GeoSetu-India:</b> Renders the official <b>Ashoka Lion Capital (*सत्यमेव जयते*)</b>, Digital India, and PM GatiShakti badges in razor-sharp detail across all screen resolutions and zoom levels.
         </div>
       </div>
 
@@ -333,7 +333,7 @@
         </div>
         <div class="tech-analogy">💡 Simple Analogy: A custom digital satellite atlas.</div>
         <div class="tech-role">
-          <b>Role in TerraByte:</b> Renders 100 georeferenced cadastral land parcel polygons across the Bhopal, Raisen, and Sehore revenue divisions with acquisition boundary highlights, coordinates, and khatauni information.
+          <b>Role in GeoSetu-India:</b> Renders 100 georeferenced cadastral land parcel polygons across the Bhopal, Raisen, and Sehore revenue divisions with acquisition boundary highlights, coordinates, and khatauni information.
         </div>
       </div>
 
@@ -344,7 +344,7 @@
         </div>
         <div class="tech-analogy">💡 Simple Analogy: An automatic graph &amp; chart maker.</div>
         <div class="tech-role">
-          <b>Role in TerraByte:</b> Visualizes compensation disbursement statistics, Direct Benefit Transfer (DBT) progress, and acquisition status distribution on senior administrative dashboards.
+          <b>Role in GeoSetu-India:</b> Visualizes compensation disbursement statistics, Direct Benefit Transfer (DBT) progress, and acquisition status distribution on senior administrative dashboards.
         </div>
       </div>
     </div>
@@ -364,7 +364,7 @@
         </div>
         <div class="tech-analogy">💡 Simple Analogy: The office receptionist &amp; file clerk.</div>
         <div class="tech-role">
-          <b>Role in TerraByte:</b> Built on Microsoft .NET's <code>System.Net.HttpListener</code>. Listens on port <code>8080</code> to serve all web assets and handle API requests natively without requiring Node.js, Python, or Apache installations.
+          <b>Role in GeoSetu-India:</b> Built on Microsoft .NET's <code>System.Net.HttpListener</code>. Listens on port <code>8080</code> to serve all web assets and handle API requests natively without requiring Node.js, Python, or Apache installations.
         </div>
       </div>
 
@@ -375,7 +375,7 @@
         </div>
         <div class="tech-analogy">💡 Simple Analogy: The standardized ordering window.</div>
         <div class="tech-role">
-          <b>Role in TerraByte:</b> Exposes structured endpoints such as <code>POST /api/idv/upload-photo</code> and <code>GET /api/idv/verifications</code> for transmitting identity photographs and retrieving verification records.
+          <b>Role in GeoSetu-India:</b> Exposes structured endpoints such as <code>POST /api/idv/upload-photo</code> and <code>GET /api/idv/verifications</code> for transmitting identity photographs and retrieving verification records.
         </div>
       </div>
 
@@ -386,7 +386,7 @@
         </div>
         <div class="tech-analogy">💡 Simple Analogy: The security guard with a lock.</div>
         <div class="tech-role">
-          <b>Role in TerraByte:</b> Protects user privacy under the Digital Personal Data Protection (DPDP) Act 2023. If any user or browser attempts to directly browse or download from <code>/storage/secure_idv/</code>, the guard intercepts and blocks it with <b>HTTP 403 Forbidden</b>.
+          <b>Role in GeoSetu-India:</b> Protects user privacy under the Digital Personal Data Protection (DPDP) Act 2023. If any user or browser attempts to directly browse or download from <code>/storage/secure_idv/</code>, the guard intercepts and blocks it with <b>HTTP 403 Forbidden</b>.
         </div>
       </div>
 
@@ -397,7 +397,7 @@
         </div>
         <div class="tech-analogy">💡 Simple Analogy: Translating pictures into safe text.</div>
         <div class="tech-role">
-          <b>Role in TerraByte:</b> Encodes photo payloads into standard JSON text strings for transmission over HTTP, then reconstitutes them back into genuine <code>.jpg</code> files on the private storage disk.
+          <b>Role in GeoSetu-India:</b> Encodes photo payloads into standard JSON text strings for transmission over HTTP, then reconstitutes them back into genuine <code>.jpg</code> files on the private storage disk.
         </div>
       </div>
 
@@ -408,7 +408,7 @@
         </div>
         <div class="tech-analogy">💡 Simple Analogy: A tamper-proof digital wax seal.</div>
         <div class="tech-role">
-          <b>Role in TerraByte:</b> Produces cryptographic fingerprints for verification certificates and digital E-Agreement deeds. Any modification immediately invalidates the seal.
+          <b>Role in GeoSetu-India:</b> Produces cryptographic fingerprints for verification certificates and digital E-Agreement deeds. Any modification immediately invalidates the seal.
         </div>
       </div>
     </div>
@@ -428,7 +428,7 @@
         </div>
         <div class="tech-analogy">💡 Simple Analogy: A permanent digital filing cabinet.</div>
         <div class="tech-role">
-          <b>Role in TerraByte:</b> Houses the main application database (<code>terrabyte_db_v2</code>). Persists 100 georeferenced land parcels, acquisition proceedings, E-Agreements, user accounts, and immutable audit logs across computer restarts.
+          <b>Role in GeoSetu-India:</b> Houses the main application database (<code>geosetu_db_v2</code>). Persists 100 georeferenced land parcels, acquisition proceedings, E-Agreements, user accounts, and immutable audit logs across computer restarts.
         </div>
       </div>
 
@@ -439,7 +439,7 @@
         </div>
         <div class="tech-analogy">💡 Simple Analogy: A temporary sticky note.</div>
         <div class="tech-role">
-          <b>Role in TerraByte:</b> Keeps track of the currently logged-in officer or citizen. Wipes automatically when the browser tab is closed for enhanced security.
+          <b>Role in GeoSetu-India:</b> Keeps track of the currently logged-in officer or citizen. Wipes automatically when the browser tab is closed for enhanced security.
         </div>
       </div>
 
@@ -450,7 +450,7 @@
         </div>
         <div class="tech-analogy">💡 Simple Analogy: A physical locked locker on disk.</div>
         <div class="tech-role">
-          <b>Role in TerraByte:</b> The private directory on the server disk (<code>storage/secure_idv/</code>) storing the physical <code>.jpg</code> verification photographs, accessible only to authorized internal server processes.
+          <b>Role in GeoSetu-India:</b> The private directory on the server disk (<code>storage/secure_idv/</code>) storing the physical <code>.jpg</code> verification photographs, accessible only to authorized internal server processes.
         </div>
       </div>
 
@@ -461,7 +461,7 @@
         </div>
         <div class="tech-analogy">💡 Simple Analogy: An official handwritten registrar book.</div>
         <div class="tech-role">
-          <b>Role in TerraByte:</b> An append-only historical logbook (<code>verifications.json</code>) storing verification reference IDs, masked PAN numbers, IST timestamps, and verification statuses.
+          <b>Role in GeoSetu-India:</b> An append-only historical logbook (<code>verifications.json</code>) storing verification reference IDs, masked PAN numbers, IST timestamps, and verification statuses.
         </div>
       </div>
     </div>
@@ -503,7 +503,7 @@
 
   <div class="footer">
     <div>
-      <b>TerraByte (टेराबाइट)</b> &bull; National Land Acquisition &amp; Management System<br>
+      <b>GeoSetu-India (जिओसेतु-इंडिया)</b> &bull; National Land Acquisition &amp; Management System<br>
       Department of Land Resources &bull; Ministry of Rural Development &bull; Government of India
     </div>
     <div style="text-align:right;">

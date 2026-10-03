@@ -23,7 +23,7 @@ $listener.Prefixes.Add($prefix)
 try {
     $listener.Start()
     Write-Host "==========================================================" -ForegroundColor Green
-    Write-Host " TerraByte National Platform & IDV Gateway is Live!" -ForegroundColor Cyan
+    Write-Host " GeoSetu-India National Platform & IDV Gateway is Live!" -ForegroundColor Cyan
     Write-Host " URL: $prefix" -ForegroundColor Yellow
     Write-Host " Web Root: $root" -ForegroundColor Gray
     Write-Host " Private Vault: $secureVaultDir (Protected)" -ForegroundColor DarkGray
@@ -92,7 +92,7 @@ while ($listener.IsListening) {
         if ($rawUrl -eq "/api/health") {
             Send-JsonResponse $response 200 @{
                 status = "UP"
-                service = "TerraByte IdentityVerificationService"
+                service = "GeoSetu-India IdentityVerificationService"
                 mode = "Demo Verification"
                 timestamp = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
             }

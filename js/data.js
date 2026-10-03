@@ -1,5 +1,5 @@
 /* =====================================================================
-   TerraByte (टेराबाइट) — National Land Acquisition & Management System
+   GeoSetu-India (जिओसेतु-इंडिया) — National Land Acquisition & Management System
    Department of Land Resources, Ministry of Rural Development, GoI.
    Single-file SPA with LocalStorage persistence.
    ===================================================================== */
@@ -78,10 +78,10 @@ function generateSeed(){
   const db = { users:[], owners:[], parcels:[], projects:[], cases:[], documents:[], approvals:[], compensation:[], alerts:[], monitoring:[], auditLogs:[], agreements:[] };
 
   db.users = [
-    {id:'U-ADMIN', name:'S. Nair', role:'ADMIN', title:'District Nodal Administrator', username:'admin', email:'admin@terrabyte.gov.in', password:'password123'},
-    {id:'U-OFFICER', name:'R. Chouhan', role:'LAND_OFFICER', title:'Land Acquisition Officer (Bhopal Circle)', username:'officer', email:'officer@terrabyte.gov.in', password:'password123'},
-    {id:'U-AUTHORITY', name:'A. Deshmukh', role:'PROJECT_AUTHORITY', title:'Project Director, NHAI Cell', username:'authority', email:'authority@terrabyte.gov.in', password:'password123'},
-    {id:'U-OWNER', name:'Amit Kumar', role:'LAND_OWNER', title:'Verified Khatedar / Citizen', username:'citizen', email:'citizen@terrabyte.gov.in', password:'password123'},
+    {id:'U-ADMIN', name:'S. Nair', role:'ADMIN', title:'District Nodal Administrator', username:'admin', email:'admin@geosetu-india.gov.in', password:'password123'},
+    {id:'U-OFFICER', name:'R. Chouhan', role:'LAND_OFFICER', title:'Land Acquisition Officer (Bhopal Circle)', username:'officer', email:'officer@geosetu-india.gov.in', password:'password123'},
+    {id:'U-AUTHORITY', name:'A. Deshmukh', role:'PROJECT_AUTHORITY', title:'Project Director, NHAI Cell', username:'authority', email:'authority@geosetu-india.gov.in', password:'password123'},
+    {id:'U-OWNER', name:'Amit Kumar', role:'LAND_OWNER', title:'Verified Khatedar / Citizen', username:'citizen', email:'citizen@geosetu-india.gov.in', password:'password123'},
   ];
 
   // Owners
@@ -416,7 +416,7 @@ function generateSeed(){
     }
   ];
 
-  db.auditLogs.push({ id:uid('AUD'), action:'Central database synchronized with National Land Record Portal', user:'System / NIC', entity:'system', entityId:'-', timestamp: addDaysISO(todayISO(),-1), remarks:'TerraByte platform initialized under GIGW guidelines.' });
+  db.auditLogs.push({ id:uid('AUD'), action:'Central database synchronized with National Land Record Portal', user:'System / NIC', entity:'system', entityId:'-', timestamp: addDaysISO(todayISO(),-1), remarks:'GeoSetu-India platform initialized under GIGW guidelines.' });
   db.auditLogs.sort((a,b)=> new Date(a.timestamp)-new Date(b.timestamp));
 
   return db;
@@ -435,15 +435,15 @@ function loadDB(){
     if(raw){
       DB = JSON.parse(raw);
       const defaultCreds = {
-        'U-ADMIN': {u:'admin', e:'admin@terrabyte.gov.in', p:'password123'},
-        'U-OFFICER': {u:'officer', e:'officer@terrabyte.gov.in', p:'password123'},
-        'U-AUTHORITY': {u:'authority', e:'authority@terrabyte.gov.in', p:'password123'},
-        'U-OWNER': {u:'citizen', e:'citizen@terrabyte.gov.in', p:'password123'},
+        'U-ADMIN': {u:'admin', e:'admin@geosetu-india.gov.in', p:'password123'},
+        'U-OFFICER': {u:'officer', e:'officer@geosetu-india.gov.in', p:'password123'},
+        'U-AUTHORITY': {u:'authority', e:'authority@geosetu-india.gov.in', p:'password123'},
+        'U-OWNER': {u:'citizen', e:'citizen@geosetu-india.gov.in', p:'password123'},
       };
       DB.users.forEach(u => {
         if (!u.password) u.password = defaultCreds[u.id] ? defaultCreds[u.id].p : 'password123';
         if (!u.username) u.username = defaultCreds[u.id] ? defaultCreds[u.id].u : u.name.toLowerCase().replace(/\s+/g,'.');
-        if (!u.email || u.email.includes('bhoomisetu')) u.email = defaultCreds[u.id] ? defaultCreds[u.id].e : `${u.username}@terrabyte.gov.in`;
+        if (!u.email || u.email.includes('bhoomisetu') || u.email.includes('terrabyte')) u.email = defaultCreds[u.id] ? defaultCreds[u.id].e : `${u.username}@geosetu-india.gov.in`;
       });
       if(!DB.agreements || !DB.agreements.length){
         const seed = generateSeed();

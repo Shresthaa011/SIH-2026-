@@ -159,14 +159,14 @@ function renderSidebar(){
 
   initSidebarGroupStates();
 
-  const portalBrand = (typeof t === 'function') ? t('portal_brand', 'TerraByte') : 'TerraByte';
+  const portalBrand = (typeof t === 'function') ? t('portal_brand', 'GeoSetu-India') : 'GeoSetu-India';
   const portalSub = (typeof currentLang !== 'undefined' && currentLang === 'hi') 
     ? 'भारत सरकार केंद्रीय पोर्टल • भोपाल वृत्त' 
     : 'GoI Central Portal &bull; Bhopal Circle';
 
   let html = `
     <div class="sidebar-header">
-      <div class="sidebar-emblem">TB</div>
+      <div class="sidebar-emblem">GS</div>
       <div>
         <div class="sidebar-title">${portalBrand}</div>
         <div class="sidebar-sub">${portalSub}</div>
@@ -309,7 +309,7 @@ const TITLES = {
   'decision-support':['Decision Support','Geospatial Alignment & Parcel Feasibility DSS'],
   'alerts':['Statutory Vigilance','Compliance Alerts & Statutory Delays'],
   'audit':['Audit Trail','Immutable Cryptographic Audit Trail'],
-  'ai':['Digital India AI','TerraByte AI Assistant & Legal Enquiry'],
+  'ai':['Digital India AI','GeoSetu-India AI Assistant & Legal Enquiry'],
   'users':['Administration','Portal User Roles & Jurisdiction Directory']
 };
 
@@ -319,7 +319,7 @@ function navigate(name, param){
     n.classList.toggle('active', n.dataset.route === name);
   });
 
-  const tInfo = (typeof getRouteTitle === 'function') ? getRouteTitle(name) : (TITLES[name] || ['TerraByte','Portal']); 
+  const tInfo = (typeof getRouteTitle === 'function') ? getRouteTitle(name) : (TITLES[name] || ['GeoSetu-India','Portal']); 
   const crumbEl = document.getElementById('topbar-crumb');
   const titleEl = document.getElementById('topbar-title');
   if (crumbEl) crumbEl.textContent = tInfo[0];

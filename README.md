@@ -1,7 +1,7 @@
-# TerraByte (टेराबाइट) — National Land Acquisition & Management System
+# GeoSetu-India (जिओसेतु-इंडिया) — National Land Acquisition & Management System
 ### भारत सरकार | Government of India — GIGW 3.0 Compliant Web Portal
 
-**TerraByte** is an end-to-end national land acquisition, cadastral GIS mapping, digital e-agreements, and compensation disbursement portal compliant with the **Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement (RFCTLARR) Act, 2013** and **Guidelines for Indian Government Websites (GIGW 3.0)**.
+**GeoSetu-India** is an end-to-end national land acquisition, cadastral GIS mapping, digital e-agreements, and compensation disbursement portal compliant with the **Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement (RFCTLARR) Act, 2013** and **Guidelines for Indian Government Websites (GIGW 3.0)**.
 
 ---
 
@@ -44,10 +44,10 @@
 
 | Role | Username | Official Email | Password | Access Scope |
 | :--- | :--- | :--- | :--- | :--- |
-| **Nodal Admin** | `admin` | `admin@terrabyte.gov.in` | `password123` | Full administrative control, audit log, user management |
-| **Land Officer (LAO)** | `officer` | `officer@terrabyte.gov.in` | `password123` | E-Agreements creation & DSC counter-signing, verification queue, Khasra inspections |
-| **Project Authority (NHAI)** | `authority` | `authority@terrabyte.gov.in` | `password123` | Project dashboards, objections review, sanction approvals |
-| **Citizen / Khatedar** | `citizen` | `citizen@terrabyte.gov.in` | `password123` | Review & e-Sign pending E-Agreements, "My Land" records, compensation calculator |
+| **Nodal Admin** | `admin` | `admin@geosetu-india.gov.in` | `password123` | Full administrative control, audit log, user management |
+| **Land Officer (LAO)** | `officer` | `officer@geosetu-india.gov.in` | `password123` | E-Agreements creation & DSC counter-signing, verification queue, Khasra inspections |
+| **Project Authority (NHAI)** | `authority` | `authority@geosetu-india.gov.in` | `password123` | Project dashboards, objections review, sanction approvals |
+| **Citizen / Khatedar** | `citizen` | `citizen@geosetu-india.gov.in` | `password123` | Review & e-Sign pending E-Agreements, "My Land" records, compensation calculator |
 
 > **Tip**: You can click the 1-click preset chips at the bottom of the sign-in card to automatically populate credentials and security captcha.
 
