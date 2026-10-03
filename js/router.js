@@ -375,11 +375,35 @@ function workflowBadge(s){ return `<span class="${statusBadgeClass(s)}">${(typeo
 
 function renderStepper(currentState){
   const idx = WORKFLOW_STATES.indexOf(currentState);
-  return `<div class="stepper">${WORKFLOW_STATES.map((s,i)=>{
-    const cls = i<idx?'done': (i===idx?'current':'');
-    const label = (typeof getWorkflowLabel === 'function') ? getWorkflowLabel(s) : WORKFLOW_LABELS[s];
-    return `<div class="step ${cls}"><span class="dot"></span><span class="step-label">${label}</span></div>` + (i<WORKFLOW_STATES.length-1?'<div class="step-connector"></div>':'');
-  }).join('')}</div>`;
+  const legalNote = WORKFLOW_RFCTLARR_NOTES[currentState] || 'RFCTLARR Act 2013 Statutory Legal Compliance Pipeline';
+  return `
+    <div class="stepper-wrap">
+      <div class="stepper">
+        ${WORKFLOW_STATES.map((s,i)=>{
+          const cls = i<idx?'done': (i===idx?'current':'');
+          const label = (typeof getWorkflowLabel === 'function') ? getWorkflowLabel(s) : WORKFLOW_LABELS[s];
+          const sec = (typeof WORKFLOW_SECTIONS !== 'undefined') ? WORKFLOW_SECTIONS[s] : '';
+          const note = (typeof WORKFLOW_RFCTLARR_NOTES !== 'undefined') ? WORKFLOW_RFCTLARR_NOTES[s] : '';
+          return `
+            <div class="step ${cls}" title="${escapeHtml(note)}">
+              <span class="dot"></span>
+              <span class="step-label">
+                ${label}
+                ${sec ? `<span class="sec-badge">${sec}</span>` : ''}
+              </span>
+            </div>
+            ${i < WORKFLOW_STATES.length - 1 ? '<div class="step-connector"></div>' : ''}
+          `;
+        }).join('')}
+      </div>
+
+      <!-- Statutory RFCTLARR Act 2013 legal reference banner -->
+      <div class="stepper-legal-banner">
+        <span class="legal-badge">⚖️ RFCTLARR ACT 2013 STATUTORY REFERENCE</span>
+        <span class="legal-note-text">${legalNote}</span>
+      </div>
+    </div>
+  `;
 }
 
 function openModal(innerHtml){

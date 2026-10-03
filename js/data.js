@@ -21,6 +21,30 @@ const WORKFLOW_LABELS = {
   APPROVAL:'Approval (सक्षम अनुमोदन)', COMPENSATION_ASSESSED:'Compensation Assessed (प्रतिकर निर्धारण)', PAYMENT_PENDING:'Payment Pending (भुगतान प्रक्रियाधीन)',
   PAYMENT_COMPLETED:'Payment Completed (डीबीटी संपन्न)', LAND_ACQUIRED:'Land Acquired (अधिग्रहीत)', PROJECT_UTILIZATION:'Project Utilization (हस्तांतरित)'
 };
+const WORKFLOW_SECTIONS = {
+  IDENTIFIED: 'Sec 4',
+  VERIFICATION: 'Sec 6 & 8',
+  NOTICE_ISSUED: 'Sec 11(1)',
+  OBJECTION_REVIEW: 'Sec 15',
+  APPROVAL: 'Sec 19(1)',
+  COMPENSATION_ASSESSED: 'Sec 26-30',
+  PAYMENT_PENDING: 'Sec 31',
+  PAYMENT_COMPLETED: 'Sec 37',
+  LAND_ACQUIRED: 'Sec 38',
+  PROJECT_UTILIZATION: 'Sec 99/101'
+};
+const WORKFLOW_RFCTLARR_NOTES = {
+  IDENTIFIED: 'RFCTLARR Act 2013 Sec 4 — Preliminary Social Impact Assessment (SIA) study & public notice by Nodal Body.',
+  VERIFICATION: 'RFCTLARR Act 2013 Sec 6 & 8 — Independent Expert Group appraisal of SIA & revenue survey boundary verification.',
+  NOTICE_ISSUED: 'RFCTLARR Act 2013 Sec 11(1) — Publication of Preliminary Notification in official Gazette & local newspapers.',
+  OBJECTION_REVIEW: 'RFCTLARR Act 2013 Sec 15 — Mandatory 60-day hearing of citizen objections on public purpose & land area by Collector.',
+  APPROVAL: 'RFCTLARR Act 2013 Sec 19(1) — Final statutory Declaration & Rehabilitation & Resettlement (R&R) Scheme approval.',
+  COMPENSATION_ASSESSED: 'RFCTLARR Act 2013 Sec 26-30 — Collector Compensation Award determination (Base Market Value + 100% Solatium + 12% Interest).',
+  PAYMENT_PENDING: 'RFCTLARR Act 2013 Sec 31 — Direct Benefit Transfer (DBT) disbursal of compensation award into beneficiary bank account.',
+  PAYMENT_COMPLETED: 'RFCTLARR Act 2013 Sec 37 — Collector Award completion & electronic PFMS payment receipt confirmation.',
+  LAND_ACQUIRED: 'RFCTLARR Act 2013 Sec 38 — Collector taking full physical possession of unencumbered land post 100% compensation.',
+  PROJECT_UTILIZATION: 'RFCTLARR Act 2013 Sec 99/101 — Formal transfer & physical handover of acquired land to Requiring Body (NHAI/Railways).'
+};
 const WORKFLOW_NEXT = {
   IDENTIFIED:'VERIFICATION', VERIFICATION:'NOTICE_ISSUED', NOTICE_ISSUED:'OBJECTION_REVIEW', OBJECTION_REVIEW:'APPROVAL',
   APPROVAL:'COMPENSATION_ASSESSED', COMPENSATION_ASSESSED:'PAYMENT_PENDING', PAYMENT_PENDING:'PAYMENT_COMPLETED',

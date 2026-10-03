@@ -2482,12 +2482,18 @@ tr:hover td {
   width: 240px;
 }
 
-/* Stepper */
+/* Stepper & Statutory Legal Section Badges */
+.stepper-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 .stepper {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0;
-  margin: 6px 0 10px;
+  margin: 6px 0 6px;
 }
 .step {
   display: flex;
@@ -2495,6 +2501,8 @@ tr:hover td {
   font-size: 0.786rem;
   color: var(--gov-text-muted);
   padding: 4px 0;
+  cursor: help;
+  position: relative;
 }
 .step .dot {
   width: 8px;
@@ -2502,10 +2510,16 @@ tr:hover td {
   border-radius: 50%;
   background: var(--gov-border);
   margin-right: 5px;
+  flex-shrink: 0;
 }
 .step.done .dot { background: var(--gov-green); }
 .step.current .dot { background: var(--gov-saffron); box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25); }
-.step-label { margin-right: 12px; }
+.step-label {
+  margin-right: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
 .step.done { color: var(--gov-green-dark); font-weight: 700; }
 .step.current { color: var(--gov-navy); font-weight: 800; }
 .step-connector {
@@ -2513,6 +2527,57 @@ tr:hover td {
   height: 1px;
   background: var(--gov-border);
   margin-right: 12px;
+  flex-shrink: 0;
+}
+.sec-badge {
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  background: #E2E8F0;
+  color: var(--gov-navy);
+  padding: 1px 5px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  margin-left: 2px;
+}
+.step.done .sec-badge {
+  background: #D1FAE5;
+  color: #065F46;
+}
+.step.current .sec-badge {
+  background: #FEF3C7;
+  color: #92400E;
+  border-color: #F59E0B;
+}
+
+/* In-App Statutory Legal Note Banner */
+.stepper-legal-banner {
+  background: #F8FAFC;
+  border: 1px solid #CBD5E1;
+  border-left: 3px solid var(--gov-navy);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 0.786rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.legal-badge {
+  font-family: var(--font-mono);
+  font-size: 0.679rem;
+  font-weight: 800;
+  background: var(--gov-navy);
+  color: #FFFFFF;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.04em;
+}
+.legal-note-text {
+  color: var(--gov-navy);
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 /* ============ GIGW COMPLIANT FOOTER ============ */
