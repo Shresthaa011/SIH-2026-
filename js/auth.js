@@ -340,7 +340,87 @@ function handleInquirySubmit(e) {
   e.target.reset();
 }
 
-/* ============ GOV ACCESSIBILITY MODALS ============ */
+/* ============ GOV ACCESSIBILITY & POLICY MODALS ============ */
+function openWebsitePoliciesModal() {
+  openModal(`
+    <div class="modal-header">
+      <div class="modal-title">📜 Website Policies / वेबसाइट नीतियां</div>
+      <button class="modal-close-btn" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:12px;color:var(--gov-text-muted);line-height:1.6;margin-bottom:10px;">
+        This website is maintained by the Department of Land Resources (DoLR), Ministry of Rural Development, Government of India. The content hosted on this portal is for official land acquisition management and public information under GIGW 3.0 guidelines.
+      </p>
+      <p style="font-size:12px;color:var(--gov-text-muted);line-height:1.6;margin:0;">
+        यह वेबसाइट भूमि संसाधन विभाग (DoLR), ग्रामीण विकास मंत्रालय, भारत सरकार द्वारा संचालित है। इस पोर्टल पर उपलब्ध जानकारी जीआईजीडब्ल्यू 3.0 दिशा-निर्देशों के तहत आधिकारिक भूमि अधिग्रहण और सार्वजनिक सूचना हेतु है।
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-navy btn-sm" onclick="closeModal()">Close / बंद करें</button>
+    </div>
+  `);
+}
+
+function openTermsModal() {
+  openModal(`
+    <div class="modal-header">
+      <div class="modal-title">⚖️ Terms &amp; Conditions / नियम व शर्तें</div>
+      <button class="modal-close-btn" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:12px;color:var(--gov-text-muted);line-height:1.6;margin-bottom:10px;">
+        Access to this portal is governed by statutory provisions of the RFCTLARR Act 2013 and Information Technology Act 2000. Unauthorized access, alteration, or tampering with digital land records and e-agreements is strictly prohibited and legally punishable.
+      </p>
+      <p style="font-size:12px;color:var(--gov-text-muted);line-height:1.6;margin:0;">
+        इस पोर्टल का उपयोग आरएफसीटीएलएआरआर अधिनियम 2013 और आईटी अधिनियम 2000 के वैधानिक प्रावधानों द्वारा शासित है। डिजिटल भू-अभिलेखों और ई-समझौतों में अनधिकृत प्रवेश या छेड़छाड़ सख्त वर्जित और दंडनीय है।
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-navy btn-sm" onclick="closeModal()">Close / बंद करें</button>
+    </div>
+  `);
+}
+
+function openPrivacyModal() {
+  openModal(`
+    <div class="modal-header">
+      <div class="modal-title">🔒 Privacy Policy / गोपनीयता नीति</div>
+      <button class="modal-close-btn" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:12px;color:var(--gov-text-muted);line-height:1.6;margin-bottom:10px;">
+        GeoSetu-India is committed to protecting citizen privacy and personal data in full compliance with the Digital Personal Data Protection (DPDP) Act 2023. Aadhaar and payment details are encrypted and utilized solely for statutory compensation disbursal.
+      </p>
+      <p style="font-size:12px;color:var(--gov-text-muted);line-height:1.6;margin:0;">
+        जिओसेतु-इंडिया डिजिटल व्यक्तिगत डेटा संरक्षण (DPDP) अधिनियम 2023 के तहत नागरिक गोपनीयता और व्यक्तिगत डेटा की सुरक्षा के लिए प्रतिबद्ध है। आधार और बैंक खाते के विवरण केवल वैधानिक मुआवजा वितरण हेतु उपयोग किए जाते हैं।
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-navy btn-sm" onclick="closeModal()">Close / बंद करें</button>
+    </div>
+  `);
+}
+
+function openHyperlinkingModal() {
+  openModal(`
+    <div class="modal-header">
+      <div class="modal-title">🔗 Hyperlinking Policy / हाइपरलिंकिंग नीति</div>
+      <button class="modal-close-btn" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:12px;color:var(--gov-text-muted);line-height:1.6;margin-bottom:10px;">
+        Prior permission is required before hyperlink references to this portal are directed from any external site. Links to external government portals (e.g. PM GatiShakti, NGDRS, Bhuvan) open in a new window for citizen reference.
+      </p>
+      <p style="font-size:12px;color:var(--gov-text-muted);line-height:1.6;margin:0;">
+        किसी भी बाहरी साइट से इस पोर्टल के हाइपरलिंक संदर्भ से पहले पूर्व अनुमति आवश्यक है। बाहरी सरकारी पोर्टलों (जैसे पीएम गतिशक्ति, एनजीडीआरएस, भुवन) के लिंक नागरिक संदर्भ के लिए नई विंडो में खुलते हैं।
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-navy btn-sm" onclick="closeModal()">Close / बंद करें</button>
+    </div>
+  `);
+}
+
 function openAccessibilityModal() {
   openModal(`
     <div class="modal-header">
