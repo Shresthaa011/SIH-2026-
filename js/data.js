@@ -8,6 +8,7 @@
 const ROLES = {
   ADMIN: {key:'ADMIN', label:'Administrator / नोडल अधिकारी'},
   LAND_OFFICER: {key:'LAND_OFFICER', label:'Land Officer / भू-अधिग्रहण अधिकारी'},
+  FIELD_OFFICER: {key:'FIELD_OFFICER', label:'Field Officer / पटवारी (क्षेत्रीय सत्यापक)'},
   PROJECT_AUTHORITY: {key:'PROJECT_AUTHORITY', label:'Project Authority / परियोजना प्राधिकारी'},
   LAND_OWNER: {key:'LAND_OWNER', label:'Citizen / Land Owner (खातेदार)'},
 };
@@ -80,6 +81,7 @@ function generateSeed(){
   db.users = [
     {id:'U-ADMIN', name:'S. Nair', role:'ADMIN', title:'District Nodal Administrator', username:'admin', email:'admin@geosetu-india.gov.in', password:'password123'},
     {id:'U-OFFICER', name:'R. Chouhan', role:'LAND_OFFICER', title:'Land Acquisition Officer (Bhopal Circle)', username:'officer', email:'officer@geosetu-india.gov.in', password:'password123'},
+    {id:'U-FIELD', name:'Vikram Singh', role:'FIELD_OFFICER', title:'Senior Field Surveyor / Patwari', username:'field', email:'field@geosetu-india.gov.in', password:'password123'},
     {id:'U-AUTHORITY', name:'A. Deshmukh', role:'PROJECT_AUTHORITY', title:'Project Director, NHAI Cell', username:'authority', email:'authority@geosetu-india.gov.in', password:'password123'},
     {id:'U-OWNER', name:'Amit Kumar', role:'LAND_OWNER', title:'Verified Khatedar / Citizen', username:'citizen', email:'citizen@geosetu-india.gov.in', password:'password123'},
   ];
@@ -437,9 +439,13 @@ function loadDB(){
       const defaultCreds = {
         'U-ADMIN': {u:'admin', e:'admin@geosetu-india.gov.in', p:'password123'},
         'U-OFFICER': {u:'officer', e:'officer@geosetu-india.gov.in', p:'password123'},
+        'U-FIELD': {u:'field', e:'field@geosetu-india.gov.in', p:'password123'},
         'U-AUTHORITY': {u:'authority', e:'authority@geosetu-india.gov.in', p:'password123'},
         'U-OWNER': {u:'citizen', e:'citizen@geosetu-india.gov.in', p:'password123'},
       };
+      if (!DB.users.some(u => u.id === 'U-FIELD')) {
+        DB.users.push({id:'U-FIELD', name:'Vikram Singh', role:'FIELD_OFFICER', title:'Senior Field Surveyor / Patwari', username:'field', email:'field@geosetu-india.gov.in', password:'password123'});
+      }
       DB.users.forEach(u => {
         if (!u.password) u.password = defaultCreds[u.id] ? defaultCreds[u.id].p : 'password123';
         if (!u.username) u.username = defaultCreds[u.id] ? defaultCreds[u.id].u : u.name.toLowerCase().replace(/\s+/g,'.');

@@ -785,6 +785,7 @@
               <label for="reg-role">Role &amp; Jurisdiction / पद व कार्यक्षेत्र</label>
               <select id="reg-role" class="gov-select">
                 <option value="LAND_OWNER">Citizen / Landowner (खातेदार / नागरिक)</option>
+                <option value="FIELD_OFFICER">Field Officer / Patwari (क्षेत्रीय सत्यापक)</option>
                 <option value="LAND_OFFICER">Land Acquisition Officer (भू-अधिग्रहण अधिकारी)</option>
                 <option value="PROJECT_AUTHORITY">Project Authority / NHAI (परियोजना प्राधिकारी)</option>
                 <option value="ADMIN">District Nodal Administrator (ज़िला नोडल अधिकारी)</option>
@@ -815,6 +816,10 @@
               <div class="cred-chip" data-user="officer" data-pass="password123">
                 <div class="chip-role">Land Officer (LAO)</div>
                 <div class="chip-user">officer / password123</div>
+              </div>
+              <div class="cred-chip" data-user="field" data-pass="password123">
+                <div class="chip-role">Field Officer (Patwari)</div>
+                <div class="chip-user">field / password123</div>
               </div>
               <div class="cred-chip" data-user="authority" data-pass="password123">
                 <div class="chip-role">Project Authority (NHAI)</div>
@@ -971,8 +976,9 @@
   <script src="js/router.js"></script>
   <script src="js/auth.js"></script>
 
-  <!-- 11 Statutory Feature Views (SIH Competition Core) -->
+  <!-- 12 Statutory Feature Views (SIH Competition Core) -->
   <script src="js/views/dashboard.js"></script>
+  <script src="js/views/field_survey.js"></script>
   <script src="js/views/map.js"></script>
   <script src="js/views/parcels.js"></script>
   <script src="js/views/cases.js"></script>
