@@ -172,6 +172,7 @@ function renderSidebar(){
       <div class="sidebar-emblem">GS</div>
       <div>
         <div class="sidebar-title">${portalBrand}</div>
+        <div style="font-size:0.85rem;font-weight:700;color:var(--gov-saffron);font-family:var(--font-devanagari);line-height:1.2;margin-top:1px;">जिओसेतु-इंडिया</div>
         <div class="sidebar-sub">${portalSub}</div>
       </div>
     </div>

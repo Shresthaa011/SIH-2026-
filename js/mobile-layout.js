@@ -30,6 +30,7 @@
           <div class="mobile-brand-emblem">GS</div>
           <div class="mobile-brand-text">
             <span class="mobile-brand-title">GeoSetu-India</span>
+            <span style="font-size:0.75rem;font-weight:700;color:var(--gov-gold);font-family:var(--font-devanagari);line-height:1.1;">जिओसेतु-इंडिया</span>
             <span class="mobile-brand-sub" id="mobile-route-badge">Govt. of India</span>
           </div>
         </div>
