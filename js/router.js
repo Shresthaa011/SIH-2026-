@@ -4,7 +4,7 @@ const NAV_ITEMS = [
     groupKey: 'group_overview',
     groupFallback: 'Overview',
     items: [
-      { key: 'dashboard', i18nKey: 'item_dashboard', labelEn: 'Dashboard', labelHi: 'डैशबोर्ड', ico: '▣', roles: ['ADMIN', 'LAND_OFFICER', 'FIELD_OFFICER', 'PROJECT_AUTHORITY'] },
+      { key: 'dashboard', i18nKey: 'item_dashboard', labelEn: 'Dashboard', labelHi: 'डैशबोर्ड', ico: '▣', roles: ['ADMIN', 'CENTRAL_GOVT', 'LAND_OFFICER', 'FIELD_OFFICER', 'PROJECT_AUTHORITY'] },
       { key: 'my-land', i18nKey: 'item_my_land', labelEn: 'My Land (Khatedar)', labelHi: 'मेरी भूमि (खातेदार)', ico: '⌂', roles: ['LAND_OWNER'] },
       { key: 'e-agreements', i18nKey: 'item_my_agreements', labelEn: 'My E-Agreements', labelHi: 'मेरे ई-समझौते', ico: '✍', roles: ['LAND_OWNER'] },
     ]
@@ -14,9 +14,9 @@ const NAV_ITEMS = [
     groupKey: 'group_records',
     groupFallback: 'Land Records',
     items: [
-      { key: 'field-survey', i18nKey: 'item_field_survey', labelEn: 'Field Survey & Inspection', labelHi: 'क्षेत्रीय जीपीएस एवं फोटो सत्यापन', ico: '📍', roles: ['ADMIN', 'LAND_OFFICER', 'FIELD_OFFICER'] },
-      { key: 'map', i18nKey: 'item_map', labelEn: 'GIS Land Map', labelHi: 'भू-स्थानिक नक्शा', ico: '⚑', roles: ['ADMIN', 'LAND_OFFICER', 'FIELD_OFFICER', 'PROJECT_AUTHORITY'] },
-      { key: 'parcels', i18nKey: 'item_parcels', labelEn: 'Land Parcels', labelHi: 'खसरा / भूखंड', ico: '▦', roles: ['ADMIN', 'LAND_OFFICER', 'FIELD_OFFICER', 'PROJECT_AUTHORITY'] },
+      { key: 'field-survey', i18nKey: 'item_field_survey', labelEn: 'Field Survey & Inspection', labelHi: 'क्षेत्रीय जीपीएस एवं फोटो सत्यापन', ico: '📍', roles: ['ADMIN', 'CENTRAL_GOVT', 'LAND_OFFICER', 'FIELD_OFFICER'] },
+      { key: 'map', i18nKey: 'item_map', labelEn: 'GIS Land Map', labelHi: 'भू-स्थानिक नक्शा', ico: '⚑', roles: ['ADMIN', 'CENTRAL_GOVT', 'LAND_OFFICER', 'FIELD_OFFICER', 'PROJECT_AUTHORITY'] },
+      { key: 'parcels', i18nKey: 'item_parcels', labelEn: 'Land Parcels', labelHi: 'खसरा / भूखंड', ico: '▦', roles: ['ADMIN', 'CENTRAL_GOVT', 'LAND_OFFICER', 'FIELD_OFFICER', 'PROJECT_AUTHORITY'] },
     ]
   },
   {
@@ -24,11 +24,11 @@ const NAV_ITEMS = [
     groupKey: 'group_acquisition',
     groupFallback: 'Acquisition',
     items: [
-      { key: 'cases', i18nKey: 'item_cases', labelEn: 'Acquisition Cases', labelHi: 'अधिग्रहण प्रकरण', ico: '◧', roles: ['ADMIN', 'LAND_OFFICER', 'FIELD_OFFICER', 'PROJECT_AUTHORITY'] },
-      { key: 'documents', i18nKey: 'item_documents', labelEn: 'Document Verification', labelHi: 'दस्तावेज़ सत्यापन', ico: '▤', roles: ['ADMIN', 'LAND_OFFICER', 'FIELD_OFFICER'] },
-      { key: 'e-agreements', i18nKey: 'item_agreements', labelEn: 'E-Agreements', labelHi: 'ई-समझौता', ico: '✍', roles: ['ADMIN', 'LAND_OFFICER', 'PROJECT_AUTHORITY'] },
-      { key: 'approvals', i18nKey: 'item_approvals', labelEn: 'Approvals & NOC', labelHi: 'अनुमोदन व अनापत्ति', ico: '✓', roles: ['ADMIN', 'PROJECT_AUTHORITY'] },
-      { key: 'compensation', i18nKey: 'item_compensation', labelEn: 'Compensation & DBT', labelHi: 'प्रतिकर एवं डीबीटी', ico: '₹', roles: ['ADMIN', 'LAND_OFFICER', 'PROJECT_AUTHORITY'] },
+      { key: 'cases', i18nKey: 'item_cases', labelEn: 'Acquisition Cases', labelHi: 'अधिग्रहण प्रकरण', ico: '◧', roles: ['ADMIN', 'CENTRAL_GOVT', 'LAND_OFFICER', 'FIELD_OFFICER', 'PROJECT_AUTHORITY'] },
+      { key: 'documents', i18nKey: 'item_documents', labelEn: 'Document Verification', labelHi: 'दस्तावेज़ सत्यापन', ico: '▤', roles: ['ADMIN', 'CENTRAL_GOVT', 'LAND_OFFICER', 'FIELD_OFFICER'] },
+      { key: 'e-agreements', i18nKey: 'item_agreements', labelEn: 'E-Agreements', labelHi: 'ई-समझौता', ico: '✍', roles: ['ADMIN', 'CENTRAL_GOVT', 'LAND_OFFICER', 'PROJECT_AUTHORITY'] },
+      { key: 'approvals', i18nKey: 'item_approvals', labelEn: 'Approvals & NOC', labelHi: 'अनुमोदन व अनापत्ति', ico: '✓', roles: ['ADMIN', 'CENTRAL_GOVT', 'PROJECT_AUTHORITY'] },
+      { key: 'compensation', i18nKey: 'item_compensation', labelEn: 'Compensation & DBT', labelHi: 'प्रतिकर एवं डीबीटी', ico: '₹', roles: ['ADMIN', 'CENTRAL_GOVT', 'LAND_OFFICER', 'PROJECT_AUTHORITY'] },
     ]
   },
   {
@@ -36,9 +36,9 @@ const NAV_ITEMS = [
     groupKey: 'group_projects',
     groupFallback: 'Projects',
     items: [
-      { key: 'projects', i18nKey: 'item_projects', labelEn: 'Infrastructure Projects', labelHi: 'अवसंरचना परियोजनाएं', ico: '◆', roles: ['ADMIN', 'PROJECT_AUTHORITY'] },
-      { key: 'monitoring', i18nKey: 'item_monitoring', labelEn: 'Progress Monitoring', labelHi: 'प्रगति निगरानी', ico: '◔', roles: ['ADMIN', 'PROJECT_AUTHORITY'] },
-      { key: 'decision-support', i18nKey: 'item_decision_support', labelEn: 'Decision Support', labelHi: 'निर्णय सहायता', ico: '⚖', roles: ['ADMIN', 'PROJECT_AUTHORITY'] },
+      { key: 'projects', i18nKey: 'item_projects', labelEn: 'Infrastructure Projects', labelHi: 'अवसंरचना परियोजनाएं', ico: '◆', roles: ['ADMIN', 'CENTRAL_GOVT', 'PROJECT_AUTHORITY'] },
+      { key: 'monitoring', i18nKey: 'item_monitoring', labelEn: 'Progress Monitoring', labelHi: 'प्रगति निगरानी', ico: '◔', roles: ['ADMIN', 'CENTRAL_GOVT', 'PROJECT_AUTHORITY'] },
+      { key: 'decision-support', i18nKey: 'item_decision_support', labelEn: 'Decision Support', labelHi: 'निर्णय सहायता', ico: '⚖', roles: ['ADMIN', 'CENTRAL_GOVT', 'PROJECT_AUTHORITY'] },
     ]
   },
   {
@@ -46,10 +46,10 @@ const NAV_ITEMS = [
     groupKey: 'group_oversight',
     groupFallback: 'Oversight & Admin',
     items: [
-      { key: 'alerts', i18nKey: 'item_alerts', labelEn: 'Compliance Alerts', labelHi: 'सतर्कता सूचनाएं', ico: '!', roles: ['ADMIN', 'LAND_OFFICER', 'FIELD_OFFICER', 'PROJECT_AUTHORITY'] },
-      { key: 'audit', i18nKey: 'item_audit', labelEn: 'Audit Trail', labelHi: 'ऑडिट ट्रेल', ico: '≡', roles: ['ADMIN'] },
-      { key: 'ai', i18nKey: 'item_ai', labelEn: 'AI Legal Assistant', labelHi: 'एआई सहायक', ico: '✦', roles: ['ADMIN', 'LAND_OFFICER', 'FIELD_OFFICER', 'PROJECT_AUTHORITY'] },
-      { key: 'users', i18nKey: 'item_users', labelEn: 'User Roles & Access', labelHi: 'प्रयोक्ता प्रबंधन', ico: '☰', roles: ['ADMIN'] },
+      { key: 'alerts', i18nKey: 'item_alerts', labelEn: 'Compliance Alerts', labelHi: 'सतर्कता सूचनाएं', ico: '!', roles: ['ADMIN', 'CENTRAL_GOVT', 'LAND_OFFICER', 'FIELD_OFFICER', 'PROJECT_AUTHORITY'] },
+      { key: 'audit', i18nKey: 'item_audit', labelEn: 'Audit Trail', labelHi: 'ऑडिट ट्रेल', ico: '≡', roles: ['ADMIN', 'CENTRAL_GOVT'] },
+      { key: 'ai', i18nKey: 'item_ai', labelEn: 'AI Legal Assistant', labelHi: 'एआई सहायक', ico: '✦', roles: ['ADMIN', 'CENTRAL_GOVT', 'LAND_OFFICER', 'FIELD_OFFICER', 'PROJECT_AUTHORITY'] },
+      { key: 'users', i18nKey: 'item_users', labelEn: 'User Roles & Access', labelHi: 'प्रयोक्ता प्रबंधन', ico: '☰', roles: ['ADMIN', 'CENTRAL_GOVT'] },
     ]
   },
 ];
@@ -62,6 +62,7 @@ function canSee(itemRoles) {
 // Role-tailored pinned shortcuts
 const ROLE_PINNED_ROUTES = {
   ADMIN: ['dashboard', 'cases', 'map', 'ai'],
+  CENTRAL_GOVT: ['dashboard', 'projects', 'monitoring', 'cases'],
   LAND_OFFICER: ['dashboard', 'cases', 'parcels', 'documents'],
   FIELD_OFFICER: ['field-survey', 'parcels', 'documents', 'map'],
   PROJECT_AUTHORITY: ['dashboard', 'projects', 'cases', 'map'],

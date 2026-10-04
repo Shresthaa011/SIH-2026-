@@ -7,6 +7,7 @@
 /* ---------------- CONSTANTS ---------------- */
 const ROLES = {
   ADMIN: {key:'ADMIN', label:'Administrator / नोडल अधिकारी'},
+  CENTRAL_GOVT: {key:'CENTRAL_GOVT', label:'Central Govt. / केंद्र सरकार (DoLR)'},
   LAND_OFFICER: {key:'LAND_OFFICER', label:'Land Officer / भू-अधिग्रहण अधिकारी'},
   FIELD_OFFICER: {key:'FIELD_OFFICER', label:'Field Officer / पटवारी (क्षेत्रीय सत्यापक)'},
   PROJECT_AUTHORITY: {key:'PROJECT_AUTHORITY', label:'Project Authority / परियोजना प्राधिकारी'},
@@ -104,6 +105,7 @@ function generateSeed(){
 
   db.users = [
     {id:'U-ADMIN', name:'S. Nair', role:'ADMIN', title:'District Nodal Administrator', username:'admin', email:'admin@geosetu-india.gov.in', password:'password123'},
+    {id:'U-CENTRAL', name:'Dr. A. K. Sharma', role:'CENTRAL_GOVT', title:'Joint Secretary, DoLR (Ministry of Rural Development)', username:'central', email:'central@geosetu-india.gov.in', password:'password123'},
     {id:'U-OFFICER', name:'R. Chouhan', role:'LAND_OFFICER', title:'Land Acquisition Officer (Bhopal Circle)', username:'officer', email:'officer@geosetu-india.gov.in', password:'password123'},
     {id:'U-FIELD', name:'Vikram Singh', role:'FIELD_OFFICER', title:'Senior Field Surveyor / Patwari', username:'field', email:'field@geosetu-india.gov.in', password:'password123'},
     {id:'U-AUTHORITY', name:'A. Deshmukh', role:'PROJECT_AUTHORITY', title:'Project Director, NHAI Cell', username:'authority', email:'authority@geosetu-india.gov.in', password:'password123'},
@@ -462,11 +464,15 @@ function loadDB(){
       DB = JSON.parse(raw);
       const defaultCreds = {
         'U-ADMIN': {u:'admin', e:'admin@geosetu-india.gov.in', p:'password123'},
+        'U-CENTRAL': {u:'central', e:'central@geosetu-india.gov.in', p:'password123'},
         'U-OFFICER': {u:'officer', e:'officer@geosetu-india.gov.in', p:'password123'},
         'U-FIELD': {u:'field', e:'field@geosetu-india.gov.in', p:'password123'},
         'U-AUTHORITY': {u:'authority', e:'authority@geosetu-india.gov.in', p:'password123'},
         'U-OWNER': {u:'citizen', e:'citizen@geosetu-india.gov.in', p:'password123'},
       };
+      if (!DB.users.some(u => u.id === 'U-CENTRAL')) {
+        DB.users.push({id:'U-CENTRAL', name:'Dr. A. K. Sharma', role:'CENTRAL_GOVT', title:'Joint Secretary, DoLR (Ministry of Rural Development)', username:'central', email:'central@geosetu-india.gov.in', password:'password123'});
+      }
       if (!DB.users.some(u => u.id === 'U-FIELD')) {
         DB.users.push({id:'U-FIELD', name:'Vikram Singh', role:'FIELD_OFFICER', title:'Senior Field Surveyor / Patwari', username:'field', email:'field@geosetu-india.gov.in', password:'password123'});
       }

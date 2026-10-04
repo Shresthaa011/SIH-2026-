@@ -44,6 +44,7 @@
 
 | Role | Username | Official Email | Password | Access Scope |
 | :--- | :--- | :--- | :--- | :--- |
+| **Central Govt. (DoLR)** | `central` | `central@geosetu-india.gov.in` | `password123` | National oversight, DoLR ministry dashboard, project monitoring & statutory audit |
 | **Nodal Admin** | `admin` | `admin@geosetu-india.gov.in` | `password123` | Full administrative control, audit log, user management |
 | **Land Officer (LAO)** | `officer` | `officer@geosetu-india.gov.in` | `password123` | E-Agreements creation & DSC counter-signing, verification queue, Khasra inspections |
 | **Field Officer (Patwari)** | `field` | `field@geosetu-india.gov.in` | `password123` | Field survey GPS terminal, geotagged photo capture, boundary pillar verification |

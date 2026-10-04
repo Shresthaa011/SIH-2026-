@@ -689,8 +689,10 @@ function renderLogin() {
         </div>
         <div class="modal-body">
           <p style="font-size:12px;color:var(--gov-text-muted);margin-bottom:12px;">Use any registered official or citizen credential to inspect role-specific permissions:</p>
+          <div class="kv"><span>Central Govt. (DoLR):</span><span>central / password123</span></div>
           <div class="kv"><span>Nodal Administrator:</span><span>admin / password123</span></div>
           <div class="kv"><span>Land Officer (LAO):</span><span>officer / password123</span></div>
+          <div class="kv"><span>Field Officer (Patwari):</span><span>field / password123</span></div>
           <div class="kv"><span>Project Authority (NHAI):</span><span>authority / password123</span></div>
           <div class="kv"><span>Citizen / Landowner:</span><span>citizen / password123</span></div>
           <p style="font-size:11px;color:var(--gov-text-muted);margin-top:14px;">In production, identity tokens authenticate via MeriPehchan / JanParichay National SSO.</p>
@@ -772,7 +774,9 @@ function renderLogin() {
 
       const roleTitles = {
         'ADMIN': 'District Nodal Administrator',
+        'CENTRAL_GOVT': 'Joint Secretary, DoLR (Ministry of Rural Development)',
         'LAND_OFFICER': 'Gazetted Land Acquisition Officer',
+        'FIELD_OFFICER': 'Senior Field Surveyor / Patwari',
         'PROJECT_AUTHORITY': 'Competent Project Authority',
         'LAND_OWNER': 'Registered Khatedar / Citizen'
       };
